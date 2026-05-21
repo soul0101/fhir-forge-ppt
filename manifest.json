@@ -1,0 +1,16 @@
+{
+  "description": "The Last Mile Layer — strategy deck for Prompt Opinion. 11 slides, light editorial.",
+  "slides": [
+    { "folio": "01", "chapter": "Opening",     "title": "Title",                       "path": "content/00-intro/01-title.html" },
+    { "folio": "02", "chapter": "The Problem", "title": "Born unstructured",           "path": "content/01-problem/02-born-unstructured.html" },
+    { "folio": "03", "chapter": "The Cost",    "title": "By hand is slow",             "path": "content/01-problem/03-the-cost.html" },
+    { "folio": "04", "chapter": "Who Does It", "title": "Everyone does data entry",    "path": "content/01-problem/04-who-does-it.html" },
+    { "folio": "05", "chapter": "Existing",    "title": "Today's tools fix a slice",   "path": "content/01-problem/05-existing-solutions.html" },
+    { "folio": "06", "chapter": "The Solution","title": "One agentic loop",            "path": "content/02-solution/06-one-workflow.html" },
+    { "folio": "07", "chapter": "Platform Fit","title": "Po owns the hardest parts",   "path": "content/03-platform/07-platform-fit.html" },
+    { "folio": "08", "chapter": "Verticals",   "title": "One foundation",              "path": "content/03-platform/08-verticals.html" },
+    { "folio": "09", "chapter": "Recommend",   "title": "Make it a flagship",          "path": "content/04-closing/09-recommendation.html" },
+    { "folio": "10", "chapter": "Closing",     "title": "A workflow, not a workforce", "path": "content/04-closing/10-closing.html" },
+    { "folio": "11", "chapter": "Appendix",    "title": "Assumptions & sources",       "path": "content/04-closing/11-appendix.html" }
+  ]
+}

@@ -1,0 +1,449 @@
+/*
+ * deck.css — design system for the modular Reveal.js deck.
+ *
+ * The values below are a *starting seed*, not a house style. The
+ * /deck-new flow asks the user for palette + type and overwrites
+ * this :root block to match. Slide bodies should reference
+ * var(--token) only — never hex — so a re-theme is a 10-line edit
+ * of this block plus the font-family declarations on html/body and
+ * .chrome.
+ *
+ * Tokens are semantic (--accent, --good, --warn) so a fork can
+ * pick any aesthetic without renaming references across slides.
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TOKENS — semantic names, neutral defaults.
+   Replace the values below to re-theme the deck. Don't rename the
+   tokens themselves unless you also sweep the template stubs and
+   widgets.js, which reference these names.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Surfaces — light, modern, editorial. Warm off-white canvas. */
+  --paper:        #F5F6F4;
+  --paper-2:      #ECEFEC;
+  --paper-3:      #FFFFFF;
+
+  /* Ink — deep navy hierarchy on light. */
+  --ink:          #17263B;
+  --ink-2:        #2A3A52;
+  --ink-3:        #46556A;
+  --muted:        #5E6B79;
+
+  /* Hairlines. */
+  --rule:         #E5E8E6;
+  --rule-soft:    #EFF1EE;
+
+  /* Accent — teal. Primary brand colour. */
+  --accent:       #0F8A78;
+  --accent-deep:  #0A6B5C;
+  --accent-soft:  #46C9AE;
+
+  /* Semantic states. */
+  --good:         #46C9AE;
+  --warn:         #D98A3D;
+  --warn-deep:    #B36B22;
+
+  /* Stage — deep navy panel + on-dark text. */
+  --stage:        #16263A;
+  --stage-2:      #0F1C2D;
+  --ink-on-dark:  #FFFFFF;
+  --muted-on-dark:#A8B5C4;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   STAGE — fixed 1280×720 sheet, editorial feel.
+   ═══════════════════════════════════════════════════════════════════════ */
+html, body, .reveal {
+  background: var(--stage);
+  color: var(--ink);
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv01", "cv02";
+}
+
+.reveal .slides { text-align: initial; }
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  width: 1280px; height: 720px;
+  padding: 0 !important;
+  top: 0 !important; left: 0 !important;
+  margin: 0 !important;
+  background: var(--paper);
+  color: var(--ink);
+  overflow: hidden;
+  display: block;
+  box-shadow:
+    0 40px 80px -30px rgba(20, 14, 8, .35),
+    0 20px 40px -20px rgba(20, 14, 8, .22);
+}
+
+/* sheet — primary cream variant. Very subtle warmth, no decorative gradients. */
+.reveal .slides section.sheet { background: var(--paper); }
+.reveal .slides section.sheet::before {
+  content: ""; position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(1200px 600px at 92% -10%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
+    radial-gradient(800px 400px at -10% 110%, color-mix(in srgb, var(--ink) 4%, transparent), transparent 60%);
+}
+.reveal .slides section.sheet::after {
+  content: ""; position: absolute; inset: 0;
+  pointer-events: none; z-index: 2;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent),
+    inset 0 0 80px color-mix(in srgb, var(--ink) 4%, transparent);
+}
+.reveal .slides section.sheet > * { z-index: 1; }
+.reveal .slides section.sheet > .bg-layer { position: absolute; inset: 0; z-index: 0; }
+
+/* dark — chapter openers, hero / quote moments. Warm near-black, never blue. */
+.reveal .slides section.dark {
+  background: var(--stage);
+  color: var(--ink-on-dark);
+}
+.reveal .slides section.dark::before {
+  content: ""; position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(900px 600px at 20% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 65%),
+    radial-gradient(700px 500px at 80% 80%, color-mix(in srgb, var(--accent-soft) 8%, transparent), transparent 60%);
+}
+.reveal .slides section.dark::after {
+  content: ""; position: absolute; inset: 0;
+  pointer-events: none; z-index: 2;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--ink-on-dark) 6%, transparent),
+    inset 0 0 140px rgba(0, 0, 0, .55);
+}
+.reveal .slides section.dark > * { z-index: 1; }
+
+/* plate — full-bleed image moments. Brighter cream so photos sit cleanly. */
+.reveal .slides section.plate { background: var(--paper-3); }
+.reveal .slides section.plate::after {
+  content: ""; position: absolute; inset: 0;
+  pointer-events: none; z-index: 2;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent),
+    inset 0 0 80px color-mix(in srgb, var(--ink) 4%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CHROME — editorial header strip. Mono, tracked uppercase, very small.
+   Folio chip on the right is the truth — the validator checks it.
+   ═══════════════════════════════════════════════════════════════════════ */
+.chrome {
+  position: absolute; top: 28px; left: 56px; right: 56px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: .24em;
+  font-weight: 500; color: var(--ink-2);
+  text-transform: uppercase; z-index: 3;
+}
+.sheet  .chrome { color: var(--ink-2); }
+.plate  .chrome { color: var(--ink-2); }
+.dark   .chrome { color: var(--muted-on-dark); }
+.chrome .dot {
+  display: inline-block; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--accent);
+  margin-right: 10px; vertical-align: middle;
+}
+.chrome .folio { font-variant-numeric: tabular-nums; }
+.chrome .right { display: flex; gap: 18px; align-items: center; }
+
+/* sig — optional bottom-left signature (date, venue, author handle). */
+.sig {
+  position: absolute; left: 56px; bottom: 28px;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .24em;
+  text-transform: uppercase; color: var(--muted); z-index: 3;
+}
+.sig.r { left: auto; right: 56px; text-align: right; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY — minimal hierarchy. Use these as a baseline; slides may
+   override via inline style="" for editorial moments.
+   ═══════════════════════════════════════════════════════════════════════ */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal p,
+.reveal ol,
+.reveal ul { margin: 0; }
+
+.reveal h1 {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 96px; line-height: 1.0;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+  max-width: 1080px;
+}
+.reveal h2 {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 60px; line-height: 1.08;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+}
+.reveal h3 {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 36px; line-height: 1.18;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+}
+.reveal h4 {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 22px; line-height: 1.3;
+  letter-spacing: -0.012em;
+  color: var(--ink-2);
+}
+
+.reveal .dark h1,
+.reveal .dark h2,
+.reveal .dark h3,
+.reveal .dark h4 { color: var(--ink-on-dark); }
+
+.reveal p {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 24px; line-height: 1.45;
+  color: var(--ink-2);
+  max-width: 920px;
+}
+.reveal .dark p { color: var(--muted-on-dark); }
+
+/* Italic-serif voice — used for kickers, subtitles, pull-out emphasis.
+   Apply via class="kicker" or wrap in <em class="kicker">…</em>. */
+.reveal .kicker,
+.reveal em.kicker {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink);
+}
+.reveal .dark .kicker,
+.reveal .dark em.kicker { color: var(--ink-on-dark); }
+
+/* Eyebrow — small mono label above titles. The closest thing this house
+   style has to decoration. Use sparingly. */
+.reveal .eyebrow {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px; letter-spacing: .28em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.reveal .dark .eyebrow { color: var(--muted-on-dark); }
+.reveal .eyebrow.accent { color: var(--accent); }
+
+/* Editorial pull-quote — italic serif at scale. */
+.reveal blockquote {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 44px; line-height: 1.22;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  max-width: 980px;
+}
+.reveal .dark blockquote { color: var(--ink-on-dark); }
+.reveal blockquote em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+}
+.reveal blockquote cite {
+  display: block;
+  margin-top: 18px;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-style: normal;
+  font-size: 11px; letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hairlines — the workhorse divider. Short variant is the accent rule. */
+.reveal hr.rule {
+  border: 0; height: 1px;
+  background: var(--rule);
+  margin: 0;
+}
+.reveal hr.rule.soft { background: var(--rule-soft); }
+.reveal hr.rule.short {
+  width: 72px; height: 2px;
+  background: var(--accent);
+}
+
+/* Inline links — accent colour, hairline underline, nothing showy. */
+.reveal a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: color .15s ease, border-color .15s ease;
+}
+.reveal a:hover {
+  color: var(--accent-deep);
+  border-bottom-color: var(--accent);
+}
+
+/* Inline code chip — recessed, mono, low-contrast on cream. */
+.reveal code,
+.reveal kbd {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: .92em;
+  background: var(--paper-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.reveal .dark code,
+.reveal .dark kbd {
+  background: rgba(240, 233, 220, .08);
+  color: var(--ink-on-dark);
+}
+
+/* Speaker notes — hidden on stage, surfaced in speaker view by Reveal. */
+aside.notes { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ENTRANCE ANIMATIONS — slides may opt children in with class="rise"
+   and CSS var --d for stagger delay. Kept under 250ms per skill rule.
+   ═══════════════════════════════════════════════════════════════════════ */
+@keyframes lml-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.reveal .slides section.present .rise {
+  animation: lml-rise .24s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay: var(--d, 0s);
+}
+
+/* Editorial section marker — teal square + uppercase tracked label. */
+.section-marker {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: .28em;
+  text-transform: uppercase; color: var(--accent);
+}
+.section-marker::before {
+  content: ""; display: inline-block;
+  width: 14px; height: 14px; border-radius: 3px;
+  background: var(--accent);
+}
+
+/* Card primitive — white surface, hairline, soft shadow, optional accent top. */
+.card {
+  background: var(--paper-3);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 8px 24px -16px rgba(23,38,59,.18);
+  position: relative;
+}
+.card.accent-top::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0;
+  height: 3px; background: var(--accent);
+  border-radius: 10px 10px 0 0;
+}
+.card .card-eyebrow {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+
+/* Emphasis band — slim navy/teal band carrying a one-line takeaway. */
+.band {
+  position: absolute; left: 56px; right: 56px;
+  padding: 18px 26px; border-radius: 8px;
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px; line-height: 1.45;
+  display: flex; align-items: center; gap: 16px;
+}
+.band.navy { background: var(--stage); color: var(--ink-on-dark); }
+.band.teal { background: var(--accent); color: #fff; }
+.band .band-mark {
+  display: inline-block; width: 8px; height: 8px; border-radius: 2px;
+  background: var(--accent-soft); flex-shrink: 0;
+}
+.band.teal .band-mark { background: #fff; opacity: .9; }
+
+/* Icon tile — pale teal tint circle, used inside cards. */
+.icon-tile {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.icon-tile svg { width: 22px; height: 22px; stroke-width: 1.75; }
+
+/* Page number — tiny muted folio bottom-right. */
+.pageno {
+  position: absolute; right: 56px; bottom: 28px;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: .22em; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pipeline step — used on slides 6, 8. */
+.step {
+  background: var(--paper-3);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 14px 14px 12px;
+  text-align: center;
+  position: relative;
+}
+.step.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.step.active .step-name { color: #fff; }
+.step.active .step-num  { color: rgba(255,255,255,.7); }
+.step .step-num {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .2em; color: var(--muted);
+  font-weight: 600;
+}
+.step .step-name {
+  font-family: "Geist", sans-serif;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  margin-top: 4px; letter-spacing: -0.01em;
+}
+.step-connector {
+  align-self: center;
+  color: var(--accent-soft);
+  font-size: 18px; font-weight: 700;
+}
+.tag-hitl {
+  position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+  background: var(--warn); color: #fff;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 9px; letter-spacing: .18em; font-weight: 700;
+  padding: 3px 8px; border-radius: 4px; text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Bottleneck slide motion (ambient, low-intensity) ───────────────────── */
+@keyframes lml-flow-dash {
+  to { stroke-dashoffset: -18; }
+}
+@keyframes lml-pulse-ring {
+  0%   { transform: scale(.6); opacity: .55; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes lml-warn-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217,138,61,.0), 0 12px 36px -18px rgba(217,138,61,.55); }
+  50%      { box-shadow: 0 0 0 6px rgba(217,138,61,.10), 0 16px 44px -16px rgba(217,138,61,.75); }
+}
+.reveal .slides section.present .flow-line {
+  stroke-dasharray: 4 6;
+  animation: lml-flow-dash 1.6s linear infinite;
+}
+.reveal .slides section.present .pulse-ring {
+  animation: lml-pulse-ring 1.8s ease-out infinite;
+}
+.reveal .slides section.present .bottleneck {
+  animation: lml-warn-glow 2.6s ease-in-out infinite;
+}
