@@ -1,0 +1,239 @@
+<!--
+  Slide 7 · What's commoditizing, what stays
+  Chapter: The Solution · The Strategic Bet
+
+  Job: state the bet plainly. Two columns. Lots of breathing room.
+  Traceability is mentioned as one of the moat items here, but its
+  *visualization* lives on slide 9 (Why this shape) where it gets a
+  dedicated panel. Don't try to do both on this slide.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE STRATEGIC BET</div>
+    <div class="right">
+      <span>Commoditization</span>
+      <span class="folio">08</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:1">
+    <div class="rise" style="--d:0s">
+      <span class="eyebrow accent">The Strategic Bet</span>
+    </div>
+    <h1 class="rise" style="--d:.05s;font-size:46px;line-height:1.08;letter-spacing:-0.022em;
+                            color:var(--ink);font-weight:700;margin-top:10px;max-width:1080px">
+      Extraction is going to be free.<br>
+      <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">The work around it isn't.</em>
+    </h1>
+  </div>
+
+  <!-- ─── Two columns ─────────────────────────────────────────────── -->
+  <div class="co-grid rise" style="--d:.15s">
+
+    <!-- LEFT · Commoditizing -->
+    <div class="co-col co-col--commod">
+      <div class="co-col-head">
+        <div class="co-arrow co-arrow--down">↓</div>
+        <div>
+          <div class="co-col-name">Commoditizing</div>
+          <div class="co-col-sub">racing to cents per call</div>
+        </div>
+      </div>
+      <ul class="co-list">
+        <li>
+          <div class="co-li-name">Text extraction</div>
+          <div class="co-li-why">Hyperscalers and open models.</div>
+        </li>
+        <li>
+          <div class="co-li-name">Code lookup</div>
+          <div class="co-li-why">LOINC · RxNorm · ICD via open APIs.</div>
+        </li>
+        <li>
+          <div class="co-li-name">OCR &amp; transcription</div>
+          <div class="co-li-why">Many cheap providers.</div>
+        </li>
+        <li>
+          <div class="co-li-name">Basic LLM intelligence</div>
+          <div class="co-li-why">General-purpose, fungible.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT · The moat -->
+    <div class="co-col co-col--moat">
+      <div class="co-col-head">
+        <div class="co-arrow co-arrow--up">↑</div>
+        <div>
+          <div class="co-col-name">Not commoditizing</div>
+          <div class="co-col-sub">years of work, by design</div>
+        </div>
+      </div>
+      <ul class="co-list">
+        <li>
+          <div class="co-li-name">Per-EHR write surface</div>
+          <div class="co-li-why">Epic / Cerner scopes. Years per customer.</div>
+        </li>
+        <li>
+          <div class="co-li-name">Reconciliation semantics</div>
+          <div class="co-li-why">Diff against the live chart. Judgment, not parsing.</div>
+        </li>
+        <li class="co-li--feature">
+          <div class="co-li-name">★ Traceability + Provenance</div>
+          <div class="co-li-why">Every entry walks back to source.</div>
+        </li>
+        <li>
+          <div class="co-li-name">Unified fan-in</div>
+          <div class="co-li-why">PDF · fax · CCD · dictation. One engine.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── Takeaway band ───────────────────────────────────────────── -->
+  <div class="rise" style="--d:.5s;position:absolute;left:80px;right:80px;bottom:48px">
+    <div class="band navy" style="position:static;padding:18px 24px;border-radius:10px">
+      <span class="band-mark"></span>
+      <div style="font-size:16px;line-height:1.5">
+        Plant where the moat is.
+        <em class="kicker" style="color:var(--accent-soft);font-size:1em">The rest is racing to free.</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="pageno">08 / 15</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    .co-grid {
+      position: absolute;
+      left: 80px; right: 80px;
+      top: 240px;        /* well below the 2-line header */
+      bottom: 150px;     /* leaves ~80px of clearance above the bottom band */
+      display: grid;
+      grid-template-columns: 1fr 1fr;   /* two real columns; divider is a ::before pseudo */
+      column-gap: 64px;
+      align-items: start;
+    }
+
+    /* Vertical hairline between columns. */
+    .co-grid::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 8%; bottom: 8%;
+      width: 1px;
+      background: var(--rule);
+      transform: translateX(-50%);
+    }
+
+    .co-col-head {
+      display: flex; align-items: center; gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: 10px;
+    }
+    .co-col--commod .co-col-head { border-bottom-color: color-mix(in srgb,var(--muted) 30%,transparent); }
+    .co-col--moat   .co-col-head { border-bottom-color: var(--accent); }
+
+    .co-arrow {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 21px; font-weight: 700; line-height: 1;
+      flex-shrink: 0;
+    }
+    .co-arrow--down {
+      background: color-mix(in srgb,var(--muted) 16%,transparent);
+      color: var(--ink-3);
+    }
+    .co-arrow--up {
+      background: color-mix(in srgb,var(--accent) 14%,transparent);
+      color: var(--accent-deep);
+      box-shadow: 0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent);
+    }
+
+    .co-col-name {
+      font-family: "Geist", sans-serif;
+      font-size: 19px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.012em;
+      line-height: 1.15;
+    }
+    .co-col--commod .co-col-name { color: var(--ink-3); }
+    .co-col-sub {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13px; color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .co-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column;
+    }
+    .co-list li {
+      padding: 10px 4px;
+      border-bottom: 1px dashed var(--rule-soft);
+      transition: padding-left .2s ease;
+    }
+    .co-list li:last-child { border-bottom: 0; }
+    .co-list li:hover { padding-left: 10px; }
+
+    .co-li-name {
+      font-family: "Geist", sans-serif;
+      font-size: 16px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+    }
+    .co-col--commod .co-li-name { color: var(--ink-3); }
+
+    .co-li-why {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13.5px; line-height: 1.4;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .co-col--moat .co-li-why { color: var(--ink-3); }
+
+    /* Featured row — Traceability. */
+    .co-li--feature {
+      background: color-mix(in srgb,var(--accent) 5%,transparent);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 10px 12px !important;
+      margin: 2px -8px;
+    }
+    .co-li--feature .co-li-name {
+      color: var(--accent-deep) !important;
+      font-weight: 700;
+    }
+    .co-li--feature .co-li-why { color: var(--ink-2); }
+
+    /* Subtle list-item entrance stagger. */
+    .co-list li {
+      opacity: 0; transform: translateY(6px);
+      animation: lml-rise .35s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .reveal .slides section.present .co-col--commod .co-list li:nth-child(1) { animation-delay: .30s; }
+    .reveal .slides section.present .co-col--commod .co-list li:nth-child(2) { animation-delay: .36s; }
+    .reveal .slides section.present .co-col--commod .co-list li:nth-child(3) { animation-delay: .42s; }
+    .reveal .slides section.present .co-col--commod .co-list li:nth-child(4) { animation-delay: .48s; }
+    .reveal .slides section.present .co-col--moat   .co-list li:nth-child(1) { animation-delay: .34s; }
+    .reveal .slides section.present .co-col--moat   .co-list li:nth-child(2) { animation-delay: .40s; }
+    .reveal .slides section.present .co-col--moat   .co-list li:nth-child(3) { animation-delay: .46s; }
+    .reveal .slides section.present .co-col--moat   .co-list li:nth-child(4) { animation-delay: .52s; }
+  </style>
+
+  <aside class="notes">
+    State the bet plainly. Don't read every row — let the columns sit while
+    you say:
+
+    "The left column is going to be free. Open models, hyperscaler APIs,
+     terminology services — every one of these is racing to cents per call.
+     The right column is the work that takes years per customer. Plant
+     where the moat is."
+
+    Traceability gets its own visual on slide 9. Don't drill into it here.
+  </aside>
+</section>

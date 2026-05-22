@@ -1,0 +1,220 @@
+<!--
+  Slide 4 · Every chart, by hand
+  Chapter: The Problem · The Burden
+
+  Tone shift from the workforce-displacement framing. The story here is
+  about the *process* — hours per chart, days of lag, re-keying at every
+  handoff. Not about removing jobs. About removing toil.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE PROBLEM</div>
+    <div class="right">
+      <span>The Burden</span>
+      <span class="folio">03</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:1">
+    <div class="rise" style="--d:0s">
+      <span class="eyebrow accent">The Burden</span>
+    </div>
+    <h1 class="rise" style="--d:.05s;font-size:62px;line-height:1.04;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700;margin-top:10px;max-width:1100px">
+      Every chart, <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">by hand.</em>
+    </h1>
+    <p class="rise" style="--d:.1s;font-size:20px;line-height:1.5;color:var(--ink-3);
+                           max-width:880px;margin-top:14px">
+      Hours of work per encounter. Days of lag. Re-keying at every handoff.
+    </p>
+  </div>
+
+  <!-- ─── Three big-stat columns ─────────────────────────────────── -->
+  <div class="rise" style="--d:.18s;position:absolute;left:80px;right:80px;top:268px;
+                           display:grid;grid-template-columns:repeat(3,1fr);gap:36px">
+
+    <!-- Stat 01 · TIME burden -->
+    <div class="ce-stat">
+      <div class="ce-stat-num">2<span class="ce-unit">hrs</span></div>
+      <div class="ce-stat-label">of EHR &amp; desk work for<br>every 1 hr of patient care</div>
+      <hr class="ce-stat-rule">
+      <div class="ce-stat-src">¹ Sinsky et al., <em>Annals of Internal Medicine</em>, 2016</div>
+    </div>
+
+    <!-- Stat 02 · LAG -->
+    <div class="ce-stat">
+      <div class="ce-stat-num">7-12<span class="ce-unit">mo</span></div>
+      <div class="ce-stat-label">typical backlog before a<br>chart is registry-ready</div>
+      <hr class="ce-stat-rule">
+      <div class="ce-stat-src">² NAACCR / cancer-registry abstraction backlogs</div>
+    </div>
+
+    <!-- Stat 03 · RE-KEYING -->
+    <div class="ce-stat ce-stat--warn">
+      <div class="ce-stat-num">5×</div>
+      <div class="ce-stat-label">re-keyed by hand between<br>encounter and submission</div>
+      <hr class="ce-stat-rule ce-stat-rule--warn">
+      <div class="ce-stat-src">³ Typical chart handoff chain (illustrative)</div>
+    </div>
+  </div>
+
+  <!-- ─── Handoff process diagram ─────────────────────────────────── -->
+  <div class="rise" style="--d:.32s;position:absolute;left:80px;right:80px;top:516px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:14px">
+      <span class="eyebrow">The cumbersome middle</span>
+      <hr class="rule" style="flex:1;background:var(--rule)">
+    </div>
+
+    <div class="ce-flow">
+      <div class="ce-flow-node"><span class="ce-flow-num">01</span><span class="ce-flow-name">Encounter</span></div>
+      <div class="ce-flow-arc" aria-hidden="true">
+        <svg viewBox="0 0 80 16" preserveAspectRatio="none"><path d="M2 8 L72 8" stroke="var(--warn)" stroke-width="1.4" fill="none" class="flow-line"/><path d="M66 4 L72 8 L66 12" stroke="var(--warn)" stroke-width="1.4" fill="none"/></svg>
+        <span class="ce-flow-tag">re-key</span>
+      </div>
+      <div class="ce-flow-node"><span class="ce-flow-num">02</span><span class="ce-flow-name">Notes</span></div>
+      <div class="ce-flow-arc" aria-hidden="true">
+        <svg viewBox="0 0 80 16" preserveAspectRatio="none"><path d="M2 8 L72 8" stroke="var(--warn)" stroke-width="1.4" fill="none" class="flow-line"/><path d="M66 4 L72 8 L66 12" stroke="var(--warn)" stroke-width="1.4" fill="none"/></svg>
+        <span class="ce-flow-tag">re-key</span>
+      </div>
+      <div class="ce-flow-node"><span class="ce-flow-num">03</span><span class="ce-flow-name">Coding</span></div>
+      <div class="ce-flow-arc" aria-hidden="true">
+        <svg viewBox="0 0 80 16" preserveAspectRatio="none"><path d="M2 8 L72 8" stroke="var(--warn)" stroke-width="1.4" fill="none" class="flow-line"/><path d="M66 4 L72 8 L66 12" stroke="var(--warn)" stroke-width="1.4" fill="none"/></svg>
+        <span class="ce-flow-tag">re-key</span>
+      </div>
+      <div class="ce-flow-node"><span class="ce-flow-num">04</span><span class="ce-flow-name">Abstraction</span></div>
+      <div class="ce-flow-arc" aria-hidden="true">
+        <svg viewBox="0 0 80 16" preserveAspectRatio="none"><path d="M2 8 L72 8" stroke="var(--warn)" stroke-width="1.4" fill="none" class="flow-line"/><path d="M66 4 L72 8 L66 12" stroke="var(--warn)" stroke-width="1.4" fill="none"/></svg>
+        <span class="ce-flow-tag">re-key</span>
+      </div>
+      <div class="ce-flow-node ce-flow-node--end"><span class="ce-flow-num">05</span><span class="ce-flow-name">Submission</span></div>
+    </div>
+  </div>
+
+  <!-- ─── Bottom takeaway band ───────────────────────────────────── -->
+  <div class="rise" style="--d:.55s;position:absolute;left:80px;right:80px;bottom:48px">
+    <div class="band navy" style="position:static;padding:16px 22px;border-radius:10px">
+      <span class="band-mark"></span>
+      <div style="font-size:15.5px;line-height:1.5">
+        Every chart pays a tax.
+        <em class="kicker" style="color:var(--accent-soft);font-size:1em">The tax is conversion work — slow, fragmented, re-keyed.</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="pageno">03 / 12</div>
+
+  <!-- ─── Local styles ───────────────────────────────────────────── -->
+  <style>
+    .ce-stat {
+      display: flex; flex-direction: column; gap: 10px;
+      position: relative;
+    }
+    .ce-stat-num {
+      font-family: "Geist", sans-serif;
+      font-weight: 700;
+      font-size: 96px; line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      display: flex; align-items: baseline; gap: 4px;
+    }
+    .ce-unit {
+      font-size: 40px; color: var(--ink-3); font-weight: 500;
+      letter-spacing: -0.02em; margin-left: 4px;
+    }
+    .ce-stat--warn .ce-stat-num { color: var(--warn-deep); }
+    .ce-stat-label {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 17px; line-height: 1.35;
+      color: var(--ink-2);
+      margin-top: 6px;
+    }
+    .ce-stat-rule {
+      border: 0; height: 2px; width: 48px;
+      background: var(--accent); margin: 8px 0 0;
+    }
+    .ce-stat-rule--warn { background: var(--warn); }
+    .ce-stat-src {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .12em;
+      color: var(--muted); line-height: 1.4;
+    }
+    .ce-stat-src em {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic; font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    /* Handoff process flow ─────────────────────────────────────── */
+    .ce-flow {
+      display: flex; align-items: center;
+      gap: 6px;
+    }
+    .ce-flow-node {
+      flex: 0 0 auto;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 8px 14px 9px;
+      display: flex; flex-direction: column; gap: 1px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04);
+      min-width: 110px; text-align: center;
+    }
+    .ce-flow-node--end {
+      background: color-mix(in srgb,var(--accent) 8%,var(--paper-3));
+      border-color: color-mix(in srgb,var(--accent) 36%,var(--rule));
+    }
+    .ce-flow-num {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .22em; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .ce-flow-name {
+      font-family: "Geist", sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .ce-flow-arc {
+      flex: 1; min-width: 0;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 2px;
+    }
+    .ce-flow-arc svg { width: 100%; max-width: 80px; height: 14px; }
+    .ce-flow-tag {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .22em; font-weight: 700;
+      color: var(--warn-deep); text-transform: uppercase;
+    }
+
+    /* Stat number rise-in. */
+    @keyframes ce-num-in {
+      from { opacity: 0; transform: translateY(14px) scale(.96); }
+      to   { opacity: 1; transform: none; }
+    }
+    .reveal .slides section.present .ce-stat:nth-child(1) .ce-stat-num { animation: ce-num-in .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: .35s; }
+    .reveal .slides section.present .ce-stat:nth-child(2) .ce-stat-num { animation: ce-num-in .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: .55s; }
+    .reveal .slides section.present .ce-stat:nth-child(3) .ce-stat-num { animation: ce-num-in .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: .75s; }
+
+    @keyframes ce-rule-draw {
+      from { width: 0; }
+      to   { width: 48px; }
+    }
+    .reveal .slides section.present .ce-stat:nth-child(1) .ce-stat-rule { animation: ce-rule-draw .4s ease both; animation-delay: .9s; }
+    .reveal .slides section.present .ce-stat:nth-child(2) .ce-stat-rule { animation: ce-rule-draw .4s ease both; animation-delay: 1.05s; }
+    .reveal .slides section.present .ce-stat:nth-child(3) .ce-stat-rule { animation: ce-rule-draw .4s ease both; animation-delay: 1.20s; }
+  </style>
+
+  <aside class="notes">
+    Tone: this is about the *process*, not the people. The work itself is
+    slow, fragmented, and re-keyed at every handoff.
+
+    Three numbers in order: TIME (per encounter), LAG (before chart-ready),
+    RE-KEYING (between handoffs). Then the flow diagram makes the chain
+    visible — each "re-key" tag is a place errors creep in.
+
+    Land the band: "every chart pays a tax. The tax is conversion work."
+  </aside>
+</section>

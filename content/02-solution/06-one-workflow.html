@@ -1,13 +1,16 @@
 <!--
-  Slide 6 · One agentic loop, grounded in the live chart.
-  Chapter: The Solution
+  Slide 8 · One agentic loop, grounded in the live chart.
+  Chapter: The Solution · The Shape
+
+  Lands as the *answer* to the gap (slides 6–7), not a mid-deck assertion.
+  Diagram itself is unchanged from the original version — only the copy.
 -->
 <section class="sheet" data-transition="fade">
   <div class="chrome">
-    <div><span class="dot"></span>THE LAST MILE LAYER · CH 2</div>
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE SHAPE</div>
     <div class="right">
-      <span>The solution</span>
-      <span class="folio">06</span>
+      <span>The Shape</span>
+      <span class="folio">09</span>
     </div>
   </div>
 
@@ -16,18 +19,31 @@
 
     <!-- Header -->
     <div class="rise" style="--d:0s;display:flex;flex-direction:column;gap:8px">
-      <span class="section-marker">The Solution</span>
+      <span class="section-marker">The Shape That Fits the Gap</span>
       <h2 style="font-size:38px;line-height:1.06;letter-spacing:-0.022em;max-width:1080px;margin:0">
         One Agentic Loop — <em class="kicker" style="color:var(--accent)">Grounded in the Live Chart.</em>
       </h2>
       <p style="font-size:14.5px;line-height:1.55;color:var(--ink-3);max-width:920px;margin:0">
-        Sub-agents extract, ground, and reconcile against your FHIR server.
-        The clinician reviews; edits feed back into the loop; approved data writes back.
+        End-to-end conversion, governed write-back, unified fan-in.
+        The architecture that fills the top-right of the market map.
       </p>
     </div>
 
     <!-- Diagram canvas — 1120 × 460 in absolute coordinates -->
     <div class="rise" style="--d:.10s;position:relative;flex:1;min-height:0">
+
+      <!-- ░░ Foundational layer wrap (behind everything) ░░ -->
+      <div style="position:absolute;left:0;top:324px;right:0;height:114px;
+                  background:color-mix(in srgb,var(--accent-deep) 2.5%, var(--paper));
+                  border:1.5px dashed color-mix(in srgb,var(--accent-deep) 35%, transparent);
+                  border-radius:14px;z-index:0">
+        <!-- Bottom label notch — sits on the plinth -->
+        <div style="position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);
+                    background:var(--paper);padding:0 14px;display:flex;align-items:center;gap:9px;white-space:nowrap">
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-deep);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent-deep) 20%, transparent)"></span>
+          <span style="font-family:'Geist Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.26em;color:var(--accent-deep);font-weight:700;text-transform:uppercase">Prompt Opinion Foundational Layer</span>
+        </div>
+      </div>
 
       <!-- ░░ Arrow layer ░░ -->
       <svg viewBox="0 0 1120 460" preserveAspectRatio="xMidYMid meet"
@@ -63,21 +79,21 @@
               style="font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;font-weight:700;fill:var(--warn-deep);text-transform:uppercase">Feedback Loop · Edits Re-enter Agent</text>
 
         <!-- 5) Sub-agents ↕ FHIR Integration -->
-        <path d="M 263 280 L 263 326" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"
+        <path d="M 263 280 L 263 340" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"
               marker-end="url(#lml-ah-accent)" marker-start="url(#lml-ah-accent)" opacity=".7"/>
-        <path d="M 415 280 L 415 326" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"
+        <path d="M 415 280 L 415 340" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"
               marker-end="url(#lml-ah-accent)" marker-start="url(#lml-ah-accent)" opacity=".7"/>
-        <path d="M 567 280 L 567 326" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"
+        <path d="M 567 280 L 567 340" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"
               marker-end="url(#lml-ah-accent)" marker-start="url(#lml-ah-accent)" opacity=".7"/>
 
         <!-- Channel label -->
-        <rect x="335" y="294" width="160" height="18" rx="9" fill="var(--paper)" stroke="var(--rule)" stroke-width="1"/>
-        <text x="415" y="306" text-anchor="middle"
+        <rect x="335" y="301" width="160" height="18" rx="9" fill="var(--paper)" stroke="var(--rule)" stroke-width="1"/>
+        <text x="415" y="313" text-anchor="middle"
               style="font-family:'Geist Mono',ui-monospace,monospace;font-size:9px;letter-spacing:.18em;font-weight:700;fill:var(--accent-deep);text-transform:uppercase">FHIR API · Live Chart</text>
 
         <!-- 6) Commit — straight down -->
-        <path d="M 825 244 L 825 326" stroke="var(--accent-deep)" stroke-width="1.8" fill="none" marker-end="url(#lml-ah-deep)"/>
-        <text x="846" y="288"
+        <path d="M 825 244 L 825 340" stroke="var(--accent-deep)" stroke-width="1.8" fill="none" marker-end="url(#lml-ah-deep)"/>
+        <text x="846" y="295"
               style="font-family:'Geist Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.18em;font-weight:700;fill:var(--accent-deep);text-transform:uppercase">Commit</text>
       </svg>
 
@@ -167,7 +183,7 @@
         </div>
 
         <!-- FHIR INTEGRATION (left) -->
-        <div style="position:absolute;left:12px;top:326px;width:858px;height:70px;
+        <div style="position:absolute;left:12px;top:340px;width:828px;height:70px;
                     background:var(--stage);color:var(--ink-on-dark);border-radius:12px;
                     padding:12px 20px;display:flex;align-items:center;gap:16px;
                     box-shadow:0 1px 2px rgba(0,0,0,.18), 0 16px 36px -22px rgba(0,0,0,.42)">
@@ -190,10 +206,9 @@
         </div>
 
         <!-- DEEP GUARDRAILS (right) -->
-        <div style="position:absolute;left:886px;top:326px;width:222px;height:70px;
+        <div style="position:absolute;left:892px;top:340px;width:196px;height:70px;
                     background:var(--stage);color:var(--ink-on-dark);border-radius:12px;
-                    padding:12px 14px 12px 16px;display:flex;align-items:center;gap:12px;
-                    border-left:3px solid var(--warn);
+                    padding:12px 14px;display:flex;align-items:center;gap:12px;
                     box-shadow:0 1px 2px rgba(0,0,0,.18), 0 16px 36px -22px rgba(0,0,0,.42)">
           <div style="width:32px;height:32px;border-radius:9px;
                       background:color-mix(in srgb,var(--warn) 22%, transparent);color:var(--warn);
@@ -213,9 +228,14 @@
     </div>
   </div>
 
+  <div class="pageno">09 / 12</div>
+
   <aside class="notes">
-    One agent, three sub-agents — Extractor, Grounder, Reconciler — orchestrated together. The FHIR Integration layer
-    handles reads, writes, and audits; Deep Guardrails enforces HITL, scoped writes, and provenance. The clinician
-    reviews AI suggestions; edits feed back into the agent as context. Only after approval does the workflow commit.
+    Land it as the conclusion to slides 4–7, not a fresh assertion.
+    One agent, three sub-agents — Extractor, Grounder, Reconciler. The
+    FHIR Integration layer handles reads, writes, and audits; Deep
+    Guardrails enforces HITL, scoped writes, and provenance. Clinician
+    reviews AI suggestions; edits feed back into the agent as context.
+    Only after approval does the workflow commit.
   </aside>
 </section>

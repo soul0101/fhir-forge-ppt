@@ -1,0 +1,224 @@
+<!--
+  Slide 11 · What FHIR Forge proved, what's still hard
+  Chapter: Closing · Honest Grounding
+
+  Return to the artifact. Two columns — proved vs. still hard. The
+  "still hard" column is the credibility move: it admits what the
+  prototype didn't actually do, which makes the rest of the deck
+  believable.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · GROUNDING</div>
+    <div class="right">
+      <span>What's Proved</span>
+      <span class="folio">11</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:1">
+    <h1 class="rise" style="--d:0s;font-size:46px;line-height:1.06;letter-spacing:-0.022em;
+                            color:var(--ink);font-weight:700;max-width:1080px">
+      What we proved.
+      <em class="kicker" style="color:var(--warn-deep);font-style:italic;font-size:1em">What's still hard.</em>
+    </h1>
+    <p class="rise" style="--d:.1s;font-size:14.5px;line-height:1.5;color:var(--ink-3);
+                           max-width:920px;margin-top:8px;font-family:'Newsreader',Georgia,serif;
+                           font-style:italic">
+      Sarah's 4-day stay · one discharge summary · processed end-to-end.
+    </p>
+  </div>
+
+  <!-- ─── Two columns ─────────────────────────────────────────────── -->
+  <div class="fp-grid rise" style="--d:.15s">
+
+    <!-- LEFT · Proved -->
+    <div class="fp-col fp-col--proved">
+      <div class="fp-col-head">
+        <div class="fp-icon fp-icon--proved">✓</div>
+        <div>
+          <div class="fp-col-name">Proved</div>
+          <div class="fp-col-sub">on Sarah's chart, end-to-end</div>
+        </div>
+      </div>
+      <ul class="fp-list">
+        <li>
+          <div class="fp-li-name">Smart reconciliation — not duplication</div>
+          <div class="fp-li-why">Penicillin allergy moderate → severe = UPDATE. Hypertension already on chart = SKIP. FHIR <code>_history</code> preserved prior versions.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Cross-resource reasoning</div>
+          <div class="fp-li-why">Lisinopril → Losartan linked as substitution, not orphan prescriptions.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Surfaced missing docs — didn't fabricate</div>
+          <div class="fp-li-why">Atorvastatin's pregnancy counseling absent in source → flagged for clinician, not invented.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Clinical judgment preserved</div>
+          <div class="fp-li-why">"Depressive episode" extracted but deferred for confirmation — AI handled structure, clinician handled judgment.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Atomic write · sentence-level provenance</div>
+          <div class="fp-li-why">HAPI-validated FHIR R4, single transaction, every entity → exact sentence in the PDF.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT · Still hard -->
+    <div class="fp-col fp-col--hard">
+      <div class="fp-col-head">
+        <div class="fp-icon fp-icon--hard">!</div>
+        <div>
+          <div class="fp-col-name">Still hard</div>
+          <div class="fp-col-sub">where production takes years</div>
+        </div>
+      </div>
+      <ul class="fp-list">
+        <li>
+          <div class="fp-li-name">Production EHR scopes</div>
+          <div class="fp-li-why">Sandbox writes ≠ Epic / Cerner production paths per customer.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Vendor security review</div>
+          <div class="fp-li-why">SOC 2 · HITRUST · App Orchard · per-system BAAs — none of this in a hackathon.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Reconciliation at scale</div>
+          <div class="fp-li-why">Long chart histories, complex med chains, edge cases multiplying.</div>
+        </li>
+        <li>
+          <div class="fp-li-name">Terminology version drift</div>
+          <div class="fp-li-why">LOINC, RxNorm, ICD year-over-year — every customer pinned differently.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── Bottom band ────────────────────────────────────────────── -->
+  <div class="rise" style="--d:.5s;position:absolute;left:80px;right:80px;bottom:48px">
+    <div class="band navy" style="position:static;padding:16px 22px;border-radius:10px">
+      <span class="band-mark"></span>
+      <div style="font-size:15px;line-height:1.5">
+        The shape is right. The remaining work
+        <em class="kicker" style="color:var(--accent-soft);font-size:1em">is what Po is already best positioned to do.</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="pageno">11 / 14</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    .fp-grid {
+      position: absolute;
+      left: 80px; right: 80px;
+      top: 232px;
+      bottom: 138px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 56px;
+      align-items: start;
+    }
+    .fp-grid::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 8%; bottom: 8%;
+      width: 1px;
+      background: var(--rule);
+      transform: translateX(-50%);
+    }
+
+    .fp-col-head {
+      display: flex; align-items: center; gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: 10px;
+    }
+    .fp-col--proved .fp-col-head { border-bottom-color: var(--accent); }
+    .fp-col--hard   .fp-col-head { border-bottom-color: var(--warn); }
+
+    .fp-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; line-height: 1;
+      flex-shrink: 0;
+    }
+    .fp-icon--proved {
+      background: color-mix(in srgb,var(--accent) 14%,transparent);
+      color: var(--accent-deep);
+      box-shadow: 0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent);
+    }
+    .fp-icon--hard {
+      background: color-mix(in srgb,var(--warn) 16%,transparent);
+      color: var(--warn-deep);
+      box-shadow: 0 0 0 4px color-mix(in srgb,var(--warn) 8%,transparent);
+    }
+
+    .fp-col-name {
+      font-family: "Geist", sans-serif;
+      font-size: 19px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.012em;
+      line-height: 1.15;
+    }
+    .fp-col-sub {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13px; color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .fp-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column;
+    }
+    .fp-list li {
+      padding: 10px 4px;
+      border-bottom: 1px dashed var(--rule-soft);
+      transition: padding-left .2s ease;
+    }
+    .fp-list li:last-child { border-bottom: 0; }
+    .fp-list li:hover { padding-left: 10px; }
+
+    .fp-li-name {
+      font-family: "Geist", sans-serif;
+      font-size: 16px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+    }
+    .fp-li-why {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13.5px; line-height: 1.4;
+      color: var(--ink-3);
+      margin-top: 2px;
+    }
+
+    /* Stagger animations. */
+    .fp-list li {
+      opacity: 0; transform: translateY(6px);
+      animation: lml-rise .35s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .reveal .slides section.present .fp-col--proved .fp-list li:nth-child(1) { animation-delay: .30s; }
+    .reveal .slides section.present .fp-col--proved .fp-list li:nth-child(2) { animation-delay: .36s; }
+    .reveal .slides section.present .fp-col--proved .fp-list li:nth-child(3) { animation-delay: .42s; }
+    .reveal .slides section.present .fp-col--proved .fp-list li:nth-child(4) { animation-delay: .48s; }
+    .reveal .slides section.present .fp-col--hard   .fp-list li:nth-child(1) { animation-delay: .34s; }
+    .reveal .slides section.present .fp-col--hard   .fp-list li:nth-child(2) { animation-delay: .40s; }
+    .reveal .slides section.present .fp-col--hard   .fp-list li:nth-child(3) { animation-delay: .46s; }
+    .reveal .slides section.present .fp-col--hard   .fp-list li:nth-child(4) { animation-delay: .52s; }
+  </style>
+
+  <aside class="notes">
+    Don't read the columns. Land the frame: "I built a working loop in a
+    hackathon. Here's what that proves and what it doesn't."
+
+    The "still hard" column is the credibility move. It admits the four
+    things a real product needs that the prototype didn't have to do —
+    and every one of them is exactly what Po is already best positioned
+    to handle. That's the bridge to the recommendation.
+  </aside>
+</section>

@@ -1,0 +1,265 @@
+<!--
+  Slide 5 · It's not just discharge summaries
+  Chapter: The Problem · The Breadth
+
+  Job: show that the conversion work generalises past one document type.
+  Six use cases, six target schemas, six type badges. Different shapes;
+  same underlying work. This slide seeds the "one engine, many endpoints"
+  centerpiece later in the deck.
+
+  Honest about FHIR: not every endpoint is FHIR. The diversity is the point —
+  it's why a conversion engine has to exist as its own thing.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE PROBLEM</div>
+    <div class="right">
+      <span>The Breadth</span>
+      <span class="folio">05</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:1">
+    <div class="rise" style="--d:0s">
+      <span class="eyebrow accent">The Breadth</span>
+    </div>
+    <h1 class="rise" style="--d:.05s;font-size:58px;line-height:1.05;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700;margin-top:10px;max-width:1080px">
+      It's not just discharge summaries.
+    </h1>
+    <p class="rise" style="--d:.1s;font-size:20px;line-height:1.5;color:var(--ink-3);
+                           max-width:920px;margin-top:14px">
+      Same input chaos. Different output schemas.
+      <em class="kicker" style="color:var(--accent);font-size:1em">Same conversion work, in six disguises.</em>
+    </p>
+  </div>
+
+  <!-- ─── Table header ─────────────────────────────────────────── -->
+  <div class="rise" style="--d:.16s;position:absolute;left:80px;right:80px;top:236px;
+                           display:grid;grid-template-columns:30px 1fr 1.05fr 180px;
+                           gap:18px;align-items:end;padding-bottom:10px;
+                           border-bottom:1px solid var(--rule)">
+    <div class="nj-th">#</div>
+    <div class="nj-th">Use case</div>
+    <div class="nj-th">Target schema</div>
+    <div class="nj-th" style="text-align:right">Type</div>
+  </div>
+
+  <!-- ─── Rows ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;right:80px;top:280px">
+
+    <!-- 01 · Chart write-back -->
+    <div class="nj-row" style="--d:.20s">
+      <div class="nj-num">01</div>
+      <div>
+        <div class="nj-name">Chart write-back</div>
+        <div class="nj-ctx">Every encounter, every chart in the EHR.</div>
+      </div>
+      <div class="nj-schema">FHIR resources <span class="nj-schema-sub">· Condition · MedicationStatement · Observation</span></div>
+      <div class="nj-tag-cell"><span class="nj-tag nj-tag--fhir">FHIR · Native</span></div>
+    </div>
+
+    <!-- 02 · Cancer registries -->
+    <div class="nj-row" style="--d:.26s">
+      <div class="nj-num">02</div>
+      <div>
+        <div class="nj-name">Cancer registries</div>
+        <div class="nj-ctx">~1.7 M new U.S. cases per year. State central registries.<sup>¹</sup></div>
+      </div>
+      <div class="nj-schema">NAACCR data dictionary <span class="nj-schema-sub">· fixed-field flat records</span></div>
+      <div class="nj-tag-cell"><span class="nj-tag nj-tag--flat">Flat File</span></div>
+    </div>
+
+    <!-- 03 · Clinical trials -->
+    <div class="nj-row" style="--d:.32s">
+      <div class="nj-num">03</div>
+      <div>
+        <div class="nj-name">Clinical trials</div>
+        <div class="nj-ctx">Thousands of active U.S. trials. Sponsor / FDA submissions.</div>
+      </div>
+      <div class="nj-schema">CDISC SDTM &amp; CDASH <span class="nj-schema-sub">· tabular datasets</span></div>
+      <div class="nj-tag-cell"><span class="nj-tag nj-tag--tab">Tabular</span></div>
+    </div>
+
+    <!-- 04 · Quality reporting -->
+    <div class="nj-row" style="--d:.38s">
+      <div class="nj-num">04</div>
+      <div>
+        <div class="nj-name">Quality reporting <span class="nj-name-sub">(eCQM)</span></div>
+        <div class="nj-ctx">All CMS-reporting hospitals &amp; eligible clinicians.</div>
+      </div>
+      <div class="nj-schema">FHIR QI-Core <span class="nj-schema-sub">· migrating from QDM / HQMF</span></div>
+      <div class="nj-tag-cell"><span class="nj-tag nj-tag--emerge">FHIR · Emerging</span></div>
+    </div>
+
+    <!-- 05 · Risk adjustment -->
+    <div class="nj-row" style="--d:.44s">
+      <div class="nj-num">05</div>
+      <div>
+        <div class="nj-name">Risk adjustment <span class="nj-name-sub">(HCC)</span></div>
+        <div class="nj-ctx">~33 M Medicare Advantage enrollees in 2024.<sup>²</sup></div>
+      </div>
+      <div class="nj-schema">ICD-10 in RAPS / EDPS <span class="nj-schema-sub">· CMS submission files</span></div>
+      <div class="nj-tag-cell"><span class="nj-tag nj-tag--cms">CMS Submission</span></div>
+    </div>
+
+    <!-- 06 · Public health -->
+    <div class="nj-row" style="--d:.50s">
+      <div class="nj-num">06</div>
+      <div>
+        <div class="nj-name">Public health <span class="nj-name-sub">(eICR)</span></div>
+        <div class="nj-ctx">Reportable conditions, electronic case reports to PH agencies.</div>
+      </div>
+      <div class="nj-schema">FHIR eCR &amp; C-CDA <span class="nj-schema-sub">· in transition</span></div>
+      <div class="nj-tag-cell"><span class="nj-tag nj-tag--mixed">Mixed</span></div>
+    </div>
+
+  </div>
+
+  <!-- ─── Bottom takeaway band ─────────────────────────────────── -->
+  <div class="rise" style="--d:.62s;position:absolute;left:80px;right:80px;bottom:66px">
+    <div class="band navy" style="position:static;padding:18px 22px;border-radius:10px">
+      <span class="band-mark"></span>
+      <div style="font-size:15.5px;line-height:1.5">
+        Different schemas. Same conversion work.
+        <em class="kicker" style="color:var(--accent-soft);font-size:1em">One engine, many endpoints — the horizontal is the same.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footnote line -->
+  <div style="position:absolute;left:80px;right:80px;bottom:36px;
+              font-family:'Geist Mono',ui-monospace,monospace;font-size:9.5px;
+              letter-spacing:.14em;color:var(--muted);text-transform:uppercase">
+    ¹ American Cancer Society · Cancer Facts &amp; Figures 2024 &nbsp;&nbsp;
+    ² CMS Medicare Advantage enrollment, 2024
+  </div>
+
+  <div class="pageno">05 / 14</div>
+
+  <!-- ─── Local styles ─────────────────────────────────────────── -->
+  <style>
+    .nj-th {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .24em; font-weight: 600;
+      color: var(--muted); text-transform: uppercase;
+    }
+
+    .nj-row {
+      display: grid;
+      grid-template-columns: 30px 1fr 1.05fr 180px;
+      gap: 18px; align-items: center;
+      padding: 14px 0 14px;
+      border-bottom: 1px solid var(--rule-soft);
+      opacity: 0; transform: translateY(8px);
+      animation: lml-rise .35s cubic-bezier(.2,.7,.2,1) both;
+      animation-delay: var(--d, 0s);
+      transition: background .2s ease, padding-left .2s ease;
+    }
+    .nj-row:hover {
+      background: color-mix(in srgb, var(--accent) 4%, transparent);
+      padding-left: 6px;
+    }
+
+    .nj-num {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: .2em; font-weight: 700;
+      color: var(--accent); font-variant-numeric: tabular-nums;
+    }
+    .nj-name {
+      font-family: "Geist", sans-serif;
+      font-size: 17px; font-weight: 600; color: var(--ink);
+      letter-spacing: -0.012em;
+    }
+    .nj-name-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: .14em; color: var(--muted);
+      font-weight: 600; margin-left: 4px; text-transform: uppercase;
+    }
+    .nj-ctx {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13.5px; color: var(--ink-3); line-height: 1.4;
+      margin-top: 3px;
+    }
+    .nj-ctx sup {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-style: normal;
+      font-size: 9px; color: var(--muted); margin-left: 2px;
+    }
+    .nj-schema {
+      font-family: "Geist", sans-serif;
+      font-size: 14.5px; font-weight: 500; color: var(--ink-2);
+      letter-spacing: -0.008em;
+    }
+    .nj-schema-sub {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 12.5px; color: var(--muted); font-weight: 400;
+      display: block; margin-top: 2px;
+    }
+
+    .nj-tag-cell { text-align: right; }
+    .nj-tag {
+      display: inline-flex; align-items: center;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .16em; font-weight: 700;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+    }
+    .nj-tag::before {
+      content: ""; display: inline-block;
+      width: 6px; height: 6px; border-radius: 50%;
+      margin-right: 8px;
+    }
+    .nj-tag--fhir    { background: color-mix(in srgb, var(--accent) 12%, transparent);
+                       color: var(--accent-deep);
+                       border-color: color-mix(in srgb, var(--accent) 28%, transparent); }
+    .nj-tag--fhir::before    { background: var(--accent); }
+
+    .nj-tag--emerge  { background: color-mix(in srgb, var(--accent-soft) 18%, transparent);
+                       color: var(--accent-deep);
+                       border-color: color-mix(in srgb, var(--accent-soft) 38%, transparent); }
+    .nj-tag--emerge::before  { background: var(--accent-soft); }
+
+    .nj-tag--flat    { background: color-mix(in srgb, var(--ink) 8%, transparent);
+                       color: var(--ink-2);
+                       border-color: color-mix(in srgb, var(--ink) 18%, transparent); }
+    .nj-tag--flat::before    { background: var(--ink-3); }
+
+    .nj-tag--tab     { background: color-mix(in srgb, var(--ink) 8%, transparent);
+                       color: var(--ink-2);
+                       border-color: color-mix(in srgb, var(--ink) 18%, transparent); }
+    .nj-tag--tab::before     { background: var(--ink-3); }
+
+    .nj-tag--cms     { background: color-mix(in srgb, var(--warn) 14%, transparent);
+                       color: var(--warn-deep);
+                       border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+    .nj-tag--cms::before     { background: var(--warn); }
+
+    .nj-tag--mixed   { background: linear-gradient(90deg,
+                          color-mix(in srgb, var(--accent) 12%, transparent) 0%,
+                          color-mix(in srgb, var(--ink) 8%, transparent) 100%);
+                       color: var(--ink-2);
+                       border-color: color-mix(in srgb, var(--ink) 18%, transparent); }
+    .nj-tag--mixed::before   {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--ink-3) 100%);
+    }
+  </style>
+
+  <aside class="notes">
+    The slide's argument: conversion is one *kind* of work that appears in
+    many disguises across healthcare. Read the column of TYPE badges out
+    loud once — *FHIR-native, Flat File, Tabular, FHIR-emerging, CMS submission,
+    Mixed.* That heterogeneity is exactly why a unified conversion engine
+    has to exist as its own product.
+
+    Hook for next slide: "The market hasn't built that engine. Here's what
+    they've built instead." — leads directly into the market map.
+
+    Numbers are real but rounded. Footnotes carry the sources.
+  </aside>
+</section>

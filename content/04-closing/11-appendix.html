@@ -1,60 +1,83 @@
 <!--
-  Slide 12 · Assumptions & sources.
+  Slide 14 · Assumptions, sources & gaps.
   Chapter: Appendix
 -->
 <section class="sheet" data-transition="fade">
   <div class="chrome">
     <div><span class="dot"></span>THE LAST MILE LAYER · APPENDIX</div>
     <div class="right">
-      <span>Assumptions &amp; sources</span>
-      <span class="folio">11</span>
+      <span>Sources &amp; Gaps</span>
+      <span class="folio">14</span>
     </div>
   </div>
 
-  <div style="position:absolute;inset:0;padding:72px 80px 90px;
-              display:flex;flex-direction:column;gap:24px">
+  <div style="position:absolute;inset:0;padding:72px 80px 80px;
+              display:flex;flex-direction:column;gap:18px">
 
-    <div class="rise" style="--d:0s;display:flex;flex-direction:column;gap:8px">
+    <div class="rise" style="--d:0s;display:flex;flex-direction:column;gap:6px">
       <span class="section-marker">Appendix</span>
-      <h2 style="font-size:38px;line-height:1.08;letter-spacing:-0.022em">
-        Assumptions &amp; sources.
+      <h2 style="font-size:36px;line-height:1.08;letter-spacing:-0.022em">
+        Assumptions, sources &amp; what I didn't research.
       </h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;flex:1">
 
-      <div class="card accent-top rise" style="--d:.08s;padding:22px 24px;display:flex;flex-direction:column;gap:12px">
+      <!-- Assumptions -->
+      <div class="card accent-top rise" style="--d:.08s;padding:18px 20px;display:flex;flex-direction:column;gap:10px">
         <div class="card-eyebrow">Assumptions</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;
-                   font-size:13.5px;line-height:1.5;color:var(--ink-2)">
-          <li>· Runs on Prompt Opinion — Po's FHIR connectivity and guardrails, not a per-customer rebuild.</li>
-          <li>· Target EHRs expose FHIR read and write APIs.</li>
-          <li>· A clinician-in-the-loop review step is wanted — assisted conversion, not autonomous writing.</li>
-          <li>· Standard terminology services (ICD-10, RxNorm, LOINC, SNOMED) are available.</li>
-          <li>· Adoption is gated by trust and verifiability, not raw model accuracy.</li>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;
+                   font-size:12.5px;line-height:1.5;color:var(--ink-2)">
+          <li>· Runs on Prompt Opinion. FHIR connectivity + guardrails are platform, not per-customer.</li>
+          <li>· Target EHRs expose FHIR read &amp; write APIs.</li>
+          <li>· HITL review is desired — assisted conversion, not autonomous writing.</li>
+          <li>· Terminology services (ICD, RxNorm, LOINC, SNOMED) are available.</li>
+          <li>· Adoption is gated by trust &amp; verifiability, not raw model accuracy.</li>
         </ul>
       </div>
 
-      <div class="card accent-top rise" style="--d:.14s;padding:22px 24px;display:flex;flex-direction:column;gap:12px">
+      <!-- Sources -->
+      <div class="card accent-top rise" style="--d:.14s;padding:18px 20px;display:flex;flex-direction:column;gap:10px">
         <div class="card-eyebrow">Sources</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;
-                   font-size:13.5px;line-height:1.5;color:var(--ink-2)">
-          <li>· Prompt Opinion materials and founder input on platform guardrails.</li>
-          <li>· PhenoML site and published benchmarks.</li>
-          <li>· AI medical-coding / computer-assisted-coding market reviews, 2025–26.</li>
-          <li>· Clinical-NLP landscape — AWS, Google, Azure.</li>
-          <li>· The FHIR Forge prototype.</li>
-          <li>· Vertical pain-point research (cancer registry, CDISC, eCQM, eICR, HCC).</li>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;
+                   font-size:12px;line-height:1.5;color:var(--ink-2)">
+          <li><sup>1</sup> BLS Occupational Employment Statistics, 2023</li>
+          <li><sup>2</sup> Sinsky et al., <em>Annals of Internal Medicine</em>, 2016</li>
+          <li><sup>3</sup> AMA / Medscape physician burnout surveys</li>
+          <li><sup>4</sup> American Cancer Society · <em>Cancer Facts &amp; Figures 2024</em></li>
+          <li><sup>5</sup> CMS Medicare Advantage enrollment, 2024</li>
+          <li>· Company websites &amp; public docs (slide 6 plot)</li>
+          <li>· FHIR Forge prototype — primary source throughout</li>
         </ul>
       </div>
+
+      <!-- Gaps · what I didn't research -->
+      <div class="card rise" style="--d:.20s;padding:18px 20px;display:flex;flex-direction:column;gap:10px;
+                                     border-top:3px solid var(--warn);border-radius:10px">
+        <div class="card-eyebrow" style="color:var(--warn-deep)">Gaps · what I didn't research</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;
+                   font-size:12.5px;line-height:1.5;color:var(--ink-2)">
+          <li>· Po's actual customer pipeline &amp; relationships.</li>
+          <li>· Real per-vendor pricing &amp; ACV for the verticals.</li>
+          <li>· Epic / Cerner production write scopes — depth varies by tenant.</li>
+          <li>· Sales cycle &amp; implementation timeline per vertical.</li>
+          <li>· Regulatory tailwinds (TEFCA, USCDI v4) — referenced, not modeled.</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="rise" style="--d:.22s;font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:14px;color:var(--muted);text-align:center;max-width:1080px;align-self:center">
-      Based on public information and current industry research — directional, intended to frame the opportunity.
+    <div class="rise" style="--d:.28s;font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:13px;color:var(--muted);text-align:center;max-width:1080px;align-self:center">
+      Based on public information, the FHIR Forge prototype, and current industry research.
+      Directional, intended to frame the opportunity. Numbered footnotes correspond to in-deck citations.
     </div>
   </div>
 
   <aside class="notes">
-    Quick walk through assumptions if asked. Sources available on request — keep this slide short.
+    Three blocks: assumptions, sources, gaps. The gaps block is the most
+    important one — it admits what this deck *isn't* informed by, which
+    makes the rest of the deck more credible.
+
+    Sources are available on request. Don't walk through them in the room.
   </aside>
 </section>

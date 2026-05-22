@@ -74,10 +74,129 @@
     });
   }
 
+  // ── FHIR Forge slide widget ─────────────────────────────────────────────
+  // Wires up the two interactive buttons on slide 3:
+  //   • Edit    → reveals the feedback arc, flips review row 3 to "edited",
+  //               and updates the Metformin chip dose with a strikethrough.
+  //   • Approve → reveals connector 3, the dark Commit panel, the FHIR
+  //               resource JSON, and the pulsing provenance highlight.
+  // CSS handles the animation; this script just toggles `.is-on` / state.
+  function createFhirForge(root) {
+    const $ = (sel) => root.querySelector(sel);
+    const editBtn    = $('.fg-btn-edit');
+    const approveBtn = $('.fg-btn-approve');
+    const rejectBtn  = $('.fg-btn-reject');
+
+    const feedback   = $('.fg-feedback');
+    const conn3      = $('.fg-conn-3');
+    const spark3     = $('.fg-spark-3');
+    const panel4     = $('.fg-p4');
+
+    const row3       = $('.fg-row-metformin');
+    const state3     = row3 && row3.querySelector('.fg-review-state');
+    const check3     = row3 && row3.querySelector('.fg-row-icon');
+    const chipName3  = $('.fg-chip-3 .fg-chip-name');
+
+    // Surface init in the console so we can confirm the wiring fired.
+    console.log('[fhirForge] init', {
+      editBtn: !!editBtn, approveBtn: !!approveBtn, rejectBtn: !!rejectBtn,
+      feedback: !!feedback, conn3: !!conn3, spark3: !!spark3, panel4: !!panel4,
+      row3: !!row3, chipName3: !!chipName3,
+    });
+
+    let edited    = false;
+    let committed = false;
+
+    function doEdit(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      console.log('[fhirForge] edit clicked');
+      if (edited) return;
+      edited = true;
+
+      // Flip review row 3 → "edited" (orange).
+      if (state3) {
+        state3.textContent = 'edited';
+        state3.classList.add('fg-review-state--edit');
+      }
+      if (check3) {
+        check3.textContent = '✎';
+        check3.classList.add('fg-row-icon--edit');
+      }
+
+      // Surface the actual change on the chip: dose 500 → 1000.
+      if (chipName3) {
+        chipName3.innerHTML =
+          'Metformin <s class="fg-strike">500</s> ' +
+          '<span class="fg-new">1000</span> mg BID';
+      }
+
+      // Reveal the feedback arc, mark it pulsing.
+      if (feedback) feedback.classList.add('is-on');
+
+      // Dim the Edit button — single-shot.
+      editBtn.disabled = true;
+      editBtn.classList.add('fg-btn--used');
+    }
+
+    function doCommit(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      console.log('[fhirForge] approve clicked');
+      if (committed) return;
+      committed = true;
+
+      // Reveal the commit pipeline: connector spark → dark panel → JSON → provenance.
+      if (conn3)   conn3.classList.add('is-on');
+      if (spark3)  spark3.classList.add('is-on');
+      if (panel4)  panel4.classList.add('is-on');
+
+      // Final state on the Approve button.
+      approveBtn.classList.add('fg-btn--written');
+      approveBtn.innerHTML = 'Written&nbsp;✓';
+      approveBtn.disabled = true;
+
+      // Once the chart-of-record is written, edit no longer makes sense.
+      if (editBtn) { editBtn.disabled = true; editBtn.classList.add('fg-btn--used'); }
+      if (rejectBtn) { rejectBtn.disabled = true; rejectBtn.style.opacity = '.5'; }
+    }
+
+    if (editBtn)    editBtn.addEventListener('click', doEdit);
+    if (approveBtn) approveBtn.addEventListener('click', doCommit);
+    // Reject is decorative for now — just a soft acknowledgement.
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', () => {
+        if (committed) return;
+        rejectBtn.classList.add('fg-btn--used');
+        rejectBtn.disabled = true;
+      });
+    }
+  }
+
+  // ── Extraction-moat reveal widget ───────────────────────────────────────
+  // Toggles `is-revealed` on the iceberg-layout stage root. CSS handles
+  // the dive — the dim "submerged" overlay clears, Po chips fade in, the
+  // FHIR server bar surfaces at the bottom of the underwater block.
+  function createExtractionMoat(root) {
+    const btn = root.querySelector('.ic-btn');
+    if (!btn) {
+      console.warn('[extractionMoat] no .ic-btn found');
+      return;
+    }
+    let revealed = false;
+    function toggle(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      revealed = !revealed;
+      root.classList.toggle('is-revealed', revealed);
+    }
+    btn.addEventListener('click', toggle);
+    console.log('[extractionMoat] init');
+  }
+
   // ── Registry ─────────────────────────────────────────────────────────────
   window.deckWidgets = Object.assign(window.deckWidgets || {}, {
-    counter: createCounter,
-    reveal:  createReveal,
+    counter:         createCounter,
+    reveal:          createReveal,
+    fhirForge:       createFhirForge,
+    extractionMoat:  createExtractionMoat,
   });
 
   // ── Initialiser called by index.html before Reveal boots ────────────────

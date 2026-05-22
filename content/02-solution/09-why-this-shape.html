@@ -1,0 +1,351 @@
+<!--
+  Slide 9 · Why this shape, specifically
+  Chapter: The Solution · The Differentiators
+
+  Three things the agentic loop does that nothing else on the market does.
+  Each panel: number, name, a small visualization, one-line description.
+  Traceability gets the star treatment.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE DIFFERENTIATORS</div>
+    <div class="right">
+      <span>Why This Shape</span>
+      <span class="folio">10</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:1">
+    <div class="rise" style="--d:0s">
+      <span class="eyebrow accent">Three Things Nothing Else Does</span>
+    </div>
+    <h1 class="rise" style="--d:.05s;font-size:46px;line-height:1.06;letter-spacing:-0.022em;
+                            color:var(--ink);font-weight:700;margin-top:10px;max-width:1080px">
+      Why <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">this</em> shape.
+    </h1>
+    <p class="rise" style="--d:.1s;font-size:17px;line-height:1.5;color:var(--ink-3);
+                           max-width:900px;margin-top:10px">
+      Three differentiators that make the loop a product — not a pile of agents.
+    </p>
+  </div>
+
+  <!-- ─── Three panels ───────────────────────────────────────────── -->
+  <div class="ws-grid rise" style="--d:.18s">
+
+    <!-- ═════ Panel 01 · FAN-IN ═══════════════════════════════════ -->
+    <div class="ws-panel">
+      <div class="ws-num">01</div>
+      <div class="ws-title">Fan-in</div>
+
+      <!-- Mini-viz: 6 input chips on the left, curves into a single funnel point on the right. -->
+      <svg class="ws-fanin" viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <marker id="ws-ah-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+
+        <!-- Input chips on the left -->
+        <g class="ws-input-chip" font-family="Geist Mono,ui-monospace,monospace"
+           font-size="9" font-weight="600" fill="var(--ink-2)">
+          <g transform="translate(8, 14)"><rect width="78" height="20" rx="4" fill="var(--paper)" stroke="var(--rule)"/><text x="39" y="13" text-anchor="middle">PDF · NOTE</text></g>
+          <g transform="translate(8, 44)"><rect width="78" height="20" rx="4" fill="var(--paper)" stroke="var(--rule)"/><text x="39" y="13" text-anchor="middle">FAX · REFERRAL</text></g>
+          <g transform="translate(8, 74)"><rect width="78" height="20" rx="4" fill="var(--paper)" stroke="var(--rule)"/><text x="39" y="13" text-anchor="middle">CCD · XML</text></g>
+          <g transform="translate(8, 104)"><rect width="78" height="20" rx="4" fill="var(--paper)" stroke="var(--rule)"/><text x="39" y="13" text-anchor="middle">INTAKE FORM</text></g>
+          <g transform="translate(8, 134)"><rect width="78" height="20" rx="4" fill="var(--paper)" stroke="var(--rule)"/><text x="39" y="13" text-anchor="middle">LAB · IMAGING</text></g>
+          <g transform="translate(8, 164)"><rect width="78" height="20" rx="4" fill="var(--paper)" stroke="var(--rule)"/><text x="39" y="13" text-anchor="middle">DICTATION</text></g>
+        </g>
+
+        <!-- Curves converging to single point -->
+        <g fill="none" stroke="var(--accent)" stroke-width="1.2" opacity=".75">
+          <path d="M 90 24  C 160 24, 180 100, 218 100" marker-end="url(#ws-ah-a)"/>
+          <path d="M 90 54  C 160 54, 180 100, 218 100" marker-end="url(#ws-ah-a)"/>
+          <path d="M 90 84  C 160 84, 195 100, 218 100" marker-end="url(#ws-ah-a)"/>
+          <path d="M 90 114 C 160 114, 195 100, 218 100" marker-end="url(#ws-ah-a)"/>
+          <path d="M 90 144 C 160 144, 180 100, 218 100" marker-end="url(#ws-ah-a)"/>
+          <path d="M 90 174 C 160 174, 180 100, 218 100" marker-end="url(#ws-ah-a)"/>
+        </g>
+
+        <!-- Single output: "Engine" -->
+        <g transform="translate(222, 84)">
+          <rect width="52" height="32" rx="8" fill="var(--accent)"/>
+          <text x="26" y="20" text-anchor="middle" fill="#fff"
+                font-family="Geist,sans-serif" font-size="11" font-weight="700">Engine</text>
+        </g>
+      </svg>
+
+      <p class="ws-desc">
+        One engine ingests
+        <strong>PDF, fax, CCD, dictation, portal.</strong>
+        Everyone else specialises in one input type.
+      </p>
+    </div>
+
+    <!-- ═════ Panel 02 · RECONCILIATION ═══════════════════════════ -->
+    <div class="ws-panel">
+      <div class="ws-num">02</div>
+      <div class="ws-title">Reconciliation</div>
+
+      <!-- Mini-viz: existing chart entry vs. proposed write, with diff highlight. -->
+      <div class="ws-reconcile">
+
+        <div class="ws-rec-card ws-rec-card--existing">
+          <div class="ws-rec-tag">on the chart</div>
+          <div class="ws-rec-name">Metformin <span class="ws-rec-strike">500</span> mg BID</div>
+          <div class="ws-rec-meta">Condition/892 · since 2024-08</div>
+        </div>
+
+        <div class="ws-rec-vs">
+          <span class="ws-rec-diff-arrow">↓ diff</span>
+        </div>
+
+        <div class="ws-rec-card ws-rec-card--new">
+          <div class="ws-rec-tag ws-rec-tag--new">proposed write</div>
+          <div class="ws-rec-name">Metformin <span class="ws-rec-new">1000</span> mg BID</div>
+          <div class="ws-rec-meta">discharge 2026-05-12 · p.2/l.14</div>
+        </div>
+
+        <div class="ws-rec-decision">
+          <span class="ws-rec-decision-dot"></span>
+          <span>Updates existing · not duplicate</span>
+        </div>
+      </div>
+
+      <p class="ws-desc">
+        Diff against the live chart.
+        <strong>New vs. update vs. duplicate</strong>
+        is judgment — not parsing.
+      </p>
+    </div>
+
+    <!-- ═════ Panel 03 · TRACEABILITY (★) ════════════════════════ -->
+    <div class="ws-panel ws-panel--feature">
+      <div class="ws-num"><span class="ws-star">★</span> 03</div>
+      <div class="ws-title">Traceability</div>
+
+      <!-- Mini-viz: vertical chain of 5 trace fragments terminating in a signed audit chip. -->
+      <div class="ws-chain">
+        <div class="ws-link"><span class="ws-link-key">source</span><span class="ws-link-val">discharge.pdf · p.2/l.14</span></div>
+        <div class="ws-link"><span class="ws-link-key">model</span><span class="ws-link-val">v3.2 · conf 0.94</span></div>
+        <div class="ws-link"><span class="ws-link-key">code</span><span class="ws-link-val">ICD-10-CM 2025</span></div>
+        <div class="ws-link"><span class="ws-link-key">diff</span><span class="ws-link-val">vs. Cond/892 · update</span></div>
+        <div class="ws-link"><span class="ws-link-key">reviewer</span><span class="ws-link-val">dr_singh · ✓ approved</span></div>
+        <div class="ws-audit">
+          <span class="ws-audit-tag">Signed Audit Chain</span>
+          <span class="ws-audit-id">audit_aa1234</span>
+        </div>
+      </div>
+
+      <p class="ws-desc">
+        Every value walks back to its source.
+        <strong>Survives the security review.</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- ─── Bottom band ───────────────────────────────────────────── -->
+  <div class="rise" style="--d:.55s;position:absolute;left:80px;right:80px;bottom:32px">
+    <div class="band navy" style="position:static;padding:16px 22px;border-radius:10px">
+      <span class="band-mark"></span>
+      <div style="font-size:15px;line-height:1.5">
+        Fan-in. Reconciliation. Traceability.
+        <em class="kicker" style="color:var(--accent-soft);font-size:1em">No one else is doing all three.</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="pageno">10 / 15</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════ -->
+  <style>
+    .ws-grid {
+      position: absolute;
+      left: 80px; right: 80px;
+      top: 222px;
+      bottom: 110px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+    }
+
+    .ws-panel {
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 18px 20px 20px;
+      display: flex; flex-direction: column;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 14px 32px -22px rgba(23,38,59,.22);
+      position: relative;
+    }
+    .ws-panel--feature {
+      border-color: color-mix(in srgb,var(--accent) 32%,var(--rule));
+      box-shadow: 0 1px 2px rgba(23,38,59,.04),
+                  0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent),
+                  0 14px 32px -22px rgba(15,138,120,.32);
+    }
+
+    .ws-num {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .24em; font-weight: 700;
+      color: var(--muted);
+    }
+    .ws-star { color: var(--accent); margin-right: 4px; }
+    .ws-title {
+      font-family: "Geist", sans-serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.014em;
+      margin-top: 3px;
+    }
+    .ws-panel--feature .ws-title { color: var(--accent-deep); }
+
+    /* Visual area takes the middle of the panel. */
+    .ws-fanin, .ws-reconcile, .ws-chain {
+      flex: 1;
+      margin: 14px 0 12px;
+      min-height: 0;
+    }
+    .ws-fanin { width: 100%; height: auto; max-height: 200px; }
+
+    /* Reconciliation cards ─────────────────────────────────────── */
+    .ws-reconcile {
+      display: flex; flex-direction: column;
+      gap: 8px;
+    }
+    .ws-rec-card {
+      border-radius: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--rule);
+      background: var(--paper);
+    }
+    .ws-rec-card--existing {
+      opacity: .75;
+    }
+    .ws-rec-card--new {
+      border-left: 3px solid var(--warn);
+      background: color-mix(in srgb,var(--warn) 5%,var(--paper));
+    }
+    .ws-rec-tag {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .2em; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .ws-rec-tag--new { color: var(--warn-deep); }
+    .ws-rec-name {
+      font-family: "Geist", sans-serif;
+      font-size: 14px; font-weight: 600; color: var(--ink);
+      letter-spacing: -0.008em;
+      margin-top: 2px;
+    }
+    .ws-rec-strike {
+      color: var(--muted); text-decoration: line-through; font-weight: 400;
+    }
+    .ws-rec-new {
+      color: var(--warn-deep); font-weight: 700;
+      background: color-mix(in srgb,var(--warn) 16%,transparent);
+      padding: 0 4px; border-radius: 3px;
+    }
+    .ws-rec-meta {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; color: var(--muted);
+      margin-top: 3px; letter-spacing: .04em;
+    }
+    .ws-rec-vs {
+      text-align: center;
+    }
+    .ws-rec-diff-arrow {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .24em; font-weight: 700;
+      color: var(--warn-deep); text-transform: uppercase;
+    }
+    .ws-rec-decision {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px;
+      background: color-mix(in srgb,var(--accent) 8%,transparent);
+      border-radius: 6px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; color: var(--accent-deep);
+      letter-spacing: .04em; font-weight: 600;
+      margin-top: 4px;
+    }
+    .ws-rec-decision-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+
+    /* Traceability chain ──────────────────────────────────────── */
+    .ws-chain {
+      display: flex; flex-direction: column;
+      gap: 4px;
+    }
+    .ws-link {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 8px;
+      padding: 4px 8px;
+      border-left: 2px solid var(--accent);
+      background: color-mix(in srgb,var(--accent) 4%,transparent);
+      border-radius: 0 4px 4px 0;
+      align-items: baseline;
+    }
+    .ws-link-key {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .18em; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .ws-link-val {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10.5px; color: var(--ink); letter-spacing: 0;
+      font-weight: 500;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .ws-audit {
+      margin-top: 6px;
+      padding: 8px 10px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      display: flex; flex-direction: column; gap: 2px;
+      box-shadow: 0 0 0 4px color-mix(in srgb,var(--accent) 16%,transparent);
+    }
+    .ws-audit-tag {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8px; letter-spacing: .22em; font-weight: 700;
+      color: rgba(255,255,255,.82); text-transform: uppercase;
+    }
+    .ws-audit-id {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+
+    /* Description below each visualization ─────────────────────── */
+    .ws-desc {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13.5px; line-height: 1.5;
+      color: var(--ink-3);
+      margin: 0;
+    }
+    .ws-desc strong {
+      font-style: normal;
+      color: var(--ink);
+      font-weight: 600;
+      font-family: "Geist", sans-serif;
+      font-size: 13px;
+    }
+    .ws-panel--feature .ws-desc strong { color: var(--accent-deep); }
+  </style>
+
+  <aside class="notes">
+    Three differentiators, in this order. Each panel has its own picture so
+    you don't have to describe them — just point.
+
+    Fan-in: most competitors specialise in ONE input type. We don't.
+    Reconciliation: this is judgment, not parsing. The diff is the product.
+    Traceability: this is the moat. Every value walks back to source.
+
+    Land the takeaway: "no one else is doing all three" — that's why the
+    top-right of the market map is empty.
+  </aside>
+</section>

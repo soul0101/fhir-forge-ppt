@@ -1,0 +1,506 @@
+<!--
+  Slide 6 · The market map (2×2)
+  Chapter: The Solution · The Gap
+
+  Job: locate every real player on the same picture; show the empty top-right
+  honestly. Axes are *workflow scope* × *chart depth*. Hover reveals category
+  + a one-line description per player. The Po target star pulses in last.
+
+  Coordinates (x, y) are percentages on a 0-100 plot, measured by:
+    x — how much of the conversion loop the player owns
+        (single primitive  →  full end-to-end loop)
+    y — how deeply they write back into the chart of record
+        (no chart write  →  governed, reconciled writes)
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE GAP</div>
+    <div class="right">
+      <span>Market Map</span>
+      <span class="folio">08</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:74px;right:80px;z-index:1">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <div class="rise" style="--d:0s">
+          <span class="eyebrow accent">The Gap</span>
+        </div>
+        <h1 class="rise" style="--d:.05s;font-size:48px;line-height:1.05;letter-spacing:-0.022em;
+                                color:var(--ink);font-weight:700;margin-top:8px;max-width:920px">
+          Everyone owns a slice.
+          <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">No one owns the loop.</em>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 2×2 chart ─────────────────────────────────────────────── -->
+  <div class="mm-frame rise" style="--d:.18s">
+
+    <!-- Y axis label. Up-arrow at top signals "this axis increases upward",
+         single rotated label below. End-point labels live inside the plot
+         (top-left / bottom-left corners) so this column isn't crowded. -->
+    <div class="mm-ylabel">
+      <span class="mm-axis-arrow">↑</span>
+      <span class="mm-axis-name">Chart Depth</span>
+    </div>
+
+    <!-- Plot area -->
+    <div class="mm-plot">
+
+      <!-- Grid + axes drawn in SVG below the dots. -->
+      <svg class="mm-grid" viewBox="0 0 880 380" preserveAspectRatio="none" aria-hidden="true"
+           style="overflow:visible">
+        <!-- Quadrant shading: top-right is the gap. -->
+        <rect x="440" y="0" width="440" height="190"
+              fill="color-mix(in srgb,var(--accent) 4%,transparent)"/>
+        <!-- Grid lines every 25%. -->
+        <g stroke="var(--rule-soft)" stroke-width="1">
+          <line x1="220" y1="0" x2="220" y2="380"/>
+          <line x1="440" y1="0" x2="440" y2="380"/>
+          <line x1="660" y1="0" x2="660" y2="380"/>
+          <line x1="0"   y1="95"  x2="880" y2="95"/>
+          <line x1="0"   y1="190" x2="880" y2="190"/>
+          <line x1="0"   y1="285" x2="880" y2="285"/>
+        </g>
+        <!-- Quadrant midlines (slightly stronger). -->
+        <line x1="440" y1="0" x2="440" y2="380" stroke="var(--rule)" stroke-width="1"
+              stroke-dasharray="3 3"/>
+        <line x1="0" y1="190" x2="880" y2="190" stroke="var(--rule)" stroke-width="1"
+              stroke-dasharray="3 3"/>
+        <!-- X and Y border axes. -->
+        <line x1="0"   y1="380" x2="880" y2="380" class="mm-axis"/>
+        <line x1="0"   y1="0"   x2="0"   y2="380" class="mm-axis"/>
+        <!-- Axis arrowheads. -->
+        <path d="M 870 374 L 880 380 L 870 386" fill="none" class="mm-axis" stroke-linejoin="round"/>
+        <path d="M -6 10  L 0   0    L 6  10"   fill="none" class="mm-axis" stroke-linejoin="round"/>
+
+        <!-- Gap callout — faint label inside the empty top-right. -->
+        <text x="660" y="40" text-anchor="middle"
+              style="font-family:'Geist Mono',ui-monospace,monospace;
+                     font-size:9px;letter-spacing:.26em;font-weight:700;
+                     fill:var(--accent-deep);text-transform:uppercase;opacity:.6">
+          The Empty Quadrant
+        </text>
+
+        <!-- Corner end-point labels — replace what used to be in the y-label column. -->
+        <text x="14" y="20"
+              style="font-family:'Newsreader',Georgia,serif;font-style:italic;
+                     font-size:11px;fill:var(--ink-3);opacity:.75">
+          governed chart writes
+        </text>
+        <text x="14" y="370"
+              style="font-family:'Newsreader',Georgia,serif;font-style:italic;
+                     font-size:11px;fill:var(--ink-3);opacity:.75">
+          no chart write
+        </text>
+      </svg>
+
+      <!-- ═══ Plotted players ════════════════════════════════════════
+           Y is now the visual-top percent: low value = visually HIGH (so
+           high chart depth sits at the top of the plot). Modifier classes
+           keep tooltips on screen:
+             • mm-dot--bottom   tooltip flips ABOVE the dot
+             • mm-dot--right    tooltip flips to the LEFT of the dot
+           ════════════════════════════════════════════════════════════ -->
+
+      <!-- Cluster · Extraction primitives  (single-step API, no chart) -->
+      <div class="mm-dot mm-cluster mm-dot--bottom" style="--x:14%;--y:84%;--d:.32s">
+        <span class="mm-dotmark mm-dotmark--primitive"></span>
+        <span class="mm-dotlabel">Extraction APIs</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--primitive">Primitives · Developer APIs</div>
+          <div class="mm-tip-name">Extraction APIs (cluster)</div>
+          <div class="mm-tip-list">PhenoML Lang2FHIR · AWS Comprehend Medical · Google Cloud Healthcare NLP · Azure Text Analytics for Health · John Snow Labs (Spark NLP)</div>
+          <div class="mm-tip-desc">Stateless text-to-entity APIs. No patient context, no reconciliation, no write-back. The lowest tier of the workflow.</div>
+        </div>
+      </div>
+
+      <!-- Fathom · autonomous coding, multi-specialty -->
+      <div class="mm-dot mm-dot--bottom" style="--x:34%;--y:78%;--d:.38s">
+        <span class="mm-dotmark mm-dotmark--cac"></span>
+        <span class="mm-dotlabel">Fathom</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--cac">Autonomous Coding</div>
+          <div class="mm-tip-name">Fathom Health</div>
+          <div class="mm-tip-desc">Multi-specialty autonomous coding — radiology, pathology, ED, pro-fee, and risk-adjustment coding at scale. Output goes to the claim, not the chart. CVS Health Ventures-backed.</div>
+        </div>
+      </div>
+
+      <!-- CodaMetrix · MGB-affiliated, autonomous coding -->
+      <div class="mm-dot mm-dot--bottom" style="--x:42%;--y:72%;--d:.42s">
+        <span class="mm-dotmark mm-dotmark--cac"></span>
+        <span class="mm-dotlabel">CodaMetrix</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--cac">Autonomous Coding · #1 KLAS 2026</div>
+          <div class="mm-tip-name">CodaMetrix</div>
+          <div class="mm-tip-desc">Mass General Brigham–affiliated. Covers radiology, pathology, E&amp;M, endoscopy, surgery, and ED. 220+ hospitals, $180B in NPR. Output goes to the claim, not the chart.</div>
+        </div>
+      </div>
+
+      <!-- Datavant (Apixio) · HCC, now with in-EHR delivery via Vim -->
+      <div class="mm-dot mm-dot--bottom" style="--x:46%;--y:60%;--d:.46s">
+        <span class="mm-dotmark mm-dotmark--hcc"></span>
+        <span class="mm-dotlabel">Datavant (Apixio)</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--hcc">Risk Adjustment (HCC)</div>
+          <div class="mm-tip-name">Datavant — HCC Complete (formerly Apixio)</div>
+          <div class="mm-tip-desc">Datavant acquired Apixio in 2024. HCC Complete surfaces missed HCCs from chart pulls — and via the Vim partnership now delivers AI insights into the EHR during the visit (concurrent + retrospective).</div>
+        </div>
+      </div>
+
+      <!-- Reveleer · unified MA platform -->
+      <div class="mm-dot mm-dot--bottom mm-dot--right" style="--x:60%;--y:74%;--d:.50s">
+        <span class="mm-dotmark mm-dotmark--hcc"></span>
+        <span class="mm-dotlabel">Reveleer</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--hcc">Risk Adjustment + Quality + CDR</div>
+          <div class="mm-tip-name">Reveleer</div>
+          <div class="mm-tip-desc">Unified MA-payer platform — risk adjustment, quality (HEDIS), RADV audit, member management, and a new Clinical Data Repository (2026). 80+ customer organisations. Still payer-side.</div>
+        </div>
+      </div>
+
+      <!-- Abridge · ambient scribe, deep Epic partnership -->
+      <div class="mm-dot" style="--x:50%;--y:48%;--d:.54s">
+        <span class="mm-dotmark mm-dotmark--ambient"></span>
+        <span class="mm-dotlabel">Abridge</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--ambient">Ambient Scribing</div>
+          <div class="mm-tip-name">Abridge</div>
+          <div class="mm-tip-desc">Ambient scribe with note + structured-field outputs. Deep Epic partnership (Workshop integration). Owns the encounter; nothing else.</div>
+        </div>
+      </div>
+
+      <!-- Dragon Copilot · Microsoft, incumbent ambient (DAX rebranded 2025) -->
+      <div class="mm-dot mm-dot--right" style="--x:58%;--y:44%;--d:.58s">
+        <span class="mm-dotmark mm-dotmark--ambient"></span>
+        <span class="mm-dotlabel">Dragon Copilot</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--ambient">Ambient Scribing · Incumbent</div>
+          <div class="mm-tip-name">Microsoft Dragon Copilot (formerly DAX)</div>
+          <div class="mm-tip-desc">DAX Copilot + Dragon Medical One merged into Dragon Copilot in March 2025. ~100K clinicians daily in 9 countries. Largest install base. Encounter-scoped.</div>
+        </div>
+      </div>
+
+      <!-- Iodine (Waystar) · CDI inpatient -->
+      <div class="mm-dot mm-dot--right" style="--x:60%;--y:50%;--d:.62s">
+        <span class="mm-dotmark mm-dotmark--cdi"></span>
+        <span class="mm-dotlabel">Iodine (Waystar)</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--cdi">CDI · Inpatient</div>
+          <div class="mm-tip-name">Iodine Software (now Waystar)</div>
+          <div class="mm-tip-desc">AwareCDI suite — Concurrent, Retrospect, Forecast, Interact, Introspect. Surfaces CDI queries into the EHR for clinician acknowledgement. Now under Waystar / AltitudeAI™.</div>
+        </div>
+      </div>
+
+      <!-- Regard · diagnosis surfacing, expanding beyond hospitalist -->
+      <div class="mm-dot" style="--x:48%;--y:28%;--d:.66s">
+        <span class="mm-dotmark mm-dotmark--cdi"></span>
+        <span class="mm-dotlabel">Regard</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--cdi">Diagnosis Surfacing</div>
+          <div class="mm-tip-name">Regard</div>
+          <div class="mm-tip-desc">Surfaces diagnoses into the EHR for clinician acceptance. Expanded from hospitalist to cardiology + surgical (2026). Strategic inpatient partner in the Microsoft Dragon Copilot ecosystem.</div>
+        </div>
+      </div>
+
+      <!-- Epic-native AI · in-basket, ICD suggestions, native agents -->
+      <div class="mm-dot" style="--x:50%;--y:15%;--d:.70s">
+        <span class="mm-dotmark mm-dotmark--ehr"></span>
+        <span class="mm-dotlabel">Epic-native AI</span>
+        <div class="mm-tip">
+          <div class="mm-tip-cat mm-tip-cat--ehr">EHR-Native</div>
+          <div class="mm-tip-name">Epic-native AI</div>
+          <div class="mm-tip-desc">In-basket replies, ICD suggestions, native agents, ambient via DAX. Maximum chart depth — but only Epic, only Epic-shaped inputs. Doesn't unify external fan-in.</div>
+        </div>
+      </div>
+
+      <!-- ★ Po target · top-right gap -->
+      <div class="mm-dot mm-target mm-dot--right" style="--x:85%;--y:15%;--d:.86s">
+        <span class="mm-dotmark mm-dotmark--target">★</span>
+        <span class="mm-dotlabel mm-dotlabel--target">Po · target</span>
+        <div class="mm-tip mm-tip--target">
+          <div class="mm-tip-cat mm-tip-cat--target">Where I Think Po Should Plant</div>
+          <div class="mm-tip-name">The Last Mile Layer</div>
+          <div class="mm-tip-desc">End-to-end conversion loop with governed writes. Unified fan-in across input types (PDF, fax, CCD, dictation). Reconciliation + provenance as the moat.</div>
+        </div>
+      </div>
+
+      <!-- Pulsing halo over the empty quadrant. Decorative; pointer-events:none. -->
+      <div class="mm-gap-halo" aria-hidden="true"></div>
+
+      <!-- X-axis tick labels under the plot. -->
+      <div class="mm-xticks">
+        <span class="mm-axis-tic mm-tic-left">Single primitive</span>
+        <span class="mm-axis-tic mm-tic-mid">Multi-step in one domain</span>
+        <span class="mm-axis-tic mm-tic-right">End-to-end loop</span>
+      </div>
+      <div class="mm-xname">Workflow Scope&nbsp;→</div>
+    </div>
+  </div>
+
+  <div class="pageno">08 / 12</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    .mm-frame {
+      position: absolute;
+      left: 80px; right: 80px; top: 198px; height: 430px;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 10px;
+    }
+
+    /* Y axis label column — arrow at the top, single rotated name below. */
+    .mm-ylabel {
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start;
+      padding: 14px 0 60px;
+      gap: 12px;
+    }
+    .mm-axis-arrow {
+      color: var(--ink-3);
+      font-size: 18px; font-weight: 700; line-height: 1;
+    }
+    .mm-ylabel .mm-axis-name {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: "Geist", sans-serif;
+      font-size: 13px; letter-spacing: .3em;
+      color: var(--ink-2); font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Plot area ─────────────────────────────────────────────────── */
+    .mm-plot {
+      position: relative;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 0;
+      overflow: visible;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 14px 32px -22px rgba(23,38,59,.22);
+    }
+
+    .mm-grid {
+      position: absolute; left: 0; top: 0;
+      width: 100%; height: calc(100% - 56px);     /* leave space for x-axis label band */
+    }
+    .mm-grid .mm-axis { stroke: var(--ink-3); stroke-width: 1.4; fill: none; }
+
+    /* Bottom band: x ticks + axis name */
+    .mm-xticks {
+      position: absolute; left: 0; right: 0;
+      top: calc(100% - 50px); height: 18px;
+      display: flex; justify-content: space-between;
+      padding: 0 8px;
+    }
+    .mm-axis-tic {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .22em;
+      color: var(--muted); font-weight: 600; text-transform: uppercase;
+    }
+    .mm-tic-mid { text-align: center; }
+    .mm-tic-right { text-align: right; }
+    .mm-xname {
+      position: absolute; left: 0; right: 0;
+      bottom: 8px; text-align: center;
+      font-family: "Geist", sans-serif;
+      font-size: 12px; letter-spacing: .26em;
+      color: var(--ink-2); font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Dots ─────────────────────────────────────────────────────── */
+    .mm-dot {
+      position: absolute;
+      left: var(--x); top: var(--y);
+      transform: translate(-50%, -50%);
+      display: flex; align-items: center; gap: 8px;
+      cursor: default;
+      z-index: 2;
+      opacity: 0;
+      animation: lml-rise .35s cubic-bezier(.2,.7,.2,1) both;
+      animation-delay: var(--d, 0s);
+    }
+    /* The plot's bottom 56px is the x-axis label band — dot positioning
+       is relative to the FULL plot, but we want dots to map to the chart
+       area only. Adjust by tightening the dots' vertical range via a
+       wrapper transform. Keeping it simple: percentages already produce
+       visually correct placement for our chosen coordinates. */
+
+    .mm-dotmark {
+      display: inline-block;
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      background: var(--ink-3);
+      box-shadow: 0 0 0 0 transparent;
+      transition: transform .2s ease, box-shadow .2s ease;
+      flex-shrink: 0;
+    }
+    .mm-dotmark--primitive { background: var(--muted); }
+    .mm-dotmark--cac       { background: var(--ink-3); }
+    .mm-dotmark--hcc       { background: var(--warn); }
+    .mm-dotmark--ambient   { background: var(--accent-soft); }
+    .mm-dotmark--cdi       { background: var(--ink-2); }
+    .mm-dotmark--ehr       { background: var(--stage); }
+
+    .mm-dotlabel {
+      font-family: "Geist", sans-serif;
+      font-size: 12.5px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.008em;
+      white-space: nowrap;
+      transition: transform .2s ease;
+    }
+
+    .mm-cluster .mm-dotmark {
+      width: 16px; height: 16px;
+      background: color-mix(in srgb, var(--muted) 60%, transparent);
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--muted) 16%, transparent);
+    }
+
+    /* Hover state — lift, halo, label emphasis. */
+    .mm-dot:hover { z-index: 50; }
+    .mm-dot:hover .mm-dotmark {
+      transform: scale(1.35);
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent),
+                  0 4px 16px -6px rgba(23,38,59,.35);
+    }
+    .mm-dot:hover .mm-dotlabel { color: var(--ink); transform: translateX(2px); }
+
+    /* Tooltip card on hover ───────────────────────────────────── */
+    .mm-tip {
+      position: absolute;
+      left: 22px; top: 18px;
+      min-width: 260px; max-width: 320px;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 12px 14px 12px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.06), 0 14px 40px -10px rgba(23,38,59,.4);
+      opacity: 0; visibility: hidden;
+      transform: translateY(-4px) scale(.98);
+      transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+      pointer-events: none;
+      z-index: 60;
+    }
+    .mm-dot:hover .mm-tip {
+      opacity: 1; visibility: visible;
+      transform: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .mm-tip-cat {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .22em; font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px; border-radius: 4px;
+      display: inline-block;
+      background: color-mix(in srgb, var(--muted) 16%, transparent);
+      color: var(--ink-2);
+    }
+    .mm-tip-cat--primitive { background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--ink-2); }
+    .mm-tip-cat--cac       { background: color-mix(in srgb, var(--ink-3) 20%, transparent); color: var(--ink); }
+    .mm-tip-cat--hcc       { background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn-deep); }
+    .mm-tip-cat--ambient   { background: color-mix(in srgb, var(--accent-soft) 25%, transparent); color: var(--accent-deep); }
+    .mm-tip-cat--cdi       { background: color-mix(in srgb, var(--ink-2) 18%, transparent); color: var(--ink); }
+    .mm-tip-cat--ehr       { background: color-mix(in srgb, var(--stage) 90%, transparent); color: #fff; }
+    .mm-tip-cat--target    { background: var(--accent); color: #fff; }
+
+    .mm-tip-name {
+      font-family: "Geist", sans-serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.012em;
+      margin-top: 8px;
+    }
+    .mm-tip-list {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .04em;
+      color: var(--muted); margin-top: 4px;
+      line-height: 1.45;
+    }
+    .mm-tip-desc {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13px; line-height: 1.45;
+      color: var(--ink-3); margin-top: 8px;
+    }
+
+    /* Tooltip placement modifiers — applied per-dot via class.
+       Default: tooltip appears at bottom-right (top:18px, left:22px).
+       mm-dot--right  → flip horizontally (tooltip on the left).
+       mm-dot--bottom → flip vertically  (tooltip above the dot). */
+    .mm-dot--right  .mm-tip { left: auto;  right: 22px; }
+    .mm-dot--bottom .mm-tip { top:  auto;  bottom: 18px; }
+
+    /* Po target ─────────────────────────────────────────────────── */
+    .mm-target { z-index: 5; }
+    .mm-target .mm-dotmark--target {
+      width: 26px; height: 26px;
+      background: var(--accent);
+      color: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      box-shadow: 0 0 0 6px color-mix(in srgb,var(--accent) 22%, transparent),
+                  0 8px 28px -8px rgba(15,138,120,.65);
+      animation: mm-target-pulse 2.4s ease-in-out 1.1s infinite;
+    }
+    .mm-target:hover .mm-dotmark--target {
+      animation-play-state: paused;
+      transform: scale(1.15);
+    }
+    .mm-dotlabel--target {
+      color: var(--accent-deep);
+      font-weight: 700;
+    }
+    @keyframes mm-target-pulse {
+      0%, 100% { box-shadow: 0 0 0 6px color-mix(in srgb,var(--accent) 22%, transparent),
+                              0 8px 28px -8px rgba(15,138,120,.65); }
+      50%      { box-shadow: 0 0 0 12px color-mix(in srgb,var(--accent) 16%, transparent),
+                              0 10px 32px -6px rgba(15,138,120,.85); }
+    }
+
+    /* Faint halo over the empty quadrant — subtle attention pull. */
+    .mm-gap-halo {
+      position: absolute;
+      left: 50%; top: 0;
+      width: 50%; height: 50%;
+      background: radial-gradient(circle at 70% 30%,
+                  color-mix(in srgb,var(--accent) 14%, transparent) 0%,
+                  transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Axis line draw-in animation. */
+    @keyframes mm-axis-draw {
+      from { stroke-dashoffset: 1000; }
+      to   { stroke-dashoffset: 0; }
+    }
+    .reveal .slides section.present .mm-grid .mm-axis {
+      stroke-dasharray: 1000;
+      animation: mm-axis-draw .9s ease-out both;
+      animation-delay: .25s;
+    }
+  </style>
+
+  <aside class="notes">
+    Walk the room across the chart, left-to-right then up-and-right:
+
+      1) Bottom-left: extraction primitives. Race to the bottom. Cents per call.
+      2) Mid-left: autonomous coding + HCC. Vertical-deep, but output ≠ chart.
+      3) Mid: ambient scribes. Own the encounter; not the rest of the chart.
+      4) Upper-mid: CDI / Regard. Real chart touch — narrow input.
+      5) Upper-left: Epic-native AI. Deep chart, only Epic, only Epic inputs.
+      6) Upper-right (Po target): end-to-end loop × governed chart writes.
+
+    Then say it plain: "the top-right is genuinely empty — and that's where
+    FHIR Forge points." Don't read every dot — let the audience hover.
+
+    Honest caveat: positions are directional, not survey-grade. The relative
+    placement is the argument; the absolute coordinates are not.
+  </aside>
+</section>

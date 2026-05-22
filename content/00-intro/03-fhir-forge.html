@@ -1,0 +1,562 @@
+<!--
+  Slide 3 · FHIR Forge — HERO ANIMATION
+  Chapter: Opening · Credibility anchor
+
+  A choreographed sequence that plays once the slide is .present.
+  Stages (left → right):
+      01 · INPUT     — a discharge-summary "page"; key clinical phrases
+                       light up in order.
+      02 · EXTRACT   — entities lift out as chips; grounding codes
+       + GROUND       (ICD / RxNorm / LOINC) snap onto each chip.
+      03 · REVIEW    — HITL panel: clinician approves / edits / rejects.
+                       A curved feedback arc loops back to EXTRACT to
+                       signal that edits feed the agent.
+      04 · COMMIT    — a FHIR Condition resource crystallises in,
+                       with provenance highlighted last.
+
+  All animations are scoped to `.reveal .slides section.present` so they
+  retrigger every time the slide is re-entered.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · OPENING</div>
+    <div class="right">
+      <span>FHIR Forge</span>
+      <span class="folio">04</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:2">
+    <div class="rise" style="--d:0s">
+      <span class="eyebrow accent">The Prototype · Watch It Work</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:24px;margin-top:10px;flex-wrap:wrap">
+      <h1 class="rise" style="--d:.05s;font-size:64px;line-height:1;
+                              letter-spacing:-0.028em;color:var(--ink);font-weight:700">
+        FHIR Forge.
+      </h1>
+      <p class="rise" style="--d:.1s;font-size:19px;line-height:1.45;color:var(--ink-3);
+                             font-family:'Newsreader',Georgia,serif;font-style:italic;
+                             margin-bottom:6px">
+        Discharge summary in.
+        <span style="color:var(--accent);font-weight:500">Chart-ready FHIR out.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ─── Animated stage (interactive — see widgets.js · fhirForge) ──── -->
+  <div class="fg-stage" data-widget="fhirForge"
+       style="position:absolute;left:60px;right:60px;top:208px;bottom:70px">
+
+    <!-- Feedback arc — sits above panels, pulses infinitely once visible.
+         pointer-events:none so it never blocks the buttons below it. -->
+    <svg class="fg-feedback" viewBox="0 0 1160 80" preserveAspectRatio="none"
+         style="position:absolute;left:0;top:-12px;width:100%;height:80px;overflow:visible;z-index:4;opacity:0;pointer-events:none">
+      <defs>
+        <marker id="fg-ah-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--warn)"/>
+        </marker>
+      </defs>
+      <path d="M 770 70 C 770 0, 420 0, 420 70"
+            fill="none" stroke="var(--warn)" stroke-width="1.6"
+            stroke-dasharray="5 5" marker-end="url(#fg-ah-warn)"/>
+      <text x="595" y="6" text-anchor="middle"
+            style="font-family:'Geist Mono',ui-monospace,monospace;
+                   font-size:10px;letter-spacing:.22em;font-weight:700;
+                   fill:var(--warn-deep);text-transform:uppercase">
+        Edits Feed Back Into Agent
+      </text>
+    </svg>
+
+    <!-- ═════ Panel 1 · INPUT (discharge PDF) ═════════════════════ -->
+    <div class="fg-panel fg-p1" style="left:0;top:0;width:250px">
+      <div class="fg-num">01</div>
+      <div class="fg-label">Input</div>
+      <div class="fg-sheet">
+        <div class="fg-sheet-head">DISCHARGE SUMMARY</div>
+        <div class="fg-sheet-meta">Pt · J. Doe · MRN 8841</div>
+        <div class="fg-sheet-body">
+          64 yo M admitted with elevated BG.
+          PMH: <span class="fg-ent fg-ent-1">Type 2 diabetes mellitus</span>,
+          hypertension.<br><br>
+          Labs: <span class="fg-ent fg-ent-2">HbA1c 8.2%</span>.<br><br>
+          Plan: Continue <span class="fg-ent fg-ent-3">Metformin 500mg BID</span>.
+          PCP f/u in 2 weeks.
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector 1 → 2 -->
+    <svg class="fg-conn fg-conn-1" viewBox="0 0 60 20" preserveAspectRatio="none"
+         style="left:250px;top:172px;width:60px">
+      <path d="M2 10 L52 10" stroke="var(--accent)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" class="flow-line"/>
+      <path d="M46 5 L52 10 L46 15" stroke="var(--accent)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="fg-spark fg-spark-1" cx="2" cy="10" r="2.6" fill="var(--accent)"/>
+    </svg>
+
+    <!-- ═════ Panel 2 · EXTRACT + GROUND ═════════════════════════ -->
+    <div class="fg-panel fg-p2" style="left:310px;top:0;width:280px">
+      <div class="fg-num">02</div>
+      <div class="fg-label">Extract <span style="color:var(--accent)">+ Ground</span></div>
+
+      <div class="fg-chip fg-chip-1">
+        <div class="fg-chip-name">Type 2 diabetes mellitus</div>
+        <div class="fg-chip-code fg-chip-code-1">
+          <span class="fg-code-sys">ICD-10</span>
+          <span class="fg-code-val">E11.9</span>
+        </div>
+      </div>
+
+      <div class="fg-chip fg-chip-2">
+        <div class="fg-chip-name">HbA1c · 8.2 %</div>
+        <div class="fg-chip-code fg-chip-code-2">
+          <span class="fg-code-sys">LOINC</span>
+          <span class="fg-code-val">4548-4</span>
+        </div>
+      </div>
+
+      <div class="fg-chip fg-chip-3">
+        <div class="fg-chip-name">Metformin 500 mg BID</div>
+        <div class="fg-chip-code fg-chip-code-3">
+          <span class="fg-code-sys">RxNorm</span>
+          <span class="fg-code-val">860975</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector 2 → 3 -->
+    <svg class="fg-conn fg-conn-2" viewBox="0 0 60 20" preserveAspectRatio="none"
+         style="left:590px;top:172px;width:60px">
+      <path d="M2 10 L52 10" stroke="var(--accent)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" class="flow-line"/>
+      <path d="M46 5 L52 10 L46 15" stroke="var(--accent)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="fg-spark fg-spark-2" cx="2" cy="10" r="2.6" fill="var(--accent)"/>
+    </svg>
+
+    <!-- ═════ Panel 3 · REVIEW (HITL) ═════════════════════════════ -->
+    <div class="fg-panel fg-p3" style="left:650px;top:0;width:280px">
+      <span class="fg-hitl-tag">HITL</span>
+      <div class="fg-num">03</div>
+      <div class="fg-label">Review</div>
+
+      <div class="fg-review-row">
+        <span class="fg-row-icon">✓</span>
+        <span class="fg-review-name">T2DM · E11.9</span>
+        <span class="fg-review-state">approved</span>
+      </div>
+      <div class="fg-review-row">
+        <span class="fg-row-icon">✓</span>
+        <span class="fg-review-name">HbA1c · 4548-4</span>
+        <span class="fg-review-state">approved</span>
+      </div>
+      <div class="fg-review-row fg-row-metformin">
+        <span class="fg-row-icon">✓</span>
+        <span class="fg-review-name">Metformin · 860975</span>
+        <span class="fg-review-state">approved</span>
+      </div>
+
+      <div class="fg-actions">
+        <button type="button" class="fg-btn fg-btn-approve">Approve</button>
+        <button type="button" class="fg-btn fg-btn-edit">Edit</button>
+        <button type="button" class="fg-btn fg-btn-reject">Reject</button>
+      </div>
+    </div>
+
+    <!-- Connector 3 → 4 -->
+    <svg class="fg-conn fg-conn-3" viewBox="0 0 60 20" preserveAspectRatio="none"
+         style="left:930px;top:172px;width:60px">
+      <path d="M2 10 L52 10" stroke="var(--accent-deep)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" class="flow-line"/>
+      <path d="M46 5 L52 10 L46 15" stroke="var(--accent-deep)" stroke-width="1.5"
+            fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="fg-spark fg-spark-3" cx="2" cy="10" r="2.6" fill="var(--accent-deep)"/>
+    </svg>
+
+    <!-- ═════ Panel 4 · COMMIT (FHIR resource) ═════════════════════ -->
+    <div class="fg-panel fg-p4" style="left:990px;top:0;width:170px;
+                                       background:var(--stage);color:var(--ink-on-dark);
+                                       border-color:var(--stage)">
+      <div class="fg-num" style="color:rgba(255,255,255,.55)">04</div>
+      <div class="fg-label" style="color:#fff">Commit</div>
+      <div class="fg-fhir">
+<span class="fg-c-key">"resourceType"</span>: <span class="fg-c-str">"Condition"</span>,
+<span class="fg-c-key">"subject"</span>: <span class="fg-c-str">"Patient/8841"</span>,
+<span class="fg-c-key">"code"</span>: {
+  <span class="fg-c-key">"system"</span>: <span class="fg-c-str">"ICD-10"</span>,
+  <span class="fg-c-key">"code"</span>:   <span class="fg-c-accent">"E11.9"</span>
+},
+<span class="fg-prov"><span class="fg-c-key">"meta.provenance"</span>: {
+  <span class="fg-c-key">"source"</span>:     <span class="fg-c-str">"…04-12.pdf"</span>,
+  <span class="fg-c-key">"confidence"</span>: <span class="fg-c-accent">0.94</span>,
+  <span class="fg-c-key">"reviewer"</span>:   <span class="fg-c-str">"dr_singh"</span>
+}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pageno">04 / 12</div>
+
+  <!-- ═════ Scoped styles + animation timeline ═════════════════════ -->
+  <style>
+    /* Stage and shared panel skin ──────────────────────────────── */
+    .fg-stage { position: absolute; z-index: 1; }
+    .fg-panel {
+      position: absolute;
+      height: 360px;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 14px 16px 16px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 14px 32px -22px rgba(23,38,59,.32);
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .fg-num {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .26em; color: var(--muted);
+      font-weight: 600;
+    }
+    .fg-label {
+      font-family: "Geist", sans-serif;
+      font-size: 15px; font-weight: 600; color: var(--ink);
+      letter-spacing: -0.01em; margin-top: 2px;
+    }
+
+    /* Connector arrows + travelling sparks ───────────────────── */
+    .fg-conn {
+      position: absolute; height: 20px; overflow: visible;
+      opacity: 0;
+      pointer-events: none;   /* decoration — never block clicks */
+    }
+    .fg-spark { opacity: 0; }
+    .fg-feedback { pointer-events: none; }
+
+    /* Panel 1 · PDF sheet ──────────────────────────────────────── */
+    .fg-sheet {
+      margin-top: 12px;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 14px 14px 14px;
+      height: 290px;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 11.5px; line-height: 1.55;
+      color: var(--ink-2);
+      position: relative;
+      box-shadow: inset 0 0 0 1px var(--rule-soft);
+    }
+    .fg-sheet-head {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .26em; font-weight: 700;
+      color: var(--ink); text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed var(--rule);
+    }
+    .fg-sheet-meta {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .12em;
+      color: var(--muted); margin-top: 4px; margin-bottom: 10px;
+    }
+    .fg-sheet-body { color: var(--ink-2); }
+    .fg-ent {
+      position: relative;
+      background: transparent;
+      border-radius: 3px;
+      padding: 1px 3px;
+      transition: background .2s ease;
+    }
+
+    /* Panel 2 · Entity chips with grounding codes ─────────────── */
+    .fg-chip {
+      margin-top: 12px;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 10px 12px;
+      opacity: 0; transform: translateX(-12px);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .fg-chip-name {
+      font-family: "Geist", sans-serif;
+      font-size: 13px; font-weight: 600; color: var(--ink);
+      letter-spacing: -0.008em;
+    }
+    .fg-chip-code {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      border-radius: 4px; padding: 3px 8px;
+      align-self: flex-start;
+      opacity: 0; transform: scale(.7);
+    }
+    .fg-code-sys {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .2em; font-weight: 700;
+      color: var(--accent-deep); text-transform: uppercase;
+    }
+    .fg-code-val {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 11px; font-weight: 600; color: var(--accent-deep);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Panel 3 · HITL review rows + action buttons ────────────── */
+    .fg-hitl-tag {
+      position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+      background: var(--warn); color: #fff;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .22em; font-weight: 700;
+      padding: 3px 9px; border-radius: 4px; text-transform: uppercase;
+    }
+    .fg-review-row {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      /* No initial opacity:0 — the parent .fg-p3 panel fades in as a whole,
+         children inherit. Keeping per-row hidden caused nth-child mismatches
+         that left the Metformin row invisible. */
+    }
+    .fg-row-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 18px; height: 18px; border-radius: 4px;
+      background: color-mix(in srgb, var(--accent) 16%, transparent);
+      color: var(--accent-deep);
+      font-size: 11px; font-weight: 700;
+      transition: background .25s ease, color .25s ease;
+    }
+    .fg-row-icon--edit {
+      background: color-mix(in srgb, var(--warn) 18%, transparent);
+      color: var(--warn-deep);
+    }
+    .fg-review-name {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 11px; color: var(--ink); font-weight: 500;
+      transition: color .25s ease;
+    }
+    .fg-review-state {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .18em; font-weight: 700;
+      text-transform: uppercase; color: var(--accent-deep);
+      padding: 2px 6px; border-radius: 3px;
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      transition: background .25s ease, color .25s ease;
+    }
+    .fg-review-state--edit {
+      color: var(--warn-deep);
+      background: color-mix(in srgb, var(--warn) 14%, transparent);
+    }
+    /* Inline edit visualisation on the Metformin chip name. */
+    .fg-strike { color: var(--muted); text-decoration: line-through; font-weight: 400; }
+    .fg-new    { color: var(--warn-deep); font-weight: 700;
+                 background: color-mix(in srgb,var(--warn) 18%,transparent);
+                 padding: 0 4px; border-radius: 3px;
+                 animation: fg-new-pop .35s cubic-bezier(.5,1.4,.4,1) both; }
+    @keyframes fg-new-pop {
+      from { opacity: 0; transform: scale(.6); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .fg-actions {
+      display: flex; gap: 8px;
+      position: absolute; left: 16px; right: 16px; bottom: 14px;
+      z-index: 5;             /* sit above any sibling overlays inside the panel */
+      pointer-events: auto;   /* belt + braces: clicks must reach the buttons */
+    }
+    .fg-btn { pointer-events: auto; position: relative; z-index: 1; }
+    .fg-btn {
+      flex: 1;
+      font-family: "Geist", sans-serif;
+      font-size: 12px; font-weight: 600;
+      padding: 8px 0; border-radius: 6px;
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      color: var(--ink-2);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .fg-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--rule));
+      box-shadow: 0 6px 16px -8px rgba(23,38,59,.25);
+    }
+    .fg-btn-approve {
+      background: var(--accent); color: #fff; border-color: var(--accent);
+      box-shadow: 0 4px 14px -6px rgba(15,138,120,.55);
+    }
+    .fg-btn-approve:hover:not(:disabled) {
+      border-color: var(--accent-deep);
+      box-shadow: 0 6px 22px -6px rgba(15,138,120,.75);
+    }
+    .fg-btn--used {
+      opacity: .45;
+      cursor: default;
+    }
+    .fg-btn--written {
+      background: var(--accent-deep) !important;
+      animation: none !important;
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent),
+                  0 6px 18px -8px rgba(10,107,92,.6);
+    }
+
+    /* Panel 4 · FHIR resource ──────────────────────────────────── */
+    .fg-fhir {
+      margin-top: 12px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; line-height: 1.55;
+      white-space: pre;
+      color: var(--ink-on-dark);
+      opacity: 0;
+    }
+    .fg-c-key    { color: #A8C7F0; }
+    .fg-c-str    { color: #FFD9A8; }
+    .fg-c-accent { color: var(--accent-soft); font-weight: 600; }
+    .fg-prov {
+      display: inline-block;
+      padding: 2px 4px; border-radius: 4px;
+      background: color-mix(in srgb, var(--accent-soft) 14%, transparent);
+      opacity: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       ANIMATION TIMELINE — fires on .present, holds final state.
+       ═══════════════════════════════════════════════════════════ */
+    @keyframes fg-panel-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fg-entity-highlight {
+      from { background: transparent; box-shadow: none; }
+      to   {
+        background: color-mix(in srgb, var(--accent) 24%, transparent);
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+      }
+    }
+    @keyframes fg-conn-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes fg-spark-travel {
+      0%   { opacity: 0; cx: 2; }
+      15%  { opacity: 1; }
+      85%  { opacity: 1; }
+      100% { opacity: 0; cx: 52; }
+    }
+    @keyframes fg-chip-in {
+      from { opacity: 0; transform: translateX(-12px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fg-code-snap {
+      0%   { opacity: 0; transform: scale(.4) rotate(-6deg); }
+      60%  { opacity: 1; transform: scale(1.12) rotate(2deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes fg-row-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fg-approve-pulse {
+      0%, 100% { box-shadow: 0 4px 14px -6px rgba(15,138,120,.55); }
+      50%      { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent),
+                              0 6px 22px -6px rgba(15,138,120,.7); }
+    }
+    @keyframes fg-fhir-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fg-prov-glow {
+      0%, 100% {
+        opacity: 1;
+        background: color-mix(in srgb, var(--accent-soft) 14%, transparent);
+        box-shadow: 0 0 0 0 rgba(70,201,174,0);
+      }
+      50% {
+        opacity: 1;
+        background: color-mix(in srgb, var(--accent-soft) 28%, transparent);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-soft) 22%, transparent);
+      }
+    }
+    @keyframes fg-feedback-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ─── Trigger choreography on .present ─────────────────── */
+    .reveal .slides section.present .fg-p1 { animation: fg-panel-in .55s cubic-bezier(.2,.7,.2,1) both;  animation-delay: .35s; }
+
+    .reveal .slides section.present .fg-ent-1 { animation: fg-entity-highlight .35s ease both; animation-delay: 1.10s; }
+    .reveal .slides section.present .fg-ent-2 { animation: fg-entity-highlight .35s ease both; animation-delay: 1.35s; }
+    .reveal .slides section.present .fg-ent-3 { animation: fg-entity-highlight .35s ease both; animation-delay: 1.60s; }
+
+    .reveal .slides section.present .fg-conn-1  { animation: fg-conn-in .25s ease both; animation-delay: 1.90s; }
+    .reveal .slides section.present .fg-spark-1 { animation: fg-spark-travel .65s ease-in-out both; animation-delay: 1.95s; }
+
+    .reveal .slides section.present .fg-p2 { animation: fg-panel-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.15s; }
+
+    .reveal .slides section.present .fg-chip-1 { animation: fg-chip-in .35s ease both; animation-delay: 2.45s; }
+    .reveal .slides section.present .fg-chip-2 { animation: fg-chip-in .35s ease both; animation-delay: 2.65s; }
+    .reveal .slides section.present .fg-chip-3 { animation: fg-chip-in .35s ease both; animation-delay: 2.85s; }
+
+    .reveal .slides section.present .fg-chip-code-1 { animation: fg-code-snap .40s cubic-bezier(.5,1.4,.4,1) both; animation-delay: 3.20s; }
+    .reveal .slides section.present .fg-chip-code-2 { animation: fg-code-snap .40s cubic-bezier(.5,1.4,.4,1) both; animation-delay: 3.40s; }
+    .reveal .slides section.present .fg-chip-code-3 { animation: fg-code-snap .40s cubic-bezier(.5,1.4,.4,1) both; animation-delay: 3.60s; }
+
+    .reveal .slides section.present .fg-conn-2  { animation: fg-conn-in .25s ease both; animation-delay: 3.90s; }
+    .reveal .slides section.present .fg-spark-2 { animation: fg-spark-travel .65s ease-in-out both; animation-delay: 3.95s; }
+
+    /* Panel 3 fades in as a whole — its review rows and action buttons
+       inherit opacity, so no per-child timing is needed. (Previous nth-child
+       selectors didn't match: the 3rd child of .fg-p3 is .fg-label, not a row.) */
+    .reveal .slides section.present .fg-p3 { animation: fg-panel-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: 4.15s; }
+    .reveal .slides section.present .fg-btn-approve {
+      animation: fg-approve-pulse 1.8s ease-in-out 5.10s infinite;
+    }
+
+    /* ─── Click-driven: feedback arc (Edit) ─────────────────────────── */
+    .fg-feedback.is-on { animation: fg-feedback-in .45s ease both,
+                                    fg-feedback-pulse 2.2s ease-in-out .5s infinite; }
+    @keyframes fg-feedback-pulse {
+      0%, 100% { opacity: .55; }
+      50%      { opacity: 1; }
+    }
+
+    /* ─── Click-driven: commit pipeline (Approve) ───────────────────── */
+    .fg-conn-3.is-on  { animation: fg-conn-in .25s ease both; }
+    .fg-spark-3.is-on { animation: fg-spark-travel .65s ease-in-out .1s both; }
+    .fg-p4.is-on      { animation: fg-panel-in .55s cubic-bezier(.2,.7,.2,1) both;
+                        animation-delay: .25s; }
+    .fg-p4.is-on .fg-fhir { animation: fg-fhir-in .45s ease both;
+                            animation-delay: .65s; }
+    .fg-p4.is-on .fg-prov {
+      animation: fg-fhir-in .35s ease 1.05s both,
+                 fg-prov-glow 2.4s ease-in-out 1.45s infinite;
+    }
+  </style>
+
+  <aside class="notes">
+    Hero slide. The auto-animation runs to the Review panel (~5 s) and stops.
+    Then the slide is live — two clicks tell the rest of the story:
+
+      1) Click EDIT.    The third row flips to orange. Metformin dose changes
+                        from 500 → 1000 with a strikethrough. The feedback arc
+                        fades in and pulses. Line: "the edit feeds back into
+                        the agent — it learns the patient's actual dose."
+
+      2) Click APPROVE. The dark Commit panel slides in. The FHIR Condition
+                        materialises. Provenance highlights and stays glowing.
+                        Line: "this is what gets written — coded, sourced, signed."
+
+    Sample IDs are illustrative; the codes are real (E11.9 · ICD-10, 4548-4
+    · LOINC, 860975 · RxNorm). FHIR Forge is the deck's primary source.
+  </aside>
+</section>

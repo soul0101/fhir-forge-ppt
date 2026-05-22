@@ -1,0 +1,240 @@
+<!--
+  Slide 12 · Recommendation
+  Chapter: Closing · The Ask
+
+  Three moves Po should make. One thing to stop. One thing I'm not sure
+  about — the uncertainty line is the credibility move that earns the
+  rest of the recommendation.
+-->
+<section class="sheet" data-transition="fade">
+  <div class="chrome">
+    <div><span class="dot"></span>THE LAST MILE LAYER · THE ASK</div>
+    <div class="right">
+      <span>Recommendation</span>
+      <span class="folio">12</span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:1">
+    <div class="rise" style="--d:0s">
+      <span class="eyebrow accent">Recommendation</span>
+    </div>
+  </div>
+
+  <!-- ─── Three move cards ───────────────────────────────────────── -->
+  <div class="rc-grid rise" style="--d:.15s">
+
+    <!-- 01 · Build the horizontal -->
+    <div class="rc-card">
+      <div class="rc-num">01</div>
+      <div class="rc-title">Build the horizontal.</div>
+      <div class="rc-tagline">Integration. Reconciliation. Governed write-back.</div>
+      <p class="rc-body">
+        This is the moat. Po's FHIR connectivity + guardrails + the loop's
+        reconciliation and traceability — built once, pointed at every output schema.
+      </p>
+      <div class="rc-footer">
+        <span class="rc-foot-key">What it is</span>
+        <span class="rc-foot-val">The Last Mile Layer.</span>
+      </div>
+    </div>
+
+    <!-- 02 · Keep extraction pluggable -->
+    <div class="rc-card">
+      <div class="rc-num">02</div>
+      <div class="rc-title">Keep extraction pluggable.</div>
+      <div class="rc-tagline">Wrap. Don't build.</div>
+      <p class="rc-body">
+        Point tools like PhenoML, AWS Comprehend Medical, JSL are swappable engines
+        under the hood. Compete on the workflow — never the parser.
+      </p>
+      <div class="rc-footer">
+        <span class="rc-foot-key">What to stop</span>
+        <span class="rc-foot-val">Building extraction in-house.</span>
+      </div>
+    </div>
+
+    <!-- 03 · Vertical is a distribution question (featured) -->
+    <div class="rc-card rc-card--feature">
+      <div class="rc-num">03</div>
+      <div class="rc-title">Pick the vertical by distribution.</div>
+      <div class="rc-tagline">Not by technology.</div>
+      <p class="rc-body">
+        The horizontal is decided. The endpoint to ship first depends on the
+        relationships and pipeline Po already has — HCC · cancer · CDISC · eCQM · eICR.
+        Same engine. Different door.
+      </p>
+      <div class="rc-footer">
+        <span class="rc-foot-key">The ask</span>
+        <span class="rc-foot-val">Po picks. I don't.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Footer · stop + uncertain ─────────────────────────────── -->
+  <div class="rc-foot rise" style="--d:.5s">
+    <div class="rc-foot-block rc-foot-block--stop">
+      <span class="rc-foot-label">Stop doing</span>
+      <span class="rc-foot-line">
+        Pitching horizontally with no named wedge. "Foundational layer" is the long-term story, not the GTM story.
+      </span>
+    </div>
+    <div class="rc-foot-block rc-foot-block--unsure">
+      <span class="rc-foot-label">What I'm unsure about</span>
+      <span class="rc-foot-line">
+        Which vertical. I can argue HCC for dollars-per-chart. Po's relationships decide it — not me.
+      </span>
+    </div>
+  </div>
+
+  <!-- ─── Bottom band ───────────────────────────────────────────── -->
+  <div class="rise" style="--d:.7s;position:absolute;left:80px;right:80px;bottom:32px">
+    <div class="band teal" style="position:static;padding:16px 22px;border-radius:10px">
+      <span class="band-mark"></span>
+      <div style="font-size:15px;line-height:1.5;color:#fff">
+        Be the governed FHIR write layer first.
+        <em class="kicker" style="color:rgba(255,255,255,.92);font-size:1em">Become the platform second.</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="pageno">12 / 14</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    .rc-grid {
+      position: absolute;
+      left: 80px; right: 80px;
+      top: 148px;
+      height: 360px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+    }
+
+    .rc-card {
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 18px 22px 16px;
+      display: flex; flex-direction: column;
+      gap: 6px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 14px 32px -22px rgba(23,38,59,.22);
+      position: relative;
+    }
+    .rc-card--feature {
+      background: var(--stage);
+      color: var(--ink-on-dark);
+      border-color: var(--stage);
+      box-shadow: 0 0 0 6px color-mix(in srgb,var(--accent) 18%,transparent),
+                  0 16px 50px -12px rgba(15,138,120,.55);
+    }
+
+    .rc-num {
+      font-family: "Geist", sans-serif;
+      font-size: 36px; font-weight: 700;
+      color: color-mix(in srgb,var(--accent) 22%,var(--rule));
+      letter-spacing: -0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .rc-card--feature .rc-num {
+      color: var(--accent-soft);
+    }
+
+    .rc-title {
+      font-family: "Geist", sans-serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.018em;
+      line-height: 1.18;
+      margin-top: 4px;
+    }
+    .rc-card--feature .rc-title { color: #fff; }
+
+    .rc-tagline {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 14.5px; line-height: 1.35;
+      color: var(--accent-deep);
+      margin-top: 2px;
+    }
+    .rc-card--feature .rc-tagline { color: var(--accent-soft); }
+
+    .rc-body {
+      font-family: "Geist", sans-serif;
+      font-size: 13px; line-height: 1.5;
+      color: var(--ink-3);
+      margin: 8px 0 0;
+      flex: 1;
+    }
+    .rc-card--feature .rc-body { color: rgba(255,255,255,.82); }
+
+    .rc-footer {
+      display: flex; flex-direction: column; gap: 2px;
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--rule);
+    }
+    .rc-card--feature .rc-footer { border-top-color: rgba(255,255,255,.18); }
+    .rc-foot-key {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .24em; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .rc-card--feature .rc-foot-key { color: rgba(255,255,255,.62); }
+    .rc-foot-val {
+      font-family: "Geist", sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.008em;
+    }
+    .rc-card--feature .rc-foot-val { color: #fff; }
+
+    /* ─── Bottom footer blocks (stop + unsure) ────────────────── */
+    .rc-foot {
+      position: absolute;
+      left: 80px; right: 80px;
+      top: 528px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .rc-foot-block {
+      padding: 10px 16px;
+      border-left: 3px solid var(--rule);
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .rc-foot-block--stop {
+      border-left-color: var(--warn);
+    }
+    .rc-foot-block--unsure {
+      border-left-color: var(--ink-3);
+    }
+    .rc-foot-label {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .24em; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .rc-foot-block--stop .rc-foot-label   { color: var(--warn-deep); }
+    .rc-foot-block--unsure .rc-foot-label { color: var(--ink-3); }
+    .rc-foot-line {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 13px; line-height: 1.45;
+      color: var(--ink-2);
+    }
+  </style>
+
+  <aside class="notes">
+    Land the three moves in order: build the horizontal, treat extraction
+    as commodity, pick the vertical by distribution. Spend the most time
+    on #3 — it's the one that requires the room to decide.
+
+    The "what I'm unsure about" line is the credibility move. It signals
+    that I'm not pretending to know Po's pipeline better than Po does.
+
+    Walk-out line: "be the governed FHIR write layer first. Become the
+    platform second."
+  </aside>
+</section>
