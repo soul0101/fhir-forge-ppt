@@ -16,12 +16,9 @@
     <div class="rise" style="--d:0s"><span class="section-marker">The Chart</span></div>
     <h1 class="rise" style="--d:.05s;font-size:52px;line-height:1.04;letter-spacing:-0.026em;
                             color:var(--ink);font-weight:700;margin-top:10px">
-      The chart was built for billing.
-      <em class="kicker" style="color:var(--accent);font-size:1em">Not for AI.</em>
+      Today's chart can't keep up.
+      <em class="kicker" style="color:var(--accent);font-size:1em">It was built for a different job.</em>
     </h1>
-    <p class="rise" style="--d:.1s;font-size:17px;line-height:1.45;color:var(--ink-3);max-width:980px;margin-top:12px">
-      It still does the original job. It does not work as the live source of truth that every agent above it has to act on.
-    </p>
   </div>
 
   <!-- ─── Three facets ───────────────────────────────────────────── -->
@@ -42,13 +39,14 @@
       <span class="cb-no">02</span>
       <span class="cb-ic">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2"  y="3"  width="8" height="8" rx="1.2"/>
-          <rect x="14" y="6"  width="8" height="8" rx="1.2"/>
-          <rect x="6"  y="13" width="8" height="8" rx="1.2"/>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="8" y1="13" x2="16" y2="13"/>
+          <line x1="8" y1="17" x2="14" y2="17"/>
         </svg>
       </span>
-      <div class="cb-name">Fragmented</div>
-      <div class="cb-desc">Notes, faxes, outside records, labs, intake all live apart. Nothing reconciles them.</div>
+      <div class="cb-name">Unstructured</div>
+      <div class="cb-desc">Most of the patient lives in notes, faxes, intake forms, and outside documents. The structured chart can't see any of it.</div>
     </div>
 
     <div class="cb-card rise" style="--d:.36s">
@@ -82,7 +80,7 @@
   <!-- ═════ Scoped styles ═══════════════════════════════════════════ -->
   <style>
     .cb-grid {
-      position: absolute; left: 80px; right: 80px; top: 232px;
+      position: absolute; left: 80px; right: 80px; top: 280px;
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; height: 250px;
     }
     .cb-card {
@@ -115,10 +113,12 @@
   </style>
 
   <aside class="notes">
-    Reframe: the pain is the chart, not the conversion labor. Three facets,
+    Reframe the pain. It's the chart, not the conversion labor. Three facets,
     each mapping to what the brain has to do later. Stale answers why a live
-    layer matters. Fragmented answers why ingestion across every source matters.
-    Mute answers why shared substrate + write-back matter. FHIR Forge is one
-    capability inside the platform, not the centerpiece.
+    layer matters. Unstructured answers why ingestion across every source matters,
+    notes, faxes, intake forms, outside documents. Mute answers why a shared
+    substrate plus write-back matter. FHIR Forge is one capability inside the
+    platform, not the centerpiece. Land the closing band: the chart was built
+    to record, it was never built to stay true.
   </aside>
 </section>

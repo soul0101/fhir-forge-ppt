@@ -13,12 +13,12 @@
   <!-- ─── Header ─────────────────────────────────────────────────── -->
   <div style="position:absolute;left:80px;top:50px;right:80px;z-index:3">
     <div class="rise" style="--d:0s"><span class="section-marker">Where AI Stalls</span></div>
-    <h1 class="rise" style="--d:.05s;font-size:52px;line-height:1.04;letter-spacing:-0.026em;
+    <h1 class="rise" style="--d:.05s;font-size:64px;line-height:1.02;letter-spacing:-0.028em;
                             color:var(--ink);font-weight:700;margin-top:8px">
-      Why healthcare AI stalls.
+      Healthcare AI's real problem: <span style="color:var(--warn-deep)">sprawl.</span>
     </h1>
-    <p class="rise" style="--d:.1s;font-size:17px;line-height:1.45;color:var(--ink-3);max-width:920px;margin-top:12px">
-      Three walls block enterprise adoption, the same three KLAS hears from 1,742 health systems.
+    <p class="rise" style="--d:.1s;font-size:17px;line-height:1.5;color:var(--ink-3);max-width:980px;margin-top:14px">
+      A scribe from one vendor. RCM from another. Triage from a third. Prior auth from a fourth. Each one its own silo, and the same three walls keep showing up across 1,742 health systems.
     </p>
   </div>
 
@@ -28,16 +28,19 @@
       <span class="as-no">01</span>
       <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></span>
       <div class="as-name">No governance</div>
+      <div class="as-sub">Each agent, its own PHI grant.</div>
     </div>
     <div class="as-card rise" style="--d:.28s">
       <span class="as-no">02</span>
       <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
       <div class="as-name">Unmeasurable ROI</div>
+      <div class="as-sub">Each agent, its own audit trail.</div>
     </div>
     <div class="as-card rise" style="--d:.36s">
       <span class="as-no">03</span>
       <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18.84 12.25 1.72-1.71a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="m5.17 11.75-1.71 1.71a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="8" x2="8" y1="2" y2="5"/><line x1="2" x2="5" y1="8" y2="8"/><line x1="16" x2="16" y1="19" y2="22"/><line x1="19" x2="22" y1="16" y2="16"/></svg></span>
       <div class="as-name">Won't integrate</div>
+      <div class="as-sub">Each agent, its own EHR pipe.</div>
     </div>
   </div>
 
@@ -68,24 +71,29 @@
     .as-card {
       position: relative;
       background: var(--paper-3); border: 1px solid var(--rule); border-top: 3px solid var(--warn-deep);
-      border-radius: 12px; padding: 24px;
+      border-radius: 12px; padding: 22px 22px 20px;
       box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 12px 30px -20px rgba(23,38,59,.26);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
     }
     .as-ic {
-      width: 56px; height: 56px; border-radius: 15px;
+      width: 52px; height: 52px; border-radius: 14px;
       background: color-mix(in srgb, var(--warn-deep) 12%, transparent); color: var(--warn-deep);
       display: inline-flex; align-items: center; justify-content: center;
     }
-    .as-ic svg { width: 30px; height: 30px; }
+    .as-ic svg { width: 28px; height: 28px; }
     .as-no {
       position: absolute; top: 16px; right: 18px;
       font-family: "Geist Mono", ui-monospace, monospace;
       font-size: 11px; letter-spacing: .22em; font-weight: 700; color: var(--muted); opacity: .5;
     }
     .as-name {
-      font-family: "Geist", sans-serif; font-size: 27px; font-weight: 700; color: var(--ink);
+      font-family: "Geist", sans-serif; font-size: 25px; font-weight: 700; color: var(--ink);
       letter-spacing: -0.02em; line-height: 1; text-align: center;
+    }
+    .as-sub {
+      font-family: "Newsreader", Georgia, serif; font-style: italic;
+      font-size: 14.5px; line-height: 1.35; color: var(--ink-3);
+      text-align: center; max-width: 240px;
     }
 
     .as-band-wrap { position: absolute; left: 80px; right: 80px; bottom: 40px; }
@@ -97,12 +105,21 @@
   </style>
 
   <aside class="notes">
-    The bridge from the chart problem to the platform. The chart is broken, and
-    the AI built on it keeps stalling for three reasons KLAS hears across 1,742
-    health systems: no governance, unmeasurable ROI, won't integrate.
+    Reframe the enemy. A health org's real pain in 2026 isn't "I can't find AI
+    agents." It's the opposite. They're about to drown in them. A scribe from
+    one vendor, RCM from another, nurse triage from a third, prior auth from
+    a fourth. Each one its own EHR integration, its own PHI grant, its own
+    audit trail, its own contract, its own model. The CIO's nightmare for the
+    next three years is agent sprawl, dozens of ungoverned things touching
+    patient data with no shared context, no portability, total vendor lock-in.
 
-    The point to land: none of these is a model problem. They are architectural.
-    And the rest of this deck answers each one by name, Integration for the last,
+    That's what the three KLAS walls actually are. No governance is every
+    agent holding its own PHI grant. Unmeasurable ROI is every agent keeping
+    its own audit trail. Won't integrate is every agent dragging its own EHR
+    pipe. Same disease, three symptoms.
+
+    Land the punchline: every wall is architectural, not a model problem.
+    The rest of the deck answers each one by name. Integration for the last,
     Guardrails and Provenance for the first, the measurable morning wedge for ROI.
   </aside>
 </section>

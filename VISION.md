@@ -160,20 +160,20 @@ The current deck is **substrate-positioned**: "we are the last mile layer." It t
 
 ## What the new deck does
 
-The new arc treats FHIR Forge as **proof of capability** and elevates **the Patient Brain as the destination**. FHIR Forge is named as Pillar 2 (the Unstructured-to-Structured Engine). The deck spends its second half building the brain concept, then resolves into the foundation-with-agents-on-top architecture that shows compounding.
+The new arc treats FHIR Forge as **proof of capability** and elevates **the Patient Brain as the destination**. FHIR Forge is named as the Unstructured-to-Structured Engine, one column of Layer 2 on the Foundation. A new Slide 4 (**Why healthcare AI stalls**) bridges the chart-broken pain to the architectural answer by naming three KLAS-attributed walls (no governance · unmeasurable ROI · won't integrate) that the rest of the deck then answers by name. The deck spends its second half building the brain concept, then resolves into the foundation-with-agents-on-top architecture that shows compounding, and closes on the emotional payoff of proactive signals.
 
 New arc:
 
 1. Title (**Patient Brain**)
 2. Born unstructured
 3. Every chart, by hand
-4. FHIR Forge (the foundation capability; closing band carries the moat line)
-5. Market map (the lane is empty; extraction-only players cluster in the lower-left)
-6. **The Patient Brain** (central vision, the living layer)
-7. **Six verbs** (what the brain does)
-8. **Signals** (the brain is alive)
-9. **The wedge** (start small, then the whole day: prep, live encounter, sign-off, loop)
-10. **The Foundation** (the layered stack every agent inherits, compounding)
+4. **Why healthcare AI stalls** (three KLAS walls; architectural, not model)
+5. FHIR Forge (the proof; closing band carries the moat line)
+6. Market map (the lane is empty; extraction-only players cluster in the lower-left)
+7. **The Patient Brain** (central vision, the living layer)
+8. **Six verbs** (what the brain does)
+9. **The Foundation** (Integration → Engine + Guardrails + Provenance → Brain → Agents)
+10. **Signals** (proactive, not reactive; the emotional payoff after the foundation)
 11. Closing
 
 ## Key shifts
@@ -182,47 +182,60 @@ New arc:
 | Shift                      | From (current deck)             | To (new deck)                                              |
 | -------------------------- | ------------------------------- | ---------------------------------------------------------- |
 | Headline concept           | "The Last Mile Layer"           | "The Patient Brain"                                        |
-| Treatment of FHIR Forge    | Centerpiece                     | Proof + Pillar 2 of three                                  |
+| Treatment of FHIR Forge    | Centerpiece                     | Proof of capability + Engine column on the Foundation      |
 | Concept of differentiation | Better extraction + integration | Brain that compounds across agents                         |
-| Reactive vs. proactive     | Reactive (responds to queries)  | Both reactive and proactive (signals)                      |
-| Foundation visibility      | Implicit (skyline metaphor)     | Explicit (a layered stack: Integration → Engine + Guardrails → Brain) |
-| Agent positioning          | "We serve six markets"          | "Agents build on top of the brain"                         |
-| Compounding mechanism      | Not articulated                 | Explicit and central (Slide 10 footer)                     |
-| Wedge                      | Not articulated as a wedge      | Pre-encounter chart prep (Slide 9)                         |
+| Bridge to architecture     | Implicit                        | Explicit (Slide 4 names three walls; deck answers each)    |
+| Reactive vs. proactive     | Reactive (responds to queries)  | Both reactive and proactive (signals as emotional peak)    |
+| Foundation visibility      | Implicit (skyline metaphor)     | Explicit (Integration → Engine + Guardrails + Provenance → Brain → Agents) |
+| Provenance treatment       | Folded into "intelligence"      | Its own column on Layer 2 alongside Engine and Guardrails  |
+| Agent positioning          | "We serve six markets"          | "Agents build on top of the brain and inherit the whole stack" |
+| Compounding mechanism      | Not articulated                 | Explicit on the Foundation footer, visualized in the stack build |
+| Wedge                      | Standalone slide                | Cut; wedge framing lives in speaker notes for now          |
 | Closing                    | "A workflow, not a workforce"   | "A workflow, not a workforce. A brain, not another agent." |
 
 
 ## Slides that go away
 
-Four slides from the current deck do not survive:
+Five slides from the original deck do not survive in the current cut:
 
-- **Old Slide 5 (FHIR Forge demo video)** is deleted. The full demo can live in speaker notes or an appendix slide outside the main flow.
-- **Old Slide 6 (PhenoML case study)** is deleted. The extraction-only players it named now appear as the lower-left cluster on the market map (Slide 5).
-- **Old Slide 9 (One agentic loop)** is deleted. Its function is taken by the new Patient Brain slide, a stronger articulation of the same architectural idea.
-- **Old Slide 10 (How FHIR Forge is different, 3-card)** is deleted. Its function is taken by the new Six Verbs slide, which describes the platform, not just FHIR Forge.
+- **Old Slide 5 (FHIR Forge demo video)** is deleted. The full demo can live in speaker notes or an appendix.
+- **Old Slide 6 (PhenoML case study)** is deleted. Extraction-only players fold into the lower-left cluster on the market map (now Slide 6).
+- **Old Slide 9 (One agentic loop)** is deleted. Its function is taken by the Patient Brain slide (now Slide 7).
+- **Old Slide 10 (How FHIR Forge is different, 3-card)** is deleted. Its function is taken by the Six Verbs slide (now Slide 8).
+- **The Wedge slide (start small, then the whole day)** that an earlier draft planned is also cut from the current cut. Pre-encounter chart prep as the first concrete product remains an essential commercial idea; for now it lives in speaker notes and is the implicit answer to "Unmeasurable ROI" (Wall #2 on the new Slide 4). A future deck may bring it back as a dedicated slide.
 
-The iceberg ("Extraction isn't the moat") that an earlier draft planned for Slide 5 is dropped entirely. It introduced a fourth taxonomy that fought with the six verbs and the layered stack. Its two jobs split cleanly: the "extraction is commodity, the chart is the moat" thesis becomes the closing band on the FHIR Forge slide (Slide 4), and the extraction-only players fold into the market map (Slide 5).
+The iceberg ("Extraction isn't the moat") that an earlier draft planned is dropped entirely. Its strategic load splits cleanly: "extraction is commodity, the chart is the moat" becomes the closing band on the FHIR Forge slide (Slide 5), and the extraction-only players fold into the market map (Slide 6).
 
-Net: the deck is now 11 slides. The market map moves up to Slide 5 so all competitive framing happens in one beat and sets up the brain reveal on Slide 6.
+Net: the deck is now 11 slides. A new architectural-bridge slide (Slide 4) sits between the chart-broken pain and the FHIR Forge proof. The market map sits at Slide 6, right after FHIR Forge. Signals (the emotional peak) moves to penultimate, immediately after the Foundation.
 
 ---
 
 # PART 3 · THE 11-SLIDE SPINE (QUICK REFERENCE)
 
 
-| #   | Title                                             | Status         | One-line summary                                                                   |
-| --- | ------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------- |
-| 1   | The Patient Brain                                 | MODIFIED       | New headline; same animated title treatment                                        |
-| 2   | Born unstructured                                 | KEPT           | One word change in subline                                                         |
-| 3   | Every chart, by hand                              | KEPT           | Add a "rots between encounters" clause                                             |
-| 4   | FHIR Forge                                        | MODIFIED       | Animation intact; new closing band carries the moat line                           |
-| 5   | The market: no one builds the brain               | MODIFIED       | Moved up; extraction-only players cluster lower-left; upper-right teases the brain |
-| 6   | The Patient Brain                                 | NEW            | Three-sided living layer: input left, chart below, agents on top                   |
-| 7   | What the brain does: six verbs                    | NEW            | 3x2 verb grid                                                                      |
-| 8   | The brain is alive: signals                       | NEW            | Patient timeline + four signal cards                                               |
-| 9   | The wedge: start small, then the whole day        | REDESIGNED     | Two beats: the wedge alone, then zoom out to the full day and the loop             |
-| 10  | The Foundation: the stack every agent inherits    | MODIFIED       | Layered stack (Integration to Engine + Guardrails to Brain), agents above, compounding |
-| 11  | Closing                                           | KEPT/SHARPENED | Two-line closing                                                                   |
+| #  | Title                              | Status                       | One-line summary                                                                       |
+| -- | ---------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------- |
+| 1  | The Patient Brain                  | KEPT                         | Animated title; the destination is on slide 1                                          |
+| 2  | Born unstructured                  | KEPT                         | Six channels of input, no system holding them                                          |
+| 3  | Every chart, by hand               | KEPT                         | The conversion tax; the chart rots between encounters                                  |
+| 4  | Why healthcare AI stalls           | **NEW**                      | Three KLAS-attributed walls (governance · ROI · integration); architectural, not model |
+| 5  | FHIR Forge                         | MODIFIED                     | Hero demo as proof of capability; closing band carries the moat line                   |
+| 6  | No one builds the brain            | KEPT (moved)                 | Market map; extraction-only cluster lower-left; star labels the Brain                  |
+| 7  | The Patient Brain                  | KEPT                         | Three-sided living layer (inputs left, chart below, agents above)                      |
+| 8  | What the brain does (six verbs)    | KEPT                         | 3x2 verb grid: Listens · Reasons · Serves · Signals · Acts · Learns                    |
+| 9  | One foundation, every agent        | MODIFIED                     | Layered stack: Integration → Engine + Guardrails + **Provenance** → Brain → Agents     |
+| 10 | Proactive, not reactive (signals)  | KEPT (moved to penultimate)  | Four signal cards over a patient timeline; the emotional payoff                        |
+| 11 | A workflow, not a workforce        | KEPT                         | Two-line close                                                                         |
+
+
+Key structural moves vs. the earlier draft of this spec:
+
+- **New Slide 4** (Why healthcare AI stalls) bridges the chart-broken pain to the architectural answer by naming three KLAS walls. The deck then answers each wall by name on Slide 9 (Integration answers "won't integrate"; Guardrails + Provenance answer "no governance"; the implicit wedge answers "unmeasurable ROI").
+- **Foundation (Slide 9) Layer 2 now has THREE columns** (Engine + Guardrails + **Provenance**) rather than two. The three columns map directly onto the three walls from Slide 4.
+- **Signals moves to penultimate** as the emotional peak after the Foundation is established.
+- **Wedge slide is cut** in the current cut; the wedge framing lives in speaker notes.
+
+> The slide-by-slide spec in Part 4 below was written for the earlier 11-slide arc and has been updated to match the current structure. The live HTML in `content/` remains the implementation source of truth.
 
 
 ---

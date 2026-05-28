@@ -9,8 +9,8 @@
     { "folio": "06", "chapter": "The Gap",       "title": "No one builds the brain",      "path": "content/02-solution/06-market-map.html" },
     { "folio": "07", "chapter": "The Vision",    "title": "The Patient Brain",            "path": "content/02-solution/06-patient-brain.html" },
     { "folio": "08", "chapter": "The Spine",     "title": "What the brain does",          "path": "content/02-solution/07-six-verbs.html" },
-    { "folio": "09", "chapter": "Proactive",     "title": "The brain is alive · signals", "path": "content/02-solution/08-signals.html" },
-    { "folio": "10", "chapter": "The Foundation","title": "One foundation, every agent",  "path": "content/03-platform/10-one-engine.html" },
+    { "folio": "09", "chapter": "The Foundation","title": "One foundation, every agent",  "path": "content/03-platform/10-one-engine.html" },
+    { "folio": "10", "chapter": "Proactive",     "title": "Proactive, not reactive",       "path": "content/02-solution/08-signals.html" },
     { "folio": "11", "chapter": "Closing",       "title": "A workflow, not a workforce",  "path": "content/04-closing/10-closing.html" }
   ]
 }
