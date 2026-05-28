@@ -1,0 +1,270 @@
+<!--
+  Slide 8 · The brain is alive · signals
+  Chapter: The Solution · Proactive Mode
+
+  The emotional centre. Four signal cards on top, a central brain hub,
+  a patient timeline below. Each column is one storyline:
+      event (bottom)  →  brain (hub)  →  signal (card, top)
+  Columns are aligned so the causal chain reads vertically, no crossing.
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:46px;right:64px;z-index:3">
+    <div class="rise" style="--d:0s"><span class="section-marker">Proactive Mode</span></div>
+    <h2 class="rise" style="--d:.05s;font-size:30px;line-height:1.08;letter-spacing:-0.02em;
+                            color:var(--ink);font-weight:700;margin-top:8px">
+      The brain doesn't just answer.
+      <em class="kicker" style="color:var(--accent);font-size:1em">It tells you what matters.</em>
+    </h2>
+    <p class="rise" style="--d:.1s;font-size:14px;line-height:1.4;color:var(--ink-3);margin-top:6px;max-width:1000px">
+      Configurable signals, evaluated against the full chart, including unstructured notes. Routed, not pushed. Learned, not hardcoded.
+    </p>
+  </div>
+
+  <!-- ─── Four signal cards (columns aligned to the timeline below) ── -->
+  <div class="sg-cards">
+    <div class="sg-card sg-c1 sg-tone-overdue">
+      <div class="sg-card-top"><span class="sg-pill">OVERDUE</span><span class="sg-conf">Transitions</span></div>
+      <div class="sg-title">Discharge follow-up</div>
+      <div class="sg-body">Discharged from MGH 7 days ago for CHF. No follow-up booked. Risk of readmission.</div>
+      <div class="sg-route">Scheduler · Outreach queue</div>
+    </div>
+    <div class="sg-card sg-c2 sg-tone-action">
+      <div class="sg-card-top"><span class="sg-pill">ACTION</span><span class="sg-conf">Quality</span></div>
+      <div class="sg-title">Care gap closing</div>
+      <div class="sg-body">HEDIS CDC-A1c gap closing in 14 days. Last A1c 8.2%, no repeat order in 90 days.</div>
+      <div class="sg-route">Care Manager · Worklist</div>
+    </div>
+    <div class="sg-card sg-c3 sg-tone-fyi">
+      <div class="sg-card-top"><span class="sg-pill">FYI</span><span class="sg-conf">Imaging</span></div>
+      <div class="sg-title">Incidental finding</div>
+      <div class="sg-body">CT abdomen mentions an 8mm renal lesion. Radiologist flagged it for follow-up.</div>
+      <div class="sg-route">PCP · Chart inbox</div>
+    </div>
+    <div class="sg-card sg-c4 sg-tone-new">
+      <div class="sg-card-top"><span class="sg-pill">NEW</span><span class="sg-conf">Oncology</span></div>
+      <div class="sg-title">Trial eligibility</div>
+      <div class="sg-body">Pt. SH now meets METASTATIC-TNBC-04 criteria: line-2 therapy failure, ECOG ≤ 2.</div>
+      <div class="sg-route">Research Coordinator · Inbox</div>
+    </div>
+  </div>
+
+  <!-- ─── Fan of arrows: brain → cards (signals raised up) ─────────── -->
+  <svg class="sg-fan sg-fan-up" viewBox="0 0 1152 46" preserveAspectRatio="none"
+       style="left:64px;top:360px;width:1152px;height:46px">
+    <defs>
+      <marker id="sg-up" viewBox="0 0 8 8" refX="4" refY="1.5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+        <path d="M0 6 L4 1 L8 6" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+      </marker>
+    </defs>
+    <g stroke="var(--accent)" stroke-width="1.3" fill="none" opacity=".7">
+      <path class="flow-line" d="M576 44 L144 2"  marker-end="url(#sg-up)"/>
+      <path class="flow-line" d="M576 44 L432 2"  marker-end="url(#sg-up)" style="animation-delay:.15s"/>
+      <path class="flow-line" d="M576 44 L720 2"  marker-end="url(#sg-up)" style="animation-delay:.3s"/>
+      <path class="flow-line" d="M576 44 L1008 2" marker-end="url(#sg-up)" style="animation-delay:.45s"/>
+    </g>
+  </svg>
+
+  <!-- ─── The brain hub ───────────────────────────────────────────── -->
+  <div class="sg-hub">
+    <span class="sg-hub-dot"></span>
+    <span class="sg-hub-name">Patient Brain</span>
+    <span class="sg-hub-sub">reads the whole chart</span>
+  </div>
+
+  <!-- ─── Fan of arrows: events → brain (events feed in) ──────────── -->
+  <svg class="sg-fan sg-fan-dn" viewBox="0 0 1152 64" preserveAspectRatio="none"
+       style="left:64px;top:444px;width:1152px;height:64px">
+    <g stroke="var(--muted)" stroke-width="1.2" fill="none" opacity=".5">
+      <path class="flow-line" d="M144 62 L576 2"  marker-end="url(#sg-up)"/>
+      <path class="flow-line" d="M432 62 L576 2"  marker-end="url(#sg-up)" style="animation-delay:.15s"/>
+      <path class="flow-line" d="M720 62 L576 2"  marker-end="url(#sg-up)" style="animation-delay:.3s"/>
+      <path class="flow-line" d="M1008 62 L576 2" marker-end="url(#sg-up)" style="animation-delay:.45s"/>
+    </g>
+  </svg>
+
+  <!-- ─── Patient timeline ────────────────────────────────────────── -->
+  <div class="sg-timeline">
+    <div class="sg-axis"></div>
+    <div class="sg-events">
+      <div class="sg-ev sg-e1"><span class="sg-ev-dot"></span><span class="sg-ev-day">Day 0</span><span class="sg-ev-txt">Discharge summary · MGH</span></div>
+      <div class="sg-ev sg-e2"><span class="sg-ev-dot"></span><span class="sg-ev-day">Day 3</span><span class="sg-ev-txt">External lab · A1c 8.2%</span></div>
+      <div class="sg-ev sg-e3"><span class="sg-ev-dot"></span><span class="sg-ev-day">Day 5</span><span class="sg-ev-txt">CT abdomen report</span></div>
+      <div class="sg-ev sg-e4"><span class="sg-ev-dot"></span><span class="sg-ev-day">Day 6</span><span class="sg-ev-txt">Oncology note · Tx failure</span></div>
+    </div>
+  </div>
+
+  <!-- ─── Footer ──────────────────────────────────────────────────── -->
+  <div class="rise sg-foot" style="--d:.2s">
+    Twenty years of rule-based decision support failed because rules fire on structured fields.
+    <span style="color:var(--ink-2)">The brain reads the whole chart, and learns when its signals get dismissed.</span>
+  </div>
+
+  <div class="pageno">09 / 11</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    /* ── Cards row ─────────────────────────────────────────────── */
+    .sg-cards {
+      position: absolute; left: 64px; right: 64px; top: 200px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
+      height: 156px;
+    }
+    .sg-card {
+      position: relative;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 11px;
+      padding: 12px 14px 13px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 12px 30px -20px rgba(23,38,59,.3);
+      display: flex; flex-direction: column;
+      opacity: 0;
+      border-top: 3px solid var(--rule);
+    }
+    .sg-card-top { display: flex; align-items: center; justify-content: space-between; }
+    .sg-pill {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .2em; font-weight: 700; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 4px; color: #fff;
+    }
+    .sg-conf {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .1em; color: var(--muted); font-weight: 600;
+    }
+    .sg-conf::before { content: "cfg · "; opacity: .7; }
+    .sg-title {
+      font-family: "Geist", sans-serif; font-size: 15px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.01em; margin-top: 9px;
+    }
+    .sg-body {
+      font-family: "Geist", sans-serif; font-size: 11.5px; line-height: 1.38;
+      color: var(--ink-3); margin-top: 5px; flex: 1;
+    }
+    .sg-route {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .04em; font-weight: 600;
+      color: var(--ink-2); margin-top: 8px; padding-top: 7px;
+      border-top: 1px dashed var(--rule);
+    }
+    .sg-route::before { content: "→ "; color: var(--accent); font-weight: 700; }
+
+    /* tone variants */
+    .sg-tone-new      { border-top-color: var(--accent); }
+    .sg-tone-new      .sg-pill { background: var(--accent); }
+    .sg-tone-action   { border-top-color: var(--warn); }
+    .sg-tone-action   .sg-pill { background: var(--warn); }
+    .sg-tone-overdue  { border-top-color: var(--warn-deep); }
+    .sg-tone-overdue  .sg-pill { background: var(--warn-deep); }
+    .sg-tone-fyi      { border-top-color: var(--muted); }
+    .sg-tone-fyi      .sg-pill { background: var(--muted); }
+
+    /* ── Brain hub ─────────────────────────────────────────────── */
+    .sg-hub {
+      position: absolute; left: 50%; top: 406px; transform: translateX(-50%);
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--stage); color: var(--ink-on-dark);
+      border-radius: 999px; padding: 9px 20px;
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 9%, transparent),
+                  0 14px 34px -16px rgba(11,28,45,.7);
+      opacity: 0; z-index: 4;
+    }
+    .sg-hub-dot {
+      width: 9px; height: 9px; border-radius: 50%; background: var(--accent-soft);
+      animation: sg-pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes sg-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-soft) 70%, transparent); }
+      50%      { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent-soft) 0%, transparent); }
+    }
+    .sg-hub-name {
+      font-family: "Geist", sans-serif; font-size: 14px; font-weight: 700; letter-spacing: -0.01em;
+    }
+    .sg-hub-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted-on-dark); padding-left: 10px;
+      border-left: 1px solid color-mix(in srgb, var(--ink-on-dark) 20%, transparent);
+    }
+
+    .sg-fan { position: absolute; overflow: visible; opacity: 0; z-index: 1; }
+
+    /* ── Timeline ──────────────────────────────────────────────── */
+    .sg-timeline {
+      position: absolute; left: 64px; right: 64px; top: 506px; height: 86px;
+    }
+    .sg-axis {
+      position: absolute; left: 80px; right: 80px; top: 7px; height: 2px;
+      background: linear-gradient(90deg, var(--rule), var(--ink-3) 20%, var(--ink-3) 80%, var(--rule));
+      transform: scaleX(0); transform-origin: left center;
+    }
+    .sg-events {
+      position: absolute; left: 0; right: 0; top: 0;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .sg-ev {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: 3px; opacity: 0;
+    }
+    .sg-ev-dot {
+      width: 13px; height: 13px; border-radius: 50%;
+      background: var(--paper-3); border: 2.5px solid var(--ink-3);
+      box-shadow: 0 0 0 3px var(--paper);
+    }
+    .sg-e1 .sg-ev-dot { border-color: var(--warn-deep); }
+    .sg-e2 .sg-ev-dot { border-color: var(--warn); }
+    .sg-e3 .sg-ev-dot { border-color: var(--muted); }
+    .sg-e4 .sg-ev-dot { border-color: var(--accent); }
+    .sg-ev-day {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--ink-2); font-weight: 700; margin-top: 4px;
+    }
+    .sg-ev-txt {
+      font-family: "Geist", sans-serif; font-size: 11px; color: var(--ink-3);
+      max-width: 180px; line-height: 1.25;
+    }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    .sg-foot {
+      position: absolute; left: 64px; right: 64px; bottom: 28px; text-align: center;
+      font-family: "Newsreader", Georgia, serif; font-style: italic;
+      font-size: 13.5px; line-height: 1.4; color: var(--muted);
+      padding-top: 12px; border-top: 1px solid var(--rule);
+    }
+
+    /* ═══ Choreography on .present ═══ */
+    @keyframes sg-card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes sg-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes sg-axis-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes sg-ev-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes sg-hub-in { from { opacity: 0; transform: translateX(-50%) scale(.85); } to { opacity: 1; transform: translateX(-50%) scale(1); } }
+
+    /* timeline draws first */
+    .reveal .slides section.present .sg-axis { animation: sg-axis-draw .8s cubic-bezier(.4,.1,.2,1) both; animation-delay: .35s; }
+    .reveal .slides section.present .sg-e1 { animation: sg-ev-in .4s ease both; animation-delay: .55s; }
+    .reveal .slides section.present .sg-e2 { animation: sg-ev-in .4s ease both; animation-delay: .75s; }
+    .reveal .slides section.present .sg-e3 { animation: sg-ev-in .4s ease both; animation-delay: .95s; }
+    .reveal .slides section.present .sg-e4 { animation: sg-ev-in .4s ease both; animation-delay: 1.15s; }
+    /* brain appears */
+    .reveal .slides section.present .sg-hub { animation: sg-hub-in .5s cubic-bezier(.3,1.3,.4,1) both; animation-delay: 1.3s; }
+    /* arrows draw up through the brain */
+    .reveal .slides section.present .sg-fan-dn { animation: sg-fade .45s ease both; animation-delay: 1.55s; }
+    .reveal .slides section.present .sg-fan-up { animation: sg-fade .45s ease both; animation-delay: 1.8s; }
+    /* cards rise last */
+    .reveal .slides section.present .sg-c1 { animation: sg-card-in .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.0s; }
+    .reveal .slides section.present .sg-c2 { animation: sg-card-in .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.1s; }
+    .reveal .slides section.present .sg-c3 { animation: sg-card-in .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.2s; }
+    .reveal .slides section.present .sg-c4 { animation: sg-card-in .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.3s; }
+  </style>
+
+  <aside class="notes">
+    The slide that separates this from every "context API" pitch. Read one column
+    end to end: an event lands on the timeline, the brain evaluates the whole chart,
+    a signal is routed to the right person. Four storylines, one patient.
+
+    Land the footer: rule-based CDS fired on structured fields and produced alert
+    fatigue. This reads the whole chart, routes contextually, and learns when a
+    signal gets dismissed, so fatigue goes down over time, not up.
+  </aside>
+</section>

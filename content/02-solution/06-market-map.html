@@ -13,26 +13,22 @@
         (no chart write  →  governed, reconciled writes)
 -->
 <section class="sheet" data-transition="fade">
-  <div class="chrome">
-    <div><span class="dot"></span>THE LAST MILE LAYER · THE GAP</div>
-    <div class="right">
-      <span>Market Map</span>
-      <span class="folio">08</span>
-    </div>
-  </div>
-
   <!-- ─── Header ─────────────────────────────────────────────────── -->
   <div style="position:absolute;left:80px;top:74px;right:80px;z-index:1">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <div>
         <div class="rise" style="--d:0s">
-          <span class="eyebrow accent">The Gap</span>
+          <span class="section-marker">The Gap</span>
         </div>
-        <h1 class="rise" style="--d:.05s;font-size:48px;line-height:1.05;letter-spacing:-0.022em;
-                                color:var(--ink);font-weight:700;margin-top:8px;max-width:920px">
+        <h1 class="rise" style="--d:.05s;font-size:44px;line-height:1.04;letter-spacing:-0.022em;
+                                color:var(--ink);font-weight:700;margin-top:8px;max-width:1120px;white-space:nowrap">
           Everyone owns a slice.
-          <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">No one owns the loop.</em>
+          <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">No one builds the brain.</em>
         </h1>
+        <p class="rise" style="--d:.1s;font-size:13px;line-height:1.4;color:var(--muted);
+                               max-width:760px;margin-top:7px">
+          Vertical axis: how much each system actually updates the live chart.
+        </p>
       </div>
     </div>
   </div>
@@ -45,7 +41,7 @@
          (top-left / bottom-left corners) so this column isn't crowded. -->
     <div class="mm-ylabel">
       <span class="mm-axis-arrow">↑</span>
-      <span class="mm-axis-name">Chart Depth</span>
+      <span class="mm-axis-name">Chart Contribution</span>
     </div>
 
     <!-- Plot area -->
@@ -92,11 +88,6 @@
                      font-size:11px;fill:var(--ink-3);opacity:.75">
           governed chart writes
         </text>
-        <text x="14" y="370"
-              style="font-family:'Newsreader',Georgia,serif;font-style:italic;
-                     font-size:11px;fill:var(--ink-3);opacity:.75">
-          no chart write
-        </text>
       </svg>
 
       <!-- ═══ Plotted players ════════════════════════════════════════
@@ -108,7 +99,7 @@
            ════════════════════════════════════════════════════════════ -->
 
       <!-- Cluster · Extraction primitives  (single-step API, no chart) -->
-      <div class="mm-dot mm-cluster mm-dot--bottom" style="--x:14%;--y:84%;--d:.32s">
+      <div class="mm-dot mm-cluster mm-dot--bottom" style="--x:15%;--y:76%;--d:.32s">
         <span class="mm-dotmark mm-dotmark--primitive"></span>
         <span class="mm-dotlabel">Extraction APIs</span>
         <div class="mm-tip">
@@ -126,7 +117,7 @@
         <div class="mm-tip">
           <div class="mm-tip-cat mm-tip-cat--cac">Autonomous Coding</div>
           <div class="mm-tip-name">Fathom Health</div>
-          <div class="mm-tip-desc">Multi-specialty autonomous coding — radiology, pathology, ED, pro-fee, and risk-adjustment coding at scale. Output goes to the claim, not the chart. CVS Health Ventures-backed.</div>
+          <div class="mm-tip-desc">Multi-specialty autonomous coding across radiology, pathology, ED, pro-fee, and risk-adjustment at scale. Output goes to the claim, not the chart. CVS Health Ventures-backed.</div>
         </div>
       </div>
 
@@ -147,8 +138,8 @@
         <span class="mm-dotlabel">Datavant (Apixio)</span>
         <div class="mm-tip">
           <div class="mm-tip-cat mm-tip-cat--hcc">Risk Adjustment (HCC)</div>
-          <div class="mm-tip-name">Datavant — HCC Complete (formerly Apixio)</div>
-          <div class="mm-tip-desc">Datavant acquired Apixio in 2024. HCC Complete surfaces missed HCCs from chart pulls — and via the Vim partnership now delivers AI insights into the EHR during the visit (concurrent + retrospective).</div>
+          <div class="mm-tip-name">Datavant · HCC Complete (formerly Apixio)</div>
+          <div class="mm-tip-desc">Datavant acquired Apixio in 2024. HCC Complete surfaces missed HCCs from chart pulls, and via the Vim partnership now delivers AI insights into the EHR during the visit (concurrent + retrospective).</div>
         </div>
       </div>
 
@@ -159,7 +150,7 @@
         <div class="mm-tip">
           <div class="mm-tip-cat mm-tip-cat--hcc">Risk Adjustment + Quality + CDR</div>
           <div class="mm-tip-name">Reveleer</div>
-          <div class="mm-tip-desc">Unified MA-payer platform — risk adjustment, quality (HEDIS), RADV audit, member management, and a new Clinical Data Repository (2026). 80+ customer organisations. Still payer-side.</div>
+          <div class="mm-tip-desc">Unified MA-payer platform: risk adjustment, quality (HEDIS), RADV audit, member management, and a new Clinical Data Repository (2026). 80+ customer organisations. Still payer-side.</div>
         </div>
       </div>
 
@@ -192,7 +183,7 @@
         <div class="mm-tip">
           <div class="mm-tip-cat mm-tip-cat--cdi">CDI · Inpatient</div>
           <div class="mm-tip-name">Iodine Software (now Waystar)</div>
-          <div class="mm-tip-desc">AwareCDI suite — Concurrent, Retrospect, Forecast, Interact, Introspect. Surfaces CDI queries into the EHR for clinician acknowledgement. Now under Waystar / AltitudeAI™.</div>
+          <div class="mm-tip-desc">AwareCDI suite: Concurrent, Retrospect, Forecast, Interact, Introspect. Surfaces CDI queries into the EHR for clinician acknowledgement. Now under Waystar / AltitudeAI™.</div>
         </div>
       </div>
 
@@ -214,23 +205,29 @@
         <div class="mm-tip">
           <div class="mm-tip-cat mm-tip-cat--ehr">EHR-Native</div>
           <div class="mm-tip-name">Epic-native AI</div>
-          <div class="mm-tip-desc">In-basket replies, ICD suggestions, native agents, ambient via DAX. Maximum chart depth — but only Epic, only Epic-shaped inputs. Doesn't unify external fan-in.</div>
+          <div class="mm-tip-desc">In-basket replies, ICD suggestions, native agents, ambient via DAX. Maximum chart depth, but only Epic, only Epic-shaped inputs. Doesn't unify external fan-in.</div>
         </div>
       </div>
 
       <!-- ★ Po target · top-right gap -->
       <div class="mm-dot mm-target mm-dot--right" style="--x:85%;--y:15%;--d:.86s">
         <span class="mm-dotmark mm-dotmark--target">★</span>
-        <span class="mm-dotlabel mm-dotlabel--target">Po · target</span>
+        <span class="mm-dotlabel mm-dotlabel--target">Patient Brain</span>
         <div class="mm-tip mm-tip--target">
-          <div class="mm-tip-cat mm-tip-cat--target">Where I Think Po Should Plant</div>
-          <div class="mm-tip-name">The Last Mile Layer</div>
-          <div class="mm-tip-desc">End-to-end conversion loop with governed writes. Unified fan-in across input types (PDF, fax, CCD, dictation). Reconciliation + provenance as the moat.</div>
+          <div class="mm-tip-cat mm-tip-cat--target">The Empty Quadrant</div>
+          <div class="mm-tip-name">The Patient Brain</div>
+          <div class="mm-tip-desc">The system that maintains the chart and serves every agent. End-to-end loop, governed write-back, unified fan-in across every input type. No one is here yet.</div>
         </div>
       </div>
 
       <!-- Pulsing halo over the empty quadrant. Decorative; pointer-events:none. -->
       <div class="mm-gap-halo" aria-hidden="true"></div>
+
+      <!-- Caption tying the extraction-only cluster to the origin of both axes. -->
+      <div class="mm-cluster-cap rise" style="--d:.95s" aria-hidden="true">
+        Extraction-only: document to entities to codes.
+        <span style="color:var(--muted)">The chart never sees it.</span>
+      </div>
 
       <!-- X-axis tick labels under the plot. -->
       <div class="mm-xticks">
@@ -242,7 +239,7 @@
     </div>
   </div>
 
-  <div class="pageno">08 / 12</div>
+  <div class="pageno">06 / 11</div>
 
   <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
   <style>
@@ -446,7 +443,7 @@
       font-size: 13px; font-weight: 700;
       box-shadow: 0 0 0 6px color-mix(in srgb,var(--accent) 22%, transparent),
                   0 8px 28px -8px rgba(15,138,120,.65);
-      animation: mm-target-pulse 2.4s ease-in-out 1.1s infinite;
+      animation: mm-target-pulse 3.2s ease-in-out 1.1s infinite;
     }
     .mm-target:hover .mm-dotmark--target {
       animation-play-state: paused;
@@ -459,8 +456,22 @@
     @keyframes mm-target-pulse {
       0%, 100% { box-shadow: 0 0 0 6px color-mix(in srgb,var(--accent) 22%, transparent),
                               0 8px 28px -8px rgba(15,138,120,.65); }
-      50%      { box-shadow: 0 0 0 12px color-mix(in srgb,var(--accent) 16%, transparent),
-                              0 10px 32px -6px rgba(15,138,120,.85); }
+      50%      { box-shadow: 0 0 0 18px color-mix(in srgb,var(--accent) 14%, transparent),
+                              0 12px 36px -6px rgba(15,138,120,.9); }
+    }
+
+    /* Extraction-only cluster caption — anchored bottom-left, near the origin. */
+    .mm-cluster-cap {
+      position: absolute;
+      left: 10px; bottom: 60px;
+      max-width: 232px;
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 10.5px; line-height: 1.38;
+      color: var(--ink-3);
+      padding-left: 9px;
+      border-left: 2px solid color-mix(in srgb, var(--muted) 45%, transparent);
+      z-index: 1;
     }
 
     /* Faint halo over the empty quadrant — subtle attention pull. */

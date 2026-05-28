@@ -1,17 +1,16 @@
 {
-  "description": "The Last Mile Layer — strategy brief for Prompt Opinion. Internal audience. Grounded in the FHIR Forge prototype.",
+  "description": "The Patient Brain — strategy brief for Prompt Opinion. Internal audience. FHIR Forge as proof of capability; the Patient Brain as the destination.",
   "slides": [
-    { "folio": "01", "chapter": "Opening",        "title": "Title",                       "path": "content/00-intro/01-title.html" },
-    { "folio": "02", "chapter": "The Problem",    "title": "Born unstructured",           "path": "content/01-problem/02-born-unstructured.html" },
-    { "folio": "03", "chapter": "The Burden",     "title": "Every chart, by hand",        "path": "content/01-problem/04-conversion-economy.html" },
-    { "folio": "04", "chapter": "Opening",        "title": "FHIR Forge",                  "path": "content/00-intro/03-fhir-forge.html" },
-    { "folio": "05", "chapter": "Demo",           "title": "FHIR Forge · live",           "path": "content/00-intro/05-fhir-forge-demo.html" },
-    { "folio": "06", "chapter": "Case Study",     "title": "PhenoML",                     "path": "content/02-solution/05-phenoml.html" },
-    { "folio": "07", "chapter": "The Real Moat",  "title": "Extraction isn't the moat",   "path": "content/02-solution/06-extraction-moat.html" },
-    { "folio": "08", "chapter": "The Gap",        "title": "Market map (2×2)",            "path": "content/02-solution/06-market-map.html" },
-    { "folio": "09", "chapter": "The Shape",      "title": "One agentic loop",            "path": "content/02-solution/06-one-workflow.html" },
-    { "folio": "10", "chapter": "Differentiation","title": "How FHIR Forge is different", "path": "content/02-solution/10-how-different.html" },
-    { "folio": "11", "chapter": "Architecture",   "title": "One engine, many endpoints",  "path": "content/03-platform/10-one-engine.html" },
-    { "folio": "12", "chapter": "Closing",        "title": "A workflow, not a workforce", "path": "content/04-closing/10-closing.html" }
+    { "folio": "01", "chapter": "Opening",       "title": "The Patient Brain",            "path": "content/00-intro/01-title.html" },
+    { "folio": "02", "chapter": "The Problem",   "title": "Born unstructured",            "path": "content/01-problem/02-born-unstructured.html" },
+    { "folio": "03", "chapter": "The Burden",    "title": "Every chart, by hand",         "path": "content/01-problem/04-conversion-economy.html" },
+    { "folio": "04", "chapter": "Why AI Stalls", "title": "Where current AI fails",       "path": "content/01-problem/04-ai-stalls.html" },
+    { "folio": "05", "chapter": "Opening",       "title": "FHIR Forge",                   "path": "content/00-intro/03-fhir-forge.html" },
+    { "folio": "06", "chapter": "The Gap",       "title": "No one builds the brain",      "path": "content/02-solution/06-market-map.html" },
+    { "folio": "07", "chapter": "The Vision",    "title": "The Patient Brain",            "path": "content/02-solution/06-patient-brain.html" },
+    { "folio": "08", "chapter": "The Spine",     "title": "What the brain does",          "path": "content/02-solution/07-six-verbs.html" },
+    { "folio": "09", "chapter": "Proactive",     "title": "The brain is alive · signals", "path": "content/02-solution/08-signals.html" },
+    { "folio": "10", "chapter": "The Foundation","title": "One foundation, every agent",  "path": "content/03-platform/10-one-engine.html" },
+    { "folio": "11", "chapter": "Closing",       "title": "A workflow, not a workforce",  "path": "content/04-closing/10-closing.html" }
   ]
 }

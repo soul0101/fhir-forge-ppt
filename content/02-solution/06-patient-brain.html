@@ -1,0 +1,380 @@
+<!--
+  Slide 6 · The Patient Brain  (the central slide)
+  Chapter: The Solution · The Vision
+
+  A three-sided living-layer diagram, NOT an orb:
+    • LEFT  · six unstructured channels, one-way arrows INTO the brain.
+    • BOTTOM · the chart (EHR · FHIR), a BIDIRECTIONAL link (read + write-back).
+    • TOP   · a row of generic agents, BIDIRECTIONAL (context up, outputs down).
+  The brain slab itself is alive: reconciled fact tokens drift through it,
+  a single "current" pill keeps breathing.
+
+  Build sequence on .present (~3.2s): header → brain+chart → inputs →
+  write-back lands in the chart → agents + the loop closes → settle.
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:5">
+    <div class="rise" style="--d:0s"><span class="section-marker">The Vision</span></div>
+    <h2 class="rise" style="--d:.05s;font-size:42px;line-height:1.04;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700;margin-top:10px">
+      The Patient Brain.
+    </h2>
+    <p class="rise" style="--d:.1s;font-family:'Newsreader',Georgia,serif;font-style:italic;
+                           font-size:18px;line-height:1.4;color:var(--ink-3);margin-top:8px;max-width:960px">
+      A living layer over the chart. Unstructured input in, the record kept true,
+      <span style="color:var(--accent)">fresh context out to every agent on top.</span>
+    </p>
+  </div>
+
+  <!-- TOP caption -->
+  <div class="pb-cap pb-cap-top" style="left:350px;width:660px;top:178px;text-align:center">
+    fresh context up · outputs back down
+  </div>
+
+  <!-- Agents row (generic; named on slide 10) -->
+  <div class="pb-agents">
+    <div class="pb-agent pb-ag-1"><span class="pb-ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V5"/><circle cx="12" cy="3.4" r="1.1"/><path d="M9 13v2"/><path d="M15 13v2"/></svg></span><span>Agent</span></div>
+    <div class="pb-agent pb-ag-2 pb-lit"><span class="pb-ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V5"/><circle cx="12" cy="3.4" r="1.1"/><path d="M9 13v2"/><path d="M15 13v2"/></svg></span><span>Agent</span></div>
+    <div class="pb-agent pb-ag-3"><span class="pb-ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V5"/><circle cx="12" cy="3.4" r="1.1"/><path d="M9 13v2"/><path d="M15 13v2"/></svg></span><span>Agent</span></div>
+    <div class="pb-agent pb-ag-4"><span class="pb-ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V5"/><circle cx="12" cy="3.4" r="1.1"/><path d="M9 13v2"/><path d="M15 13v2"/></svg></span><span>Agent</span></div>
+  </div>
+
+  <!-- Agents <-> brain connectors: clean double-headed arrows under each agent -->
+  <svg class="pb-conn pb-conn-agents" viewBox="0 0 660 36" preserveAspectRatio="none"
+       style="left:350px;top:278px;width:660px;height:36px">
+    <g stroke="var(--accent)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+      <g><line x1="75"  y1="5" x2="75"  y2="31" stroke-dasharray="3 3"/><path d="M71 10 L75 5 L79 10"/><path d="M71 26 L75 31 L79 26"/></g>
+      <g><line x1="245" y1="5" x2="245" y2="31" stroke-dasharray="3 3"/><path d="M241 10 L245 5 L249 10"/><path d="M241 26 L245 31 L249 26"/></g>
+      <g><line x1="415" y1="5" x2="415" y2="31" stroke-dasharray="3 3"/><path d="M411 10 L415 5 L419 10"/><path d="M411 26 L415 31 L419 26"/></g>
+      <g><line x1="585" y1="5" x2="585" y2="31" stroke-dasharray="3 3"/><path d="M581 10 L585 5 L589 10"/><path d="M581 26 L585 31 L589 26"/></g>
+    </g>
+  </svg>
+
+  <!-- LEFT · six unstructured channels (one-way IN) -->
+  <div class="pb-inputs">
+    <div class="pb-in pb-in-1">clinical &amp; encounter notes</div>
+    <div class="pb-in pb-in-2">faxed referrals &amp; orders</div>
+    <div class="pb-in pb-in-3">outside records (CCDs, PDFs)</div>
+    <div class="pb-in pb-in-4">patient intake forms</div>
+    <div class="pb-in pb-in-5">lab / imaging &amp; pathology</div>
+    <div class="pb-in pb-in-6">portal messages &amp; call notes</div>
+  </div>
+  <div class="pb-cap pb-cap-left">every unstructured source</div>
+
+  <!-- Left inputs -> brain (converging, one-way, continuous) -->
+  <svg class="pb-conn pb-conn-in" viewBox="0 0 62 250" preserveAspectRatio="none"
+       style="left:286px;top:243px;width:62px;height:250px">
+    <defs>
+      <marker id="pb-ar-r" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--muted)" stroke-width="1.3"/>
+      </marker>
+    </defs>
+    <g stroke="var(--muted)" stroke-width="1.2" fill="none" opacity=".55">
+      <path class="flow-line" d="M2 18  C 34 18, 36 125, 60 125" marker-end="url(#pb-ar-r)"/>
+      <path class="flow-line" d="M2 60  C 34 60, 40 125, 60 125" marker-end="url(#pb-ar-r)" style="animation-delay:.2s"/>
+      <path class="flow-line" d="M2 103 C 40 103, 44 125, 60 125" marker-end="url(#pb-ar-r)" style="animation-delay:.4s"/>
+      <path class="flow-line" d="M2 147 C 40 147, 44 125, 60 125" marker-end="url(#pb-ar-r)" style="animation-delay:.6s"/>
+      <path class="flow-line" d="M2 190 C 34 190, 40 125, 60 125" marker-end="url(#pb-ar-r)" style="animation-delay:.8s"/>
+      <path class="flow-line" d="M2 232 C 34 232, 36 125, 60 125" marker-end="url(#pb-ar-r)" style="animation-delay:1s"/>
+    </g>
+  </svg>
+
+  <!-- CENTER · the brain slab (alive) -->
+  <div class="pb-brain">
+    <div class="pb-brain-head">
+      <span class="pb-brain-name">The Patient Brain</span>
+      <span class="pb-current"><span class="pb-current-dot"></span>current</span>
+    </div>
+    <div class="pb-stream">
+      <div class="pb-track">
+        <span class="pb-tok"><i></i>T2DM · E11.9</span>
+        <span class="pb-tok"><i></i>Metformin 1000 mg</span>
+        <span class="pb-tok"><i></i>A1c 8.2%</span>
+        <span class="pb-tok"><i></i>CHF · I50.9</span>
+        <span class="pb-tok"><i></i>BP 148/92</span>
+        <span class="pb-tok"><i></i>Lisinopril 20 mg</span>
+        <span class="pb-tok"><i></i>T2DM · E11.9</span>
+        <span class="pb-tok"><i></i>Metformin 1000 mg</span>
+        <span class="pb-tok"><i></i>A1c 8.2%</span>
+        <span class="pb-tok"><i></i>CHF · I50.9</span>
+        <span class="pb-tok"><i></i>BP 148/92</span>
+        <span class="pb-tok"><i></i>Lisinopril 20 mg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brain <-> chart connector: one clean double-headed arrow, centered. -->
+  <svg class="pb-conn pb-conn-chart" viewBox="0 0 36 48" preserveAspectRatio="none"
+       style="left:662px;top:422px;width:36px;height:48px">
+    <g stroke="var(--accent-deep)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="18" y2="42" stroke-dasharray="3 3"/>
+      <path d="M13 11 L18 6 L23 11"/>
+      <path d="M13 37 L18 42 L23 37"/>
+    </g>
+  </svg>
+  <div class="pb-cap pb-cap-chart" style="left:712px;top:441px">reads · writes back validated FHIR</div>
+
+  <!-- BOTTOM · the chart -->
+  <div class="pb-chart">
+    <div class="pb-chart-head">The Chart <span>EHR · FHIR</span></div>
+    <div class="pb-chart-cols">
+      <div class="pb-col">
+        <div class="pb-col-h">Problems</div>
+        <div class="pb-col-row">Type 2 diabetes</div>
+        <!-- the write-back lands here -->
+        <div class="pb-col-row pb-writeback">CHF · I50.9 <span class="pb-src">discharge</span></div>
+      </div>
+      <div class="pb-col">
+        <div class="pb-col-h">Medications</div>
+        <div class="pb-col-row">Metformin 1000 mg</div>
+        <div class="pb-col-row">Lisinopril 20 mg</div>
+      </div>
+      <div class="pb-col">
+        <div class="pb-col-h">Labs</div>
+        <div class="pb-col-row">A1c 8.2%</div>
+        <div class="pb-col-row">BMP · within range</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="pb-strip rise" style="--d:.16s">
+    Live FHIR · provenance on every fact · written back to the chart via the Unstructured-to-Structured Engine.
+  </div>
+
+  <div class="pageno">07 / 11</div>
+
+  <!-- ═════ Scoped styles + choreography ═════ -->
+  <style>
+    /* shared captions */
+    .pb-cap {
+      position: absolute; z-index: 4;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+    }
+    .pb-cap-left  { left: 64px; top: 214px; }
+    .pb-cap-chart { white-space: nowrap; letter-spacing: .14em; }
+
+    /* connectors hidden until built */
+    .pb-conn { position: absolute; overflow: visible; opacity: 0; z-index: 3; }
+
+    /* ── Agents row ───────────────────────────────────────────── */
+    .pb-agents {
+      position: absolute; left: 350px; top: 200px; width: 660px; height: 78px;
+      display: flex; justify-content: space-between; z-index: 4;
+    }
+    .pb-agent {
+      width: 150px; height: 78px;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 10px 26px -18px rgba(23,38,59,.28);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+      opacity: 0;
+    }
+    .pb-ag-ic {
+      width: 28px; height: 28px; border-radius: 7px;
+      background: color-mix(in srgb, var(--ink-2) 8%, var(--paper));
+      color: var(--ink-2);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .pb-ag-ic svg { width: 16px; height: 16px; }
+    .pb-agent span:last-child {
+      font-family: "Geist", sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--ink-2); letter-spacing: -0.008em;
+    }
+    /* the one agent that lights up when the loop closes */
+    .pb-ag-2.pb-lit {
+      border-color: color-mix(in srgb, var(--accent) 50%, var(--rule));
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent),
+                  0 10px 26px -16px rgba(15,138,120,.5);
+    }
+    .pb-ag-2.pb-lit .pb-ag-ic { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent-deep); }
+
+    /* ── Left inputs ──────────────────────────────────────────── */
+    .pb-inputs {
+      position: absolute; left: 64px; top: 240px; width: 222px;
+      display: flex; flex-direction: column; gap: 8px; z-index: 4;
+    }
+    .pb-in {
+      background: var(--paper-3);
+      border: 1px dashed var(--rule);
+      border-radius: 7px;
+      padding: 7px 11px;
+      font-family: "Geist", sans-serif; font-size: 11.5px; font-weight: 500;
+      color: var(--ink-2); line-height: 1.2;
+      opacity: 0;
+    }
+
+    /* ── Brain slab ───────────────────────────────────────────── */
+    .pb-brain {
+      position: absolute; left: 348px; top: 314px; width: 664px; height: 108px;
+      border-radius: 16px;
+      background: linear-gradient(180deg,
+                  color-mix(in srgb, var(--accent) 9%, var(--paper-3)),
+                  var(--paper-3));
+      border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--rule));
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 8%, transparent),
+                  0 18px 50px -26px rgba(15,138,120,.55);
+      padding: 11px 18px 9px;
+      z-index: 4; opacity: 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .pb-brain-head { display: flex; align-items: center; justify-content: space-between; }
+    .pb-brain-name {
+      font-family: "Geist", sans-serif; font-size: 15px; font-weight: 700;
+      color: var(--accent-deep); letter-spacing: -0.01em;
+    }
+    .pb-current {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
+      color: var(--accent-deep);
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      padding: 3px 9px; border-radius: 999px;
+    }
+    .pb-current-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
+      animation: pb-breathe 2.2s ease-in-out infinite;
+    }
+    @keyframes pb-breathe {
+      0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+      50%      { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 0%, transparent); }
+    }
+    .pb-stream {
+      position: relative; flex: 1; overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .pb-track {
+      display: flex; align-items: center; gap: 10px;
+      position: absolute; top: 50%; left: 0; transform: translateY(-50%);
+      white-space: nowrap;
+      animation: pb-drift 26s linear infinite;
+    }
+    @keyframes pb-drift { from { transform: translate(0, -50%); } to { transform: translate(-50%, -50%); } }
+    .pb-tok {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--paper);
+      border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--rule));
+      border-radius: 6px; padding: 4px 9px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10.5px; font-weight: 600; color: var(--ink);
+    }
+    .pb-tok i { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-soft); flex-shrink: 0; }
+    .pb-brain-foot {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; text-align: center;
+    }
+
+    /* ── Chart layer ──────────────────────────────────────────── */
+    .pb-chart {
+      position: absolute; left: 348px; top: 470px; width: 664px; height: 110px;
+      background: var(--stage); color: var(--ink-on-dark);
+      border-radius: 14px; padding: 12px 18px 14px;
+      box-shadow: 0 18px 44px -26px rgba(11,28,45,.8);
+      z-index: 4; opacity: 0;
+    }
+    .pb-chart-head {
+      font-family: "Geist", sans-serif; font-size: 13px; font-weight: 700;
+      color: #fff; letter-spacing: -0.01em; margin-bottom: 8px;
+      display: flex; align-items: baseline; gap: 10px;
+    }
+    .pb-chart-head span {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted-on-dark); font-weight: 600;
+    }
+    .pb-chart-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .pb-col { display: flex; flex-direction: column; gap: 4px; }
+    .pb-col-h {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent-soft); font-weight: 700;
+    }
+    .pb-col-row {
+      font-family: "Geist", sans-serif; font-size: 11.5px; font-weight: 500;
+      color: var(--muted-on-dark);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .pb-writeback {
+      opacity: 0;
+      color: #fff; font-weight: 600;
+    }
+    .pb-src {
+      margin-left: auto;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+      color: var(--accent-soft);
+      background: color-mix(in srgb, var(--accent-soft) 18%, transparent);
+      padding: 2px 6px; border-radius: 3px;
+    }
+
+    /* ── Bottom strip ─────────────────────────────────────────── */
+    .pb-strip {
+      position: absolute; left: 64px; right: 64px; bottom: 30px;
+      text-align: center;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: .16em; color: var(--ink-3); font-weight: 500;
+      padding-top: 14px; border-top: 1px solid var(--rule);
+    }
+
+    /* ═══ Choreography on .present ═══ */
+    @keyframes pb-pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+    @keyframes pb-conn-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes pb-wb-in {
+      0%   { opacity: 0; transform: translateY(-6px); }
+      60%  { opacity: 1; }
+      100% { opacity: 1; transform: none; }
+    }
+    @keyframes pb-wb-flash {
+      0%, 100% { background: transparent; box-shadow: none; }
+      40%      { background: color-mix(in srgb, var(--accent-soft) 22%, transparent);
+                 box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-soft) 45%, transparent); }
+    }
+
+    .reveal .slides section.present .pb-brain { animation: pb-pop .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: .4s; }
+    .reveal .slides section.present .pb-chart { animation: pb-pop .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: .55s; }
+    .reveal .slides section.present .pb-conn-chart { animation: pb-conn-in .4s ease both; animation-delay: .8s; }
+
+    .reveal .slides section.present .pb-conn-in { animation: pb-conn-in .4s ease both; animation-delay: 1.0s; }
+    .reveal .slides section.present .pb-in-1 { animation: pb-pop .4s ease both; animation-delay: 1.05s; }
+    .reveal .slides section.present .pb-in-2 { animation: pb-pop .4s ease both; animation-delay: 1.15s; }
+    .reveal .slides section.present .pb-in-3 { animation: pb-pop .4s ease both; animation-delay: 1.25s; }
+    .reveal .slides section.present .pb-in-4 { animation: pb-pop .4s ease both; animation-delay: 1.35s; }
+    .reveal .slides section.present .pb-in-5 { animation: pb-pop .4s ease both; animation-delay: 1.45s; }
+    .reveal .slides section.present .pb-in-6 { animation: pb-pop .4s ease both; animation-delay: 1.55s; }
+
+    /* write-back lands in the chart */
+    .reveal .slides section.present .pb-writeback {
+      animation: pb-wb-in .5s ease both, pb-wb-flash 1.1s ease 1.9s 1;
+      animation-delay: 1.85s;
+    }
+
+    /* agents appear, the loop closes on one of them */
+    .reveal .slides section.present .pb-conn-agents { animation: pb-conn-in .4s ease both; animation-delay: 2.4s; }
+    .reveal .slides section.present .pb-agent { animation: pb-pop .45s cubic-bezier(.2,.7,.2,1) both; }
+    .reveal .slides section.present .pb-ag-1 { animation-delay: 2.45s; }
+    .reveal .slides section.present .pb-ag-2 { animation-delay: 2.55s; }
+    .reveal .slides section.present .pb-ag-3 { animation-delay: 2.65s; }
+    .reveal .slides section.present .pb-ag-4 { animation-delay: 2.75s; }
+  </style>
+
+  <aside class="notes">
+    The one slide to remember. Rhymes with slide 2: the same six channels return
+    on the left, but now they feed a system. Walk the three relationships:
+
+      LEFT   one-way in   "every unstructured source flows into the brain."
+      BOTTOM two-way      "it reads the chart to reconcile, and writes validated FHIR back."
+      TOP    two-way      "agents pull fresh context; their outputs reconcile back in."
+
+    Point at the write-back landing in the chart (the CHF row with a source tag).
+    that is the thing extraction-only players never do. The down-arrow from the
+    agents is the loop slide 10 cashes as compounding. Don't name the agents yet.
+  </aside>
+</section>

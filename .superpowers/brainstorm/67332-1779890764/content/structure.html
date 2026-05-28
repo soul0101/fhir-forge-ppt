@@ -1,0 +1,82 @@
+<h2>Where does Integration go in Slide 11?</h2>
+<p class="subtitle">Three ways to structure the foundation. Each shows agents on top. The difference is how Integration and the pillars relate. Click the one that feels right (or tell me in the terminal).</p>
+
+<style>
+  .stk { font-family: "Geist", system-ui, sans-serif; }
+  .agents { display:flex; gap:6px; justify-content:center; margin-bottom:10px; }
+  .agent { flex:1; background:#eef2f7; border:1px solid #c8d2de; border-radius:6px 6px 0 0;
+           padding:10px 4px; text-align:center; font-size:11px; font-weight:600; color:#33485f; }
+  .tendril { text-align:center; color:#9aa7b6; font-size:10px; margin:2px 0 6px; letter-spacing:.1em; }
+  .pillars { display:flex; gap:6px; }
+  .pillar { flex:1; background:#17263b; color:#fff; border-radius:6px; padding:12px 8px; text-align:center; }
+  .pillar.accent { box-shadow: inset 0 3px 0 #2fa98f; }
+  .pillar .pn { font-size:12px; font-weight:700; }
+  .pillar .ps { font-size:9px; color:#9fb6c9; margin-top:3px; line-height:1.3; }
+  .band { background:#0f8a78; color:#fff; border-radius:6px; padding:12px 8px; text-align:center; margin-top:6px; }
+  .band .pn { font-size:12px; font-weight:700; }
+  .band .ps { font-size:9px; color:#cdeee6; margin-top:3px; }
+  .ground { height:6px; background:#0b1b2b; border-radius:3px; margin-top:5px; }
+  .stklabel { font-size:9px; text-transform:uppercase; letter-spacing:.15em; color:#9aa7b6; margin:8px 0 4px; }
+</style>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Four equal pillars</h3>
+      <p>Integration becomes a peer pillar. Foundation is now four columns, all the same height, agents resting on all of them.</p>
+      <div class="stk">
+        <div class="agents"><div class="agent">Scribe</div><div class="agent">Coding</div><div class="agent">Prior Auth</div><div class="agent">Care Mgmt</div></div>
+        <div class="tendril">↓ inherit ↓</div>
+        <div class="pillars">
+          <div class="pillar accent"><div class="pn">Patient Brain</div><div class="ps">curated context</div></div>
+          <div class="pillar"><div class="pn">Engine</div><div class="ps">docs → FHIR</div></div>
+          <div class="pillar"><div class="pn">Guardrails</div><div class="ps">audit · scopes</div></div>
+          <div class="pillar"><div class="pn">Integration</div><div class="ps">connect anything</div></div>
+        </div>
+        <div class="ground"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Integration as bedrock</h3>
+      <p>Keep three named pillars. Integration is the wide ground layer they all stand on — connectivity is the substrate under everything.</p>
+      <div class="stk">
+        <div class="agents"><div class="agent">Scribe</div><div class="agent">Coding</div><div class="agent">Prior Auth</div><div class="agent">Care Mgmt</div></div>
+        <div class="tendril">↓ inherit ↓</div>
+        <div class="pillars">
+          <div class="pillar accent"><div class="pn">Patient Brain</div><div class="ps">curated context</div></div>
+          <div class="pillar"><div class="pn">Engine</div><div class="ps">docs → FHIR</div></div>
+          <div class="pillar"><div class="pn">Guardrails</div><div class="ps">audit · scopes</div></div>
+        </div>
+        <div class="band"><div class="pn">Integration</div><div class="ps">Connect to any EHR, source, or system. In and out.</div></div>
+        <div class="ground"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>True dependency stack</h3>
+      <p>Show the real hierarchy you noticed: Integration at the base → Engine + Guardrails above it → Patient Brain on those → Agents on top.</p>
+      <div class="stk">
+        <div class="agents"><div class="agent">Scribe</div><div class="agent">Coding</div><div class="agent">Prior Auth</div><div class="agent">Care Mgmt</div></div>
+        <div class="tendril">↓ runs on ↓</div>
+        <div class="band accent" style="background:#1d3a5f;box-shadow:inset 0 3px 0 #2fa98f"><div class="pn">Patient Brain</div><div class="ps">Listens · Reasons · Serves · Signals · Acts · Learns</div></div>
+        <div class="stklabel" style="text-align:center">built on</div>
+        <div class="pillars">
+          <div class="pillar"><div class="pn">Engine</div><div class="ps">docs → validated FHIR</div></div>
+          <div class="pillar"><div class="pn">Guardrails</div><div class="ps">audit · scopes · HITL</div></div>
+        </div>
+        <div class="band"><div class="pn">Integration</div><div class="ps">Connect to any EHR, source, or system. In and out.</div></div>
+        <div class="ground"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

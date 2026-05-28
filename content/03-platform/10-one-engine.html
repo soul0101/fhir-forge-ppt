@@ -1,396 +1,270 @@
 <!--
-  Slide · One engine, many endpoints — Po foundation + vertical skyline
-  Chapter: Platform · The Architecture
+  Slide 10 · The Foundation · the stack every agent inherits
+  Chapter: The Platform · The Foundation
 
-  Layout fixes vs. previous version:
-    • Title shorter, single-line; eyebrow tighter.
-    • Buildings are UNIFORM height (300 px) with content constrained
-      to fit; no overflow regardless of text length.
-    • Foundation is compact (~110 px), 3 thin strata rows, no floating
-      badges crashing into the buildings above.
-    • Hover stays inside the slide: building lifts + body tints, with
-      a small caption ribbon descending below it (over the foundation,
-      under the building) — no tooltip escapes upward into the header.
-    • Footnotes one tight line at the very bottom.
+  The force-multiplier slide. A dependency stack, not flat pillars:
+      Integration (base) → Engine + Guardrails → Patient Brain → Agents
+  Built bottom-up on .present so the build order teaches the architecture.
+  The compounding feedback loop is shown, not just stated.
 -->
 <section class="sheet" data-transition="fade">
-  <div class="chrome">
-    <div><span class="dot"></span>THE LAST MILE LAYER · THE ARCHITECTURE</div>
-    <div class="right">
-      <span>One Engine</span>
-      <span class="folio">11</span>
-    </div>
-  </div>
 
-  <!-- ─── Header (compact, single line) ──────────────────────────── -->
-  <div style="position:absolute;left:80px;top:78px;right:80px;z-index:3">
-    <div class="rise" style="--d:0s">
-      <span class="eyebrow accent">The Architecture</span>
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:48px;right:64px;z-index:6">
+    <div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap">
+      <div class="rise" style="--d:0s"><span class="section-marker">The Foundation</span></div>
+      <p class="rise" style="--d:.1s;font-size:12.5px;line-height:1.4;color:var(--ink-3);margin-left:auto">
+        Each layer is built on the one below. Every agent inherits the whole stack.
+      </p>
     </div>
-    <h1 class="rise" style="--d:.05s;font-size:38px;line-height:1.05;letter-spacing:-0.022em;
-                            color:var(--ink);font-weight:700;margin-top:6px">
+    <h2 class="rise" style="--d:.05s;font-size:34px;line-height:1.04;letter-spacing:-0.022em;
+                            color:var(--ink);font-weight:700;margin-top:7px">
       One foundation.
-      <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">Six markets standing on top.</em>
-    </h1>
+      <em class="kicker" style="color:var(--accent);font-size:1em">Every agent gets smarter.</em>
+    </h2>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!--  HERO STAGE                                                      -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <div class="po-stage rise" style="--d:.14s">
-
-    <!-- ░░░ SKYLINE — 6 uniform buildings ░░░ -->
-    <div class="po-skyline">
-
-      <!-- 1 · Risk Adjustment (HCC) -->
-      <div class="po-bldg" style="--d:.50s">
-        <div class="po-roof po-roof--cms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
-        </div>
-        <div class="po-body">
-          <div class="po-name">Risk Adjustment</div>
-          <div class="po-sub">HCC · CMS-HCC V28</div>
-          <div class="po-stat">
-            <div class="po-stat-num">&lt;60%</div>
-            <div class="po-stat-label">of legit codes captured<br>by manual review</div>
-          </div>
-          <div class="po-tag po-tag--cms">CMS Submission</div>
-        </div>
-      </div>
-
-      <!-- 2 · Quality Reporting -->
-      <div class="po-bldg" style="--d:.70s">
-        <div class="po-roof po-roof--emerge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21h18"/>
-            <rect x="5" y="12" width="3" height="9"/>
-            <rect x="10.5" y="7" width="3" height="14"/>
-            <rect x="16" y="15" width="3" height="6"/>
-          </svg>
-        </div>
-        <div class="po-body">
-          <div class="po-name">Quality Reporting</div>
-          <div class="po-sub">eCQM · QI-Core · HEDIS</div>
-          <div class="po-stat">
-            <div class="po-stat-num">7+2</div>
-            <div class="po-stat-label">eCQMs + hybrids<br>every CMS hospital, 2026</div>
-          </div>
-          <div class="po-tag po-tag--emerge">FHIR · Emerging</div>
-        </div>
-      </div>
-
-      <!-- 3 · Clinical Trials (CDISC) -->
-      <div class="po-bldg" style="--d:.90s">
-        <div class="po-roof po-roof--flat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 3v6L4 18a2 2 0 002 3h12a2 2 0 002-3l-5-9V3"/>
-            <path d="M8 3h8M9 14h6"/>
-          </svg>
-        </div>
-        <div class="po-body">
-          <div class="po-name">Clinical Trials</div>
-          <div class="po-sub">CDISC · Vulcan FHIR</div>
-          <div class="po-stat">
-            <div class="po-stat-num">2K+</div>
-            <div class="po-stat-label">sites adopting eSource<br>via Vulcan accelerator</div>
-          </div>
-          <div class="po-tag po-tag--flat">Tabular</div>
-        </div>
-      </div>
-
-      <!-- 4 · Cancer Registries -->
-      <div class="po-bldg" style="--d:1.10s">
-        <div class="po-roof po-roof--flat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M8.5 11L5 21M15.5 11L19 21M9 19h6"/>
-          </svg>
-        </div>
-        <div class="po-body">
-          <div class="po-name">Cancer Registries</div>
-          <div class="po-sub">NAACCR · SEER</div>
-          <div class="po-stat">
-            <div class="po-stat-num">700+</div>
-            <div class="po-stat-label">NAACCR fields per case<br>· CTR workforce shortage</div>
-          </div>
-          <div class="po-tag po-tag--flat">Flat File</div>
-        </div>
-      </div>
-
-      <!-- 5 · Prior Authorization -->
-      <div class="po-bldg" style="--d:1.30s">
-        <div class="po-roof po-roof--fhir">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="3" width="14" height="18" rx="2"/>
-            <path d="M9 8h6M9 12h6M9 16h4"/>
-          </svg>
-        </div>
-        <div class="po-body">
-          <div class="po-name">Prior Auth</div>
-          <div class="po-sub">Da Vinci PAS · CRD · DTR</div>
-          <div class="po-stat">
-            <div class="po-stat-num">2027</div>
-            <div class="po-stat-label">CMS-0057-F · FHIR PA API<br>mandated for impacted payers</div>
-          </div>
-          <div class="po-tag po-tag--fhir">FHIR · Native</div>
-        </div>
-      </div>
-
-      <!-- 6 · Public Health (eICR) -->
-      <div class="po-bldg" style="--d:1.50s">
-        <div class="po-roof po-roof--emerge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="7" width="18" height="14" rx="1"/>
-            <path d="M12 11v6M9 14h6"/>
-            <path d="M7 7V4h10v3"/>
-          </svg>
-        </div>
-        <div class="po-body">
-          <div class="po-name">Public Health</div>
-          <div class="po-sub">eICR · APHL AIMS · RCKMS</div>
-          <div class="po-stat">
-            <div class="po-stat-num">AIMS</div>
-            <div class="po-stat-label">jurisdiction-routed<br>via APHL + RCKMS</div>
-          </div>
-          <div class="po-tag po-tag--emerge">FHIR · Emerging</div>
-        </div>
-      </div>
+  <!-- ░░ Skyline · 6 agent buildings ░░ -->
+  <div class="fd-skyline">
+    <div class="fd-bldg fd-b1">
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/></svg></div>
+      <div class="fd-name">Ambient Scribe</div>
+      <div class="fd-desc">Notes that catch what was actually discussed.</div>
+      <div class="fd-inherit">inherits the stack ↓</div>
     </div>
-
-    <!-- ░░░ FOUNDATION — compact bedrock, 3 thin strata ░░░ -->
-    <div class="po-foundation">
-      <div class="po-foundation-head">
-        <span class="po-found-brand">★ Prompt Opinion · The Last Mile Layer</span>
-        <span class="po-found-inputs">Inputs ← PDF · Fax · CCD · Audio · Portal</span>
-      </div>
-
-      <div class="po-strata-row po-strata--loop">
-        <span class="po-strata-tag">The Loop</span>
-        <span class="po-strata-body">Extract · Ground · Reconcile · Review · Commit</span>
-      </div>
-      <div class="po-strata-row po-strata--integration">
-        <span class="po-strata-tag">Integration</span>
-        <span class="po-strata-body">FHIR R4 · Epic · Cerner · Terminology services</span>
-      </div>
-      <div class="po-strata-row po-strata--guardrails">
-        <span class="po-strata-tag">Guardrails</span>
-        <span class="po-strata-body">HITL · Scoped writes · Provenance · Audit trail</span>
-      </div>
+    <div class="fd-bldg fd-b2">
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-7 7"/><path d="M9 7H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg></div>
+      <div class="fd-name">Coding &amp; HCC</div>
+      <div class="fd-desc">Codes that survive audit.</div>
+      <div class="fd-inherit">inherits the stack ↓</div>
     </div>
-
+    <div class="fd-bldg fd-b3">
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+      <div class="fd-name">Prior Auth</div>
+      <div class="fd-desc">Submissions approved the first time.</div>
+      <div class="fd-inherit">inherits the stack ↓</div>
+    </div>
+    <div class="fd-bldg fd-b4">
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="12" width="3" height="9"/><rect x="10.5" y="7" width="3" height="14"/><rect x="16" y="15" width="3" height="6"/></svg></div>
+      <div class="fd-name">Quality &amp; Care Gap</div>
+      <div class="fd-desc">HEDIS measures captured by construction.</div>
+      <div class="fd-inherit">inherits the stack ↓</div>
+    </div>
+    <div class="fd-bldg fd-b5">
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6L4 18a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 3h8M9 14h6"/></svg></div>
+      <div class="fd-name">Trial Matching</div>
+      <div class="fd-desc">Eligible patients surfaced before the window closes.</div>
+      <div class="fd-inherit">inherits the stack ↓</div>
+    </div>
+    <div class="fd-bldg fd-b6">
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></div>
+      <div class="fd-name">Care Management</div>
+      <div class="fd-desc">Right patient. Right intervention. Right time.</div>
+      <div class="fd-inherit">inherits the stack ↓</div>
+    </div>
   </div>
 
-  <div class="pageno">11 / 12</div>
+  <!-- ░░ Layer 3 · Patient Brain ░░ -->
+  <div class="fd-layer fd-brain">
+    <div class="fd-layer-id">
+      <span class="fd-layer-name">Patient Brain</span>
+      <span class="fd-layer-sub">Continuously curated patient context</span>
+    </div>
+    <span class="fd-verbs">Listens · Reasons · Serves · Signals · Acts · Learns</span>
+  </div>
+
+  <!-- ░░ Layer 2 · Engine + Guardrails + Provenance ░░ -->
+  <div class="fd-mid">
+    <div class="fd-col fd-engine">
+      <span class="fd-col-name">Unstructured-to-Structured Engine</span>
+      <div class="fd-col-sub">FHIR Forge. Documents in, validated FHIR out.</div>
+      <div class="fd-strip">Extract · Ground · Reconcile · Validate · Write back</div>
+    </div>
+    <div class="fd-col fd-guard">
+      <span class="fd-col-name">Guardrails</span>
+      <div class="fd-col-sub">Scoped writes. Clinician approval on any change.</div>
+      <div class="fd-strip">Permission scopes · Profile validation · HITL approval</div>
+    </div>
+    <div class="fd-col fd-prov">
+      <span class="fd-col-name">Provenance</span>
+      <div class="fd-col-sub">Source, confidence, and reviewer on every fact.</div>
+      <div class="fd-strip">Source · Confidence · Reviewer · Audit log</div>
+    </div>
+  </div>
+
+  <!-- ░░ Layer 1 · Integration (bedrock) ░░ -->
+  <div class="fd-layer fd-integration">
+    <span class="fd-io fd-io-l">→ in</span>
+    <div class="fd-layer-id">
+      <span class="fd-layer-name">Integration</span>
+      <span class="fd-layer-sub">Connect to any EHR, any source, any system. In and out.</span>
+    </div>
+    <span class="fd-verbs fd-verbs--int">FHIR R4 · SMART · HL7v2 · CCDA · Fax/doc gateways · Terminology</span>
+    <span class="fd-io fd-io-r">out →</span>
+  </div>
+
+  <!-- ─── Compounding footer ─────────────────────────────────────── -->
+  <div class="fd-foot rise" style="--d:.2s">
+    <div>Update the chart once. <em class="kicker" style="color:var(--accent)">Every agent on top inherits the freshness.</em></div>
+    <div>Build the brain. <em class="kicker" style="color:var(--accent)">The platform compounds.</em></div>
+  </div>
+
+  <div class="pageno">10 / 11</div>
 
   <!-- ═════ Styles ═══════════════════════════════════════════════ -->
   <style>
-    .po-stage {
-      position: absolute;
-      left: 80px; right: 80px;
-      top: 196px;         /* pushed down to breathe under the header */
-      bottom: 48px;
-      display: flex; flex-direction: column;
-      gap: 0;
+    /* ── Skyline ───────────────────────────────────────────────── */
+    .fd-skyline {
+      position: absolute; left: 112px; right: 112px; top: 150px; height: 232px;
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-items: end; z-index: 4;
     }
-
-    /* ─── Skyline (uniform buildings) ──────────────────────────── */
-    .po-skyline {
-      flex: 1;                /* fills the remaining vertical space */
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-      align-items: end;       /* buildings rest at the bottom of the area,
-                                 freeing the upper area as breathing room */
-    }
-
-    .po-bldg {
-      height: 300px;          /* FIXED — guarantees uniform heights */
+    .fd-bldg {
+      height: 230px;
       background: var(--paper-3);
-      border: 1px solid var(--rule);
-      border-bottom: 0;
+      border: 1px solid var(--rule); border-bottom: 0;
       border-radius: 10px 10px 0 0;
-      display: flex; flex-direction: column;
-      overflow: hidden;       /* hard clip — no escaped content */
-      box-shadow: 0 1px 2px rgba(23,38,59,.04),
-                  0 -10px 26px -18px rgba(23,38,59,.18);
-      position: relative;
-      /* Initial (off-stage) state — held until .present triggers grow. */
-      transform-origin: bottom center;
-      opacity: 0;
-      transform: scaleY(0);
+      padding: 0 0 10px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 -10px 26px -18px rgba(23,38,59,.18);
+      transform-origin: bottom center; opacity: 0;
       transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
-    /* Animation fires only while the slide is .present, so it re-runs
-       every time the user returns to slide 9 (not just on first load). */
-    .reveal .slides section.present .po-bldg {
-      animation: po-grow .55s cubic-bezier(.2, .75, .25, 1) both;
-      animation-delay: var(--d, 0s);
-    }
-    @keyframes po-grow {
-      0%   { opacity: 0; transform: scaleY(0); }
-      8%   { opacity: 1; }                        /* fade in fast, then grow */
-      100% { opacity: 1; transform: scaleY(1); }
-    }
-    /* Hover: lift the building slightly. scaleY(1) preserves the
-       fully-grown state set by the entry animation. */
-    .po-bldg:hover {
-      transform: scaleY(1) translateY(-3px);
-      border-color: color-mix(in srgb,var(--accent) 36%, var(--rule));
-      box-shadow: 0 1px 2px rgba(23,38,59,.06),
-                  0 -14px 32px -16px rgba(23,38,59,.28),
-                  0 6px 18px -8px rgba(23,38,59,.20);
+    .fd-bldg:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--accent) 36%, var(--rule));
+      box-shadow: 0 -14px 32px -16px rgba(23,38,59,.28), 0 6px 18px -8px rgba(23,38,59,.2);
       z-index: 10;
     }
-
-    /* Roof — fixed height, icon only. */
-    .po-roof {
-      flex: 0 0 52px;
-      border-radius: 10px 10px 0 0;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff;
+    .fd-roof {
+      width: 100%; height: 42px; border-radius: 9px 9px 0 0;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
     }
-    .po-roof svg { width: 24px; height: 24px; }
-    .po-roof--cms    { background: var(--warn);  box-shadow: inset 0 -2px 0 rgba(0,0,0,.08); }
-    .po-roof--fhir   { background: var(--accent); box-shadow: inset 0 -2px 0 rgba(0,0,0,.08); }
-    .po-roof--emerge { background: color-mix(in srgb,var(--accent-soft) 92%,#fff);
-                       color: var(--accent-deep);
-                       box-shadow: inset 0 -2px 0 rgba(15,138,120,.18); }
-    .po-roof--flat   { background: var(--ink-2); box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); }
-
-    /* Body — strict layout, no overflow possible. */
-    .po-body {
-      flex: 1;
-      padding: 10px 12px 12px;
-      display: flex; flex-direction: column;
-      gap: 4px;
-      min-height: 0;
+    .fd-roof svg { width: 20px; height: 20px; }
+    .fd-name {
+      font-family: "Geist", sans-serif; font-size: 13.5px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.012em; line-height: 1.15; padding: 0 8px;
     }
-    .po-name {
-      font-family: "Geist", sans-serif;
-      font-size: 14px; font-weight: 700;
-      color: var(--ink); letter-spacing: -0.012em;
-      line-height: 1.15;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    .fd-desc {
+      font-family: "Newsreader", Georgia, serif; font-style: italic;
+      font-size: 11.5px; line-height: 1.32; color: var(--ink-3);
+      padding: 7px 10px 0; flex: 1;
     }
-    .po-sub {
+    .fd-inherit {
       font-family: "Geist Mono", ui-monospace, monospace;
-      font-size: 9px; letter-spacing: .14em; font-weight: 600;
-      color: var(--muted); text-transform: uppercase;
-      line-height: 1.3;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .po-stat {
-      margin-top: 6px;
-      padding: 8px 10px;
-      background: var(--paper);
-      border: 1px solid var(--rule-soft);
-      border-radius: 6px;
-      display: flex; flex-direction: column; gap: 2px;
-      flex: 1;        /* expands to push the tag to the bottom */
-      min-height: 0;
-    }
-    .po-stat-num {
-      font-family: "Geist", sans-serif;
-      font-size: 24px; font-weight: 700;
-      color: var(--ink); letter-spacing: -0.026em;
-      line-height: 1; font-variant-numeric: tabular-nums;
-    }
-    .po-stat-label {
-      font-family: "Newsreader", Georgia, serif;
-      font-style: italic;
-      font-size: 11px; line-height: 1.3;
-      color: var(--ink-3);
-    }
-    .po-stat-label sup {
-      font-family: "Geist Mono", ui-monospace, monospace;
-      font-style: normal;
-      font-size: 7.5px; color: var(--muted);
-    }
-    .po-tag {
-      font-family: "Geist Mono", ui-monospace, monospace;
-      font-size: 8px; letter-spacing: .14em; font-weight: 700;
-      text-transform: uppercase;
-      padding: 3px 6px; border-radius: 3px;
-      align-self: flex-start;
-      margin-top: 0;
-    }
-    .po-tag--fhir   { background: color-mix(in srgb,var(--accent) 14%,transparent);     color: var(--accent-deep); }
-    .po-tag--emerge { background: color-mix(in srgb,var(--accent-soft) 26%,transparent);color: var(--accent-deep); }
-    .po-tag--flat   { background: color-mix(in srgb,var(--ink) 10%,transparent);        color: var(--ink-2); }
-    .po-tag--cms    { background: color-mix(in srgb,var(--warn) 16%,transparent);       color: var(--warn-deep); }
-
-    /* ─── Foundation (compact, no floating badges) ─────────────── */
-    .po-foundation {
-      background: var(--stage);
-      color: var(--ink-on-dark);
-      border-radius: 12px;
-      padding: 10px 18px 12px;
-      box-shadow:
-        0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent),
-        0 -8px 30px -14px rgba(15,138,120,.28),
-        0 14px 36px -16px rgba(0,0,0,.45);
-      margin-top: 8px;
+      font-size: 8px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--accent-deep); font-weight: 700; opacity: .8;
     }
 
-    .po-foundation-head {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px;
-      padding: 2px 0 8px;
-      border-bottom: 1px dashed rgba(255,255,255,.14);
-      margin-bottom: 8px;
-    }
-    .po-found-brand {
+    /* ── Layer bands ───────────────────────────────────────────── */
+    .fd-layer { position: absolute; display: flex; align-items: center; gap: 18px; z-index: 4; opacity: 0; }
+    .fd-layer-id { display: flex; flex-direction: column; gap: 1px; }
+    .fd-layer-name { font-family: "Geist", sans-serif; font-weight: 700; letter-spacing: -0.012em; }
+    .fd-layer-sub {
       font-family: "Geist Mono", ui-monospace, monospace;
-      font-size: 10px; letter-spacing: .22em; font-weight: 700;
-      color: var(--accent-soft); text-transform: uppercase;
+      font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-on-dark);
     }
-    .po-found-inputs {
+    .fd-verbs {
+      margin-left: auto;
       font-family: "Geist Mono", ui-monospace, monospace;
-      font-size: 9px; letter-spacing: .14em; font-weight: 500;
+      font-size: 10px; letter-spacing: .12em; font-weight: 600; color: var(--accent-soft);
+    }
+
+    /* Layer 3 · Brain (the differentiating layer) */
+    .fd-brain {
+      left: 96px; right: 96px; top: 406px; height: 48px;
+      padding: 0 22px; border-radius: 10px;
+      background: var(--stage); color: var(--ink-on-dark);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent),
+                  0 14px 34px -18px rgba(15,138,120,.55);
+    }
+    .fd-brain .fd-layer-name { font-size: 17px; color: #fff; }
+
+    /* Layer 2 · Engine + Guardrails + Provenance */
+    .fd-mid {
+      position: absolute; left: 96px; right: 96px; top: 458px; height: 78px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; z-index: 4;
+    }
+    .fd-col {
+      background: var(--paper-3); border: 1px solid var(--rule); border-radius: 9px;
+      padding: 8px 13px; opacity: 0;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 10px 24px -20px rgba(23,38,59,.24);
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .fd-engine { border-top: 3px solid var(--accent); }
+    .fd-guard  { border-top: 3px solid var(--warn); }
+    .fd-prov   { border-top: 3px solid var(--ink-2); }
+    .fd-col-name { font-family: "Geist", sans-serif; font-size: 13.5px; font-weight: 700; color: var(--ink); letter-spacing: -0.012em; line-height: 1.15; }
+    .fd-col-sub { font-family: "Geist", sans-serif; font-size: 11px; color: var(--ink-3); line-height: 1.3; }
+    .fd-strip {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .08em; color: var(--ink-2); font-weight: 600; margin-top: 2px;
+    }
+
+    /* Layer 1 · Integration (bedrock, widest) */
+    .fd-integration {
+      left: 64px; right: 64px; top: 542px; height: 46px;
+      padding: 0 18px; border-radius: 10px;
+      background: var(--stage-2); color: var(--ink-on-dark);
+      box-shadow: 0 14px 34px -18px rgba(0,0,0,.5);
+    }
+    .fd-integration .fd-layer-name { font-size: 15px; color: #fff; }
+    .fd-integration .fd-layer-sub { text-transform: none; letter-spacing: .02em; font-size: 10px; }
+    .fd-verbs--int { color: var(--accent-soft); font-size: 9.5px; }
+    .fd-io {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
       color: var(--warn);
     }
+    .fd-io-l { margin-right: 4px; }
+    .fd-io-r { margin-left: 4px; }
 
-    .po-strata-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      align-items: center;
-      gap: 14px;
-      padding: 4px 10px;
-      border-radius: 4px;
-      margin-top: 2px;
+    /* ── Footer ────────────────────────────────────────────────── */
+    .fd-foot {
+      position: absolute; left: 64px; right: 64px; bottom: 30px; text-align: center;
+      display: flex; flex-direction: column; gap: 2px;
+      padding-top: 12px; border-top: 1px solid var(--rule);
+      font-family: "Geist", sans-serif; font-size: 18px; font-weight: 600; color: var(--ink-2);
+      letter-spacing: -0.01em; line-height: 1.3;
     }
-    .po-strata--loop        { background: color-mix(in srgb,var(--accent) 22%, var(--stage)); }
-    .po-strata--integration { background: color-mix(in srgb,var(--accent) 9%,  var(--stage)); }
-    .po-strata--guardrails  { background: var(--stage-2); }
 
-    .po-strata-tag {
-      font-family: "Geist Mono", ui-monospace, monospace;
-      font-size: 9.5px; letter-spacing: .22em; font-weight: 700;
-      color: var(--accent-soft); text-transform: uppercase;
+    /* ═══ Build the stack bottom-up on .present ═══ */
+    @keyframes fd-layer-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes fd-grow { 0% { opacity: 0; transform: scaleY(0); } 10% { opacity: 1; } 100% { opacity: 1; transform: scaleY(1); } }
+    @keyframes fd-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fd-brain-in {
+      0%   { opacity: 0; transform: translateY(10px); }
+      70%  { opacity: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent), 0 14px 34px -18px rgba(15,138,120,.55); }
+      82%  { box-shadow: 0 0 0 11px color-mix(in srgb, var(--accent) 16%, transparent), 0 14px 34px -18px rgba(15,138,120,.7); }
+      100% { opacity: 1; transform: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent), 0 14px 34px -18px rgba(15,138,120,.55); }
     }
-    .po-strata-body {
-      font-family: "Geist", sans-serif;
-      font-size: 11.5px; font-weight: 500;
-      color: #fff; letter-spacing: -0.004em;
-      line-height: 1.4;
-    }
+
+    .reveal .slides section.present .fd-integration { animation: fd-layer-in .45s ease both; animation-delay: .30s; }
+    .reveal .slides section.present .fd-col { animation: fd-layer-in .45s ease both; }
+    .reveal .slides section.present .fd-engine { animation-delay: .70s; }
+    .reveal .slides section.present .fd-guard  { animation-delay: .80s; }
+    .reveal .slides section.present .fd-prov   { animation-delay: .90s; }
+    .reveal .slides section.present .fd-brain  { animation: fd-brain-in .6s cubic-bezier(.2,.7,.2,1) both; animation-delay: 1.15s; }
+
+    .reveal .slides section.present .fd-bldg { animation: fd-grow .5s cubic-bezier(.2,.75,.25,1) both; }
+    .reveal .slides section.present .fd-b1 { animation-delay: 1.6s; }
+    .reveal .slides section.present .fd-b2 { animation-delay: 1.7s; }
+    .reveal .slides section.present .fd-b3 { animation-delay: 1.8s; }
+    .reveal .slides section.present .fd-b4 { animation-delay: 1.9s; }
+    .reveal .slides section.present .fd-b5 { animation-delay: 2.0s; }
+    .reveal .slides section.present .fd-b6 { animation-delay: 2.1s; }
+
   </style>
 
   <aside class="notes">
-    Visual: skyline + foundation. Walk it top-down.
+    Where the thesis closes. Build it bottom-up and let the order teach the
+    architecture: connect (Integration), structure safely (Engine, Guardrails,
+    Provenance), curate (Brain), then the agents rise on top.
 
-      Six markets — every one has a real, documented pain point that maps
-      to manual conversion work. Risk Adjustment is the biggest. Public
-      Health is the smallest. CDISC and Cancer are CRC / CTR labor heavy.
-      Quality Reporting and PA are policy-driven.
-
-      Underneath them: one Po foundation. Loop, Integration, Guardrails.
-      Built once. Pointed anywhere.
-
-      The horizontal is decided. Which building Po sells first is a
-      distribution question — not a technology one.
+    The agents are not standalone. The tendrils root each one through every
+    layer. The loop is the mechanism: every agent's output reconciles back into
+    the brain, and the next agent inherits it. That is why the platform is worth
+    more than the sum of its agents. Land the footer.
   </aside>
 </section>
