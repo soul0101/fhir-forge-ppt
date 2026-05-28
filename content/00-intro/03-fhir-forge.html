@@ -31,7 +31,7 @@
       <p class="rise" style="--d:.1s;font-size:19px;line-height:1.45;color:var(--ink-3);
                              font-family:'Newsreader',Georgia,serif;font-style:italic;
                              margin-bottom:6px">
-        Discharge summary in.
+        Unstructured notes in.
         <span style="color:var(--accent);font-weight:500">Chart-ready FHIR out.</span>
       </p>
     </div>
@@ -547,19 +547,15 @@
   </style>
 
   <aside class="notes">
-    Hero slide. The auto-animation runs to the Review panel (~5 s) and stops.
-    Then the slide is live. Two clicks tell the rest of the story:
-
-      1) Click EDIT.    The third row flips to orange. Metformin dose changes
-                        from 500 → 1000 with a strikethrough. The feedback arc
-                        fades in and pulses. Line: "the edit feeds back into
-                        the agent. It learns the patient's actual dose."
-
-      2) Click APPROVE. The dark Commit panel slides in. The FHIR Condition
-                        materialises. Provenance highlights and stays glowing.
-                        Line: "this is what gets written. Coded, sourced, signed."
-
-    Sample IDs are illustrative; the codes are real (E11.9 · ICD-10, 4548-4
-    · LOINC, 860975 · RxNorm). FHIR Forge is the deck's primary source.
+    This is FHIR Forge. The clearest way to show what the platform actually
+    does. On the left, an unstructured note. The engine reads it, lifts
+    out diagnoses, labs, medications, and grounds each one to a real code.
+    ICD-10. LOINC. RxNorm. Every fact arrives at this review panel before
+    anything is written. I'll click edit. The clinician fixes the metformin
+    dose. That edit doesn't just correct one record. It loops back into
+    the model. The brain learns. Now I approve. A FHIR Condition resource,
+    sourced to this exact line, signed by the clinician. Unstructured in.
+    Validated FHIR out. Governance baked in. Learning on every edit. Every
+    agent in this deck rides on this engine.
   </aside>
 </section>
