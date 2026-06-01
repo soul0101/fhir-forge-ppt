@@ -11,6 +11,7 @@
     { "folio": "08", "chapter": "The Spine",     "title": "What the brain does",          "path": "content/02-solution/07-six-verbs.html" },
     { "folio": "09", "chapter": "The Foundation","title": "One foundation, every agent",  "path": "content/03-platform/10-one-engine.html" },
     { "folio": "10", "chapter": "Proactive",     "title": "Proactive, not reactive",       "path": "content/02-solution/08-signals.html" },
-    { "folio": "11", "chapter": "Closing",       "title": "A workflow, not a workforce",  "path": "content/04-closing/10-closing.html" }
+    { "folio": "11", "chapter": "Touchpoints",   "title": "Touchpoints worth noting",      "path": "content/03-platform/11-primitives.html" },
+    { "folio": "12", "chapter": "Closing",       "title": "A brain, not another agent",   "path": "content/04-closing/10-closing.html" }
   ]
 }

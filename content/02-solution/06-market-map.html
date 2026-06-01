@@ -22,12 +22,12 @@
         </div>
         <h1 class="rise" style="--d:.05s;font-size:44px;line-height:1.04;letter-spacing:-0.022em;
                                 color:var(--ink);font-weight:700;margin-top:8px;max-width:1120px;white-space:nowrap">
-          Everyone owns a slice.
-          <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">No one builds the brain.</em>
+          Everyone holds a slice.
+          <em class="kicker" style="color:var(--accent);font-style:italic;font-size:1em">No one curates the brain.</em>
         </h1>
         <p class="rise" style="--d:.1s;font-size:13px;line-height:1.4;color:var(--muted);
                                max-width:760px;margin-top:7px">
-          Vertical axis: how much each system actually updates the live chart.
+          Vertical axis: how continuously each system curates patient context.
         </p>
       </div>
     </div>
@@ -41,7 +41,7 @@
          (top-left / bottom-left corners) so this column isn't crowded. -->
     <div class="mm-ylabel">
       <span class="mm-axis-arrow">↑</span>
-      <span class="mm-axis-name">Chart Contribution</span>
+      <span class="mm-axis-name">Context Curation</span>
     </div>
 
     <!-- Plot area -->
@@ -86,7 +86,7 @@
         <text x="14" y="20"
               style="font-family:'Newsreader',Georgia,serif;font-style:italic;
                      font-size:11px;fill:var(--ink-3);opacity:.75">
-          governed chart writes
+          continuously curated context
         </text>
       </svg>
 
@@ -249,7 +249,7 @@
         <div class="mm-tip">
           <div class="mm-tip-cat mm-tip-cat--fabric">Health Data Fabric</div>
           <div class="mm-tip-name">Innovaccer (Gravity)</div>
-          <div class="mm-tip-desc">Health data fabric with real chart-depth aspirations. Architected for batch analytics, not as a live operational layer. The closest competitor.</div>
+          <div class="mm-tip-desc">Health data fabric with real chart-depth aspirations. The closest competitor.</div>
         </div>
       </div>
 
@@ -271,7 +271,7 @@
         <div class="mm-tip mm-tip--target">
           <div class="mm-tip-cat mm-tip-cat--target">The Empty Quadrant</div>
           <div class="mm-tip-name">The Patient Brain</div>
-          <div class="mm-tip-desc">The system that maintains the chart and serves every agent. End-to-end loop, governed write-back, unified fan-in across every input type. No one is here yet.</div>
+          <div class="mm-tip-desc">A continuously curated patient context, served to every agent. Multi-modal input, end-to-end workflow, kept current. No one is here yet.</div>
         </div>
       </div>
 
@@ -281,7 +281,7 @@
       <!-- Caption tying the extraction-only cluster to the origin of both axes. -->
       <div class="mm-cluster-cap rise" style="--d:.95s" aria-hidden="true">
         Extraction-only: document to entities to codes.
-        <span style="color:var(--muted)">The chart never sees it.</span>
+        <span style="color:var(--muted)">No memory between calls.</span>
       </div>
 
       <!-- X-axis tick labels under the plot. -->
@@ -294,7 +294,7 @@
     </div>
   </div>
 
-  <div class="pageno">06 / 11</div>
+  <div class="pageno">06 / 12</div>
 
   <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
   <style>
@@ -556,15 +556,25 @@
   </style>
 
   <aside class="notes">
-    Here is who is actually solving for this. Every real player on one
-    picture. Workflow scope on the horizontal. Chart contribution on the
-    vertical. Bottom-left, the extraction APIs. Cents per call. The lower
-    band, autonomous coding and RCM. Vertical-deep, but their output goes
-    to the claim, not to the chart. The middle band, the ambient scribes.
-    They own the encounter and nothing else. Up and to the right, Innovaccer
-    and Epic-native AI. Real chart depth, but Innovaccer is batch-architected
-    and Epic is only Epic. And then the top-right is genuinely empty.
-    End-to-end workflow with governed writes. Everyone owns a slice. No one
-    builds the brain.
+    Here's who's solving this today. Every real player on one picture. On
+    the horizontal, how much of the workflow they own. On the vertical, how
+    continuously they curate patient context.
+
+    Bottom-left, the extraction APIs. Stateless. Cents per call. They lift
+    entities out of text and disappear. No memory between calls.
+
+    The lower band, autonomous coding and RCM. Fathom, CodaMetrix, AKASA,
+    Datavant. Real depth in their lane, but their output goes to the claim,
+    not back to the chart.
+
+    The middle band, the ambient scribes. Abridge, Dragon Copilot, Suki,
+    Ambience. They own the encounter, and nothing between encounters.
+
+    Up and to the right, Innovaccer's Gravity is the closest competitor. 
+    Epic-native AI sits high on curation,
+    but only inside Epic and only on Epic-shaped inputs.
+
+    The top-right is genuinely empty. Continuously curated patient context,
+    across every input, served to every agent. That's the brain.
   </aside>
 </section>

@@ -23,7 +23,7 @@
     </h2>
     <p class="rise" style="--d:.1s;font-family:'Newsreader',Georgia,serif;font-style:italic;
                            font-size:18px;line-height:1.4;color:var(--ink-3);margin-top:8px;max-width:960px">
-      A living layer over the chart. Unstructured input in, the record kept true,
+      A living layer over the chart. Every input in, structured and not, the record kept true,
       <span style="color:var(--accent)">fresh context out to every agent on top.</span>
     </p>
   </div>
@@ -52,16 +52,18 @@
     </g>
   </svg>
 
-  <!-- LEFT · six unstructured channels (one-way IN) -->
+  <!-- LEFT · two labeled groups: structured (solid) + unstructured (dashed), all one-way IN -->
   <div class="pb-inputs">
-    <div class="pb-in pb-in-1">clinical &amp; encounter notes</div>
-    <div class="pb-in pb-in-2">faxed referrals &amp; orders</div>
-    <div class="pb-in pb-in-3">outside records (CCDs, PDFs)</div>
-    <div class="pb-in pb-in-4">patient intake forms</div>
-    <div class="pb-in pb-in-5">lab / imaging &amp; pathology</div>
-    <div class="pb-in pb-in-6">portal messages &amp; call notes</div>
+    <div class="pb-group-label pb-gl-1">Structured</div>
+    <div class="pb-in pb-in-solid pb-in-1">FHIR R4 &middot; HL7 v2</div>
+    <div class="pb-in pb-in-solid pb-in-2">labs &middot; imaging &middot; pathology</div>
+    <div class="pb-in pb-in-solid pb-in-3">claims &middot; med history</div>
+    <div class="pb-group-label pb-gl-2">Unstructured</div>
+    <div class="pb-in pb-in-4">clinical notes &middot; encounters</div>
+    <div class="pb-in pb-in-5">faxes &middot; outside records</div>
+    <div class="pb-in pb-in-6">intake &middot; portal &middot; call notes</div>
   </div>
-  <div class="pb-cap pb-cap-left">every unstructured source</div>
+  <div class="pb-cap pb-cap-left">every source</div>
 
   <!-- Left inputs -> brain (converging, one-way, continuous) -->
   <svg class="pb-conn pb-conn-in" viewBox="0 0 62 250" preserveAspectRatio="none"
@@ -144,7 +146,7 @@
     Live FHIR · provenance on every fact · written back to the chart via the Unstructured-to-Structured Engine.
   </div>
 
-  <div class="pageno">07 / 11</div>
+  <div class="pageno">07 / 12</div>
 
   <!-- ═════ Scoped styles + choreography ═════ -->
   <style>
@@ -196,18 +198,33 @@
 
     /* ── Left inputs ──────────────────────────────────────────── */
     .pb-inputs {
-      position: absolute; left: 64px; top: 240px; width: 222px;
-      display: flex; flex-direction: column; gap: 8px; z-index: 4;
+      position: absolute; left: 64px; top: 232px; width: 222px;
+      display: flex; flex-direction: column; gap: 5px; z-index: 4;
     }
     .pb-in {
       background: var(--paper-3);
       border: 1px dashed var(--rule);
       border-radius: 7px;
-      padding: 7px 11px;
+      padding: 6px 11px;
       font-family: "Geist", sans-serif; font-size: 11.5px; font-weight: 500;
       color: var(--ink-2); line-height: 1.2;
       opacity: 0;
     }
+    /* Solid-border chips = structured feeds */
+    .pb-in-solid {
+      border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--rule));
+      background: color-mix(in srgb, var(--accent) 5%, var(--paper-3));
+      color: var(--ink);
+    }
+    /* Group labels above each input cluster */
+    .pb-group-label {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--ink-3); font-weight: 700;
+      padding: 0 2px;
+      opacity: 0;
+    }
+    .pb-gl-2 { margin-top: 6px; }
 
     /* ── Brain slab ───────────────────────────────────────────── */
     .pb-brain {
@@ -343,12 +360,14 @@
     .reveal .slides section.present .pb-conn-chart { animation: pb-conn-in .4s ease both; animation-delay: .8s; }
 
     .reveal .slides section.present .pb-conn-in { animation: pb-conn-in .4s ease both; animation-delay: 1.0s; }
-    .reveal .slides section.present .pb-in-1 { animation: pb-pop .4s ease both; animation-delay: 1.05s; }
-    .reveal .slides section.present .pb-in-2 { animation: pb-pop .4s ease both; animation-delay: 1.15s; }
-    .reveal .slides section.present .pb-in-3 { animation: pb-pop .4s ease both; animation-delay: 1.25s; }
-    .reveal .slides section.present .pb-in-4 { animation: pb-pop .4s ease both; animation-delay: 1.35s; }
-    .reveal .slides section.present .pb-in-5 { animation: pb-pop .4s ease both; animation-delay: 1.45s; }
-    .reveal .slides section.present .pb-in-6 { animation: pb-pop .4s ease both; animation-delay: 1.55s; }
+    .reveal .slides section.present .pb-gl-1 { animation: pb-pop .35s ease both; animation-delay: 1.0s; }
+    .reveal .slides section.present .pb-in-1 { animation: pb-pop .4s ease both; animation-delay: 1.08s; }
+    .reveal .slides section.present .pb-in-2 { animation: pb-pop .4s ease both; animation-delay: 1.18s; }
+    .reveal .slides section.present .pb-in-3 { animation: pb-pop .4s ease both; animation-delay: 1.28s; }
+    .reveal .slides section.present .pb-gl-2 { animation: pb-pop .35s ease both; animation-delay: 1.36s; }
+    .reveal .slides section.present .pb-in-4 { animation: pb-pop .4s ease both; animation-delay: 1.44s; }
+    .reveal .slides section.present .pb-in-5 { animation: pb-pop .4s ease both; animation-delay: 1.54s; }
+    .reveal .slides section.present .pb-in-6 { animation: pb-pop .4s ease both; animation-delay: 1.64s; }
 
     /* write-back lands in the chart */
     .reveal .slides section.present .pb-writeback {
@@ -366,13 +385,25 @@
   </style>
 
   <aside class="notes">
-    This is the slide to remember. The same six channels from earlier
-    return on the left, but now they feed a system. Three relationships.
-    From the left, every unstructured source flows into the brain. From
-    the bottom, the brain reads the chart to reconcile, and writes
-    validated FHIR back. From the top, agents pull fresh context, and
-    their outputs reconcile back in. The thing extraction-only players
-    never do is right there in the middle. Write-back, with provenance,
-    into the chart of record.
+    This is the topology of the brain.
+
+    In the middle, the brain. At the bottom, the chart. On top, the agents.
+    And on the left, the things that feed the brain.
+
+    The inputs are of two kinds. Some are structured. FHIR feeds, lab
+    results, claims data. Some are unstructured. Notes, faxes, intake
+    forms, portal messages. Both go in.
+
+    The brain pulls them together into one picture of the patient. The
+    chart at the bottom is kept in sync. The agents on top read from the
+    brain when they need context. Their outputs feed back in, so the next
+    agent has more to work with.
+
+    One layer in the middle. Everything else connects through it.
+
+    If asked how this is different from the chart alone: the chart mostly
+    learns things at encounters. The brain takes in whatever lands,
+    whenever it lands. An ED visit elsewhere, a referral fax, an outside
+    lab. These can reach the brain before the next visit happens.
   </aside>
 </section>

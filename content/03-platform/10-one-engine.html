@@ -27,38 +27,38 @@
   <!-- ░░ Skyline · 6 agent buildings ░░ -->
   <div class="fd-skyline">
     <div class="fd-bldg fd-b1">
-      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/></svg></div>
-      <div class="fd-name">Ambient Scribe</div>
-      <div class="fd-desc">Notes that catch what was actually discussed.</div>
+      <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></div>
+      <div class="fd-name">Clinical Decision Support</div>
+      <div class="fd-desc">Alerts that fire on what matters, not on structured fields alone.</div>
       <div class="fd-inherit">inherits the stack ↓</div>
     </div>
     <div class="fd-bldg fd-b2">
       <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-7 7"/><path d="M9 7H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg></div>
-      <div class="fd-name">Coding &amp; HCC</div>
-      <div class="fd-desc">Codes that survive audit.</div>
+      <div class="fd-name">Coding &amp; Risk Capture</div>
+      <div class="fd-desc">Codes that survive audit, sourced and signed on every fact.</div>
       <div class="fd-inherit">inherits the stack ↓</div>
     </div>
     <div class="fd-bldg fd-b3">
       <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
-      <div class="fd-name">Prior Auth</div>
-      <div class="fd-desc">Submissions approved the first time.</div>
+      <div class="fd-name">Revenue Cycle &amp; Access</div>
+      <div class="fd-desc">Prior auth, eligibility, appeals. Drafted from the chart, not retyped from it.</div>
       <div class="fd-inherit">inherits the stack ↓</div>
     </div>
     <div class="fd-bldg fd-b4">
       <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="12" width="3" height="9"/><rect x="10.5" y="7" width="3" height="14"/><rect x="16" y="15" width="3" height="6"/></svg></div>
-      <div class="fd-name">Quality &amp; Care Gap</div>
-      <div class="fd-desc">HEDIS measures captured by construction.</div>
+      <div class="fd-name">Quality &amp; Care Gaps</div>
+      <div class="fd-desc">HEDIS, MIPS, Stars. Closed from the evidence that proves them.</div>
       <div class="fd-inherit">inherits the stack ↓</div>
     </div>
     <div class="fd-bldg fd-b5">
       <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6L4 18a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 3h8M9 14h6"/></svg></div>
-      <div class="fd-name">Trial Matching</div>
+      <div class="fd-name">Research &amp; Trials</div>
       <div class="fd-desc">Eligible patients surfaced before the window closes.</div>
       <div class="fd-inherit">inherits the stack ↓</div>
     </div>
     <div class="fd-bldg fd-b6">
       <div class="fd-roof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></div>
-      <div class="fd-name">Care Management</div>
+      <div class="fd-name">Care Coordination</div>
       <div class="fd-desc">Right patient. Right intervention. Right time.</div>
       <div class="fd-inherit">inherits the stack ↓</div>
     </div>
@@ -109,7 +109,7 @@
     <div>Build the brain. <em class="kicker" style="color:var(--accent)">The platform compounds.</em></div>
   </div>
 
-  <div class="pageno">09 / 11</div>
+  <div class="pageno">09 / 12</div>
 
   <!-- ═════ Styles ═══════════════════════════════════════════════ -->
   <style>
@@ -258,14 +258,25 @@
   </style>
 
   <aside class="notes">
-    This is the architecture, and the answer to sprawl. Build it bottom-up.
-    Integration first, because nothing else matters if you can't connect
-    to every EHR and every source. Then the engine, the guardrails, and
-    the provenance layer. Then the brain on top, continuously curated.
-    And then the agents rise. Scribe, coding, prior auth, quality, trials,
-    care management. Each one inherits the whole stack underneath. One
-    PHI grant. One audit trail. One EHR pipe. Shared by every agent.
-    Update the chart once. Every agent on top inherits the freshness.
-    The platform compounds.
+    This is the platform stack. It builds bottom-up.
+
+    Integration first. To do any of this, we have to be where the work
+    already happens, without forcing anyone to leave their workflow.
+
+    On top of integration, three columns. The engine that turns
+    unstructured documents into structured FHIR. Guardrails that gate every
+    change with scope and approval. Provenance that tags every fact with
+    where it came from.
+
+    Above those, the brain. Continuously curated patient context.
+
+    And on top of the brain, the agents. Clinical decision support, coding,
+    revenue cycle, quality and care gaps, research and trials, care
+    coordination.
+
+    The point. Six categories the health system is otherwise buying from
+    six different vendors. Here they ride on the same stack. One audit
+    trail. One curated picture of the patient, shared by every one of them.
+    Every agent's output flows back into the brain. The next agent inherits.
   </aside>
 </section>

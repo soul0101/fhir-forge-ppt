@@ -191,12 +191,36 @@
     console.log('[extractionMoat] init');
   }
 
+  // ── Primitives slide ─────────────────────────────────────────────────────
+  // Each .pp-card opens a modal whose [data-modal] matches the card's
+  // data-prim attribute. State is held on the widget root via data-open.
+  function createPrimitives(root) {
+    root.addEventListener('click', function (e) {
+      var card = e.target.closest('.pp-card');
+      if (card && card.dataset.prim) {
+        root.setAttribute('data-open', card.dataset.prim);
+        return;
+      }
+      if (e.target.closest('.pp-modal-x') ||
+          e.target.classList.contains('pp-modal')) {
+        root.removeAttribute('data-open');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && root.hasAttribute('data-open')) {
+        root.removeAttribute('data-open');
+      }
+    });
+    console.log('[primitives] init');
+  }
+
   // ── Registry ─────────────────────────────────────────────────────────────
   window.deckWidgets = Object.assign(window.deckWidgets || {}, {
     counter:         createCounter,
     reveal:          createReveal,
     fhirForge:       createFhirForge,
     extractionMoat:  createExtractionMoat,
+    primitives:      createPrimitives,
   });
 
   // ── Initialiser called by index.html before Reveal boots ────────────────

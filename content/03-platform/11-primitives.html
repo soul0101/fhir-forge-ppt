@@ -1,0 +1,798 @@
+<!--
+  Slide 11 · Touchpoints worth noting
+  Chapter: The Platform · Touchpoints
+
+  Four out-of-the-box surfaces. Not the obvious ones (Console, API, Marketplace).
+  The surprising ones, all chart-aware by inheritance, all governed by default.
+
+    01 Chart Copilot     · ambient overlay inside the EHR
+    02 Signals           · agent-populated queue for human triage
+    03 Line              · phone / SMS, agent-backed
+    04 SMART App         · EHR-launched app inheriting chart context
+
+  Each card opens a modal with a bespoke mini-visualisation. Esc, click on the
+  backdrop, or the close icon dismisses. State is held on the slide root via
+  data-open and toggled by the `primitives` widget in assets/widgets.js.
+-->
+<section class="sheet pp-sheet" data-transition="fade" data-widget="primitives">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:46px;right:64px;z-index:3">
+    <div class="rise" style="--d:0s"><span class="section-marker">Touchpoints</span></div>
+    <h2 class="rise" style="--d:.05s;font-size:42px;line-height:1.05;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700;margin-top:8px">
+      Touchpoints <span style="color:var(--accent)">worth noting</span>.
+    </h2>
+    <p class="rise" style="--d:.1s;font-family:'Newsreader',Georgia,serif;font-style:italic;
+                           font-size:16px;line-height:1.4;color:var(--ink-3);margin-top:8px;max-width:980px">
+      Four touchpoints worth a closer look.
+    </p>
+  </div>
+
+  <!-- ─── Single row of 4 cards ─────────────────────────────────── -->
+  <div class="pp-grid pp-grid-4">
+
+    <button class="pp-card pp-card-surface rise" style="--d:.20s" data-prim="copilot">
+      <span class="pp-no">01</span>
+      <span class="pp-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/>
+          <circle cx="18.5" cy="9" r=".6" fill="currentColor"/><circle cx="18.5" cy="12" r=".6" fill="currentColor"/><circle cx="18.5" cy="15" r=".6" fill="currentColor"/>
+        </svg>
+      </span>
+      <div class="pp-name">Chart Copilot</div>
+      <div class="pp-desc">Ambient overlay on the EHR. Aware of the chart, always present.</div>
+      <span class="pp-expand" aria-hidden="true">↗</span>
+    </button>
+
+    <button class="pp-card pp-card-surface rise" style="--d:.28s" data-prim="signals">
+      <span class="pp-no">02</span>
+      <span class="pp-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+          <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
+        </svg>
+      </span>
+      <div class="pp-name">Signals</div>
+      <div class="pp-desc">Every alert, draft, and task. Routed to the right human for triage.</div>
+      <span class="pp-expand" aria-hidden="true">↗</span>
+    </button>
+
+    <button class="pp-card pp-card-surface rise" style="--d:.36s" data-prim="line">
+      <span class="pp-no">03</span>
+      <span class="pp-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </span>
+      <div class="pp-name">Line</div>
+      <div class="pp-desc">Phone or SMS, backed by an agent. Doctors ask, the chart answers.</div>
+      <span class="pp-expand" aria-hidden="true">↗</span>
+    </button>
+
+    <button class="pp-card pp-card-surface rise" style="--d:.44s" data-prim="smart">
+      <span class="pp-no">04</span>
+      <span class="pp-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="18" rx="2"/>
+          <path d="M2 9h20"/>
+          <circle cx="6" cy="6" r=".8" fill="currentColor"/>
+          <circle cx="8.5" cy="6" r=".8" fill="currentColor"/>
+        </svg>
+      </span>
+      <div class="pp-name">SMART App</div>
+      <div class="pp-desc">EHR-launched apps that inherit chart context from the brain.</div>
+      <span class="pp-expand" aria-hidden="true">↗</span>
+    </button>
+
+  </div>
+
+  <!-- ─── Footer ─────────────────────────────────────────────────── -->
+  <div class="pp-foot rise" style="--d:.6s">
+    Chart-aware by inheritance.
+    <span class="pp-sep">·</span>
+    FHIR-grounded.
+    <span class="pp-sep">·</span>
+    <span style="color:var(--ink-2)">Permissioned by default.</span>
+  </div>
+
+  <div class="pageno">11 / 12</div>
+
+  <!-- ═════ Modals ═══════════════════════════════════════════════════ -->
+  <div class="pp-modals" aria-hidden="true">
+
+    <!-- ── Chart Copilot ───────────────────────────────────────── -->
+    <div class="pp-modal" data-modal="copilot" role="dialog" aria-label="Chart Copilot">
+      <div class="pp-modal-card">
+        <button class="pp-modal-x" aria-label="Close">&times;</button>
+        <div class="pp-modal-head">
+          <span class="pp-modal-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/><circle cx="18.5" cy="9" r=".6" fill="currentColor"/><circle cx="18.5" cy="12" r=".6" fill="currentColor"/><circle cx="18.5" cy="15" r=".6" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <div class="pp-modal-name">Chart Copilot</div>
+            <div class="pp-modal-tag">Ambient AI overlay inside the EHR</div>
+          </div>
+        </div>
+        <div class="pp-modal-body">
+          <p class="pp-modal-def">
+            A persistent agent and UI that rides alongside the EHR, aware of the chart, always present.
+          </p>
+          <div class="mv mv-copilot">
+            <div class="mv-cp-ehr">
+              <div class="mv-cp-ehr-tab">Encounter &middot; J. Patel &middot; 04:23</div>
+              <div class="mv-cp-ehr-section">PROBLEMS</div>
+              <div class="mv-cp-ehr-row">HTN, controlled</div>
+              <div class="mv-cp-ehr-row">Hyperlipidemia</div>
+              <div class="mv-cp-ehr-section">VITALS</div>
+              <div class="mv-cp-ehr-row">BP 148/92 &middot; HR 72 &middot; BMI 31.4</div>
+              <div class="mv-cp-ehr-section">NOTE &middot; in progress</div>
+              <div class="mv-cp-ehr-note">"Pt presents with elevated glucose, polyuria, recent A1c 8.2&hellip;"</div>
+            </div>
+            <div class="mv-cp-side">
+              <div class="mv-cp-side-head">
+                <span class="mv-cp-dot"></span>
+                <span>watching encounter</span>
+              </div>
+              <div class="mv-cp-suggest">
+                <div class="mv-cp-q">Add <strong>T2DM</strong> to problem list?</div>
+                <div class="mv-cp-sub">A1c 8.2% &middot; polyuria &middot; family hx</div>
+                <div class="mv-cp-act"><span class="mv-btn mv-btn-y">Accept</span><span class="mv-btn">Skip</span></div>
+              </div>
+              <div class="mv-cp-suggest">
+                <div class="mv-cp-q">Schedule A1c follow-up in 90 days?</div>
+                <div class="mv-cp-sub">HEDIS &middot; care gap closing</div>
+                <div class="mv-cp-act"><span class="mv-btn mv-btn-y">Accept</span><span class="mv-btn">Skip</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="pp-modal-meta">
+            <div><span>FHIR</span> SMART-on-FHIR launch &middot; FHIR Subscription</div>
+            <div><span>Used by</span> Scribe &middot; CDS &middot; Coding &middot; Quality</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Signals ─────────────────────────────────────────────── -->
+    <div class="pp-modal" data-modal="signals" role="dialog" aria-label="Signals">
+      <div class="pp-modal-card">
+        <button class="pp-modal-x" aria-label="Close">&times;</button>
+        <div class="pp-modal-head">
+          <span class="pp-modal-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          </span>
+          <div>
+            <div class="pp-modal-name">Signals</div>
+            <div class="pp-modal-tag">Agent output, routed to humans</div>
+          </div>
+        </div>
+        <div class="pp-modal-body">
+          <p class="pp-modal-def">
+            An agent-populated queue where alerts, drafts, and tasks land for human triage.
+          </p>
+          <div class="mv mv-inbox">
+            <div class="mv-ib-tabs">
+              <span class="mv-tab mv-tab-on">All &middot; 12</span>
+              <span class="mv-tab">Urgent &middot; 3</span>
+              <span class="mv-tab">Drafts &middot; 7</span>
+              <span class="mv-tab">Alerts &middot; 5</span>
+            </div>
+            <div class="mv-ib-rows">
+              <div class="mv-ib-row mv-ib-urgent">
+                <span class="mv-ib-dot"></span>
+                <div class="mv-ib-main">
+                  <div class="mv-ib-title">Prior auth draft ready</div>
+                  <div class="mv-ib-sub">Sarah Hill &middot; Cohere Agent &middot; due 6h</div>
+                </div>
+                <div class="mv-ib-acts"><span>Approve</span><span>Edit</span><span>Dismiss</span></div>
+              </div>
+              <div class="mv-ib-row mv-ib-warn">
+                <span class="mv-ib-dot"></span>
+                <div class="mv-ib-main">
+                  <div class="mv-ib-title">HCC suggestion &middot; I50.9 CHF</div>
+                  <div class="mv-ib-sub">Tomas Reyes &middot; Coding Agent &middot; due 24h</div>
+                </div>
+                <div class="mv-ib-acts"><span>Approve</span><span>Edit</span><span>Dismiss</span></div>
+              </div>
+              <div class="mv-ib-row">
+                <span class="mv-ib-dot"></span>
+                <div class="mv-ib-main">
+                  <div class="mv-ib-title">Refill request</div>
+                  <div class="mv-ib-sub">Maya Chen &middot; Refill Line &middot; 2m ago</div>
+                </div>
+                <div class="mv-ib-acts"><span>Approve</span><span>Edit</span><span>Dismiss</span></div>
+              </div>
+              <div class="mv-ib-row">
+                <span class="mv-ib-dot"></span>
+                <div class="mv-ib-main">
+                  <div class="mv-ib-title">Care gap closing in 14 days</div>
+                  <div class="mv-ib-sub">D. Park &middot; Quality Agent &middot; HEDIS CDC-A1c</div>
+                </div>
+                <div class="mv-ib-acts"><span>Approve</span><span>Edit</span><span>Dismiss</span></div>
+              </div>
+              <div class="mv-ib-row mv-ib-fyi">
+                <span class="mv-ib-dot"></span>
+                <div class="mv-ib-main">
+                  <div class="mv-ib-title">Incidental finding &middot; 8mm renal lesion</div>
+                  <div class="mv-ib-sub">K. Singh &middot; Imaging Agent &middot; flagged</div>
+                </div>
+                <div class="mv-ib-acts"><span>Approve</span><span>Edit</span><span>Dismiss</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="pp-modal-meta">
+            <div><span>FHIR</span> Task &middot; CarePlan reference &middot; Provenance</div>
+            <div><span>Populated by</span> every agent on the platform</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Line ────────────────────────────────────────────────── -->
+    <div class="pp-modal" data-modal="line" role="dialog" aria-label="Line">
+      <div class="pp-modal-card">
+        <button class="pp-modal-x" aria-label="Close">&times;</button>
+        <div class="pp-modal-head">
+          <span class="pp-modal-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div>
+            <div class="pp-modal-name">Line</div>
+            <div class="pp-modal-tag">Phone or SMS, backed by an agent</div>
+          </div>
+        </div>
+        <div class="pp-modal-body">
+          <p class="pp-modal-def">
+            A phone number or messaging channel backed by an agent.
+          </p>
+          <div class="mv mv-line">
+            <div class="mv-ln-phone">
+              <div class="mv-ln-phone-head">
+                <span class="mv-ln-phone-num">+1 (415) 555-WARD</span>
+                <span class="mv-ln-phone-meta">ask-the-chart &middot; WardAgent v3.2</span>
+              </div>
+              <div class="mv-ln-wave">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="mv-ln-thread">
+                <div class="mv-ln-msg mv-ln-pt">Update on Sarah Hill from last night?</div>
+                <div class="mv-ln-msg mv-ln-agent">Post-op day 2. Vitals stable: BP 128/74, HR 72. AM labs A1c 7.4, K+ 3.9. Tolerated PO fluids per the 02:14 nursing note. No overnight orders required.</div>
+                <div class="mv-ln-msg mv-ln-pt">Any change in mental status?</div>
+                <div class="mv-ln-msg mv-ln-agent">No documented changes. A&amp;Ox3 at 06:00 rounds.</div>
+              </div>
+            </div>
+            <div class="mv-ln-extract">
+              <div class="mv-ln-extract-head">chart context used</div>
+              <div class="mv-ln-row"><span>Patient</span> Sarah Hill, 67F</div>
+              <div class="mv-ln-row"><span>Window</span> 22:00 &ndash; 06:00</div>
+              <div class="mv-ln-row"><span>Sources</span> 4 nursing notes &middot; vitals stream &middot; AM labs</div>
+              <div class="mv-ln-prov">provenance: 6 chart references &middot; 0 inferred facts</div>
+            </div>
+          </div>
+          <div class="pp-modal-meta">
+            <div><span>FHIR</span> Communication &middot; CommunicationRequest</div>
+            <div><span>Examples</span> Ask-the-chart &middot; On-call line &middot; Refill line &middot; Post-discharge</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SMART App ───────────────────────────────────────────── -->
+    <div class="pp-modal" data-modal="smart" role="dialog" aria-label="SMART App">
+      <div class="pp-modal-card">
+        <button class="pp-modal-x" aria-label="Close">&times;</button>
+        <div class="pp-modal-head">
+          <span class="pp-modal-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20"/><circle cx="6" cy="6" r=".8" fill="currentColor"/><circle cx="8.5" cy="6" r=".8" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <div class="pp-modal-name">SMART App</div>
+            <div class="pp-modal-tag">EHR-launched, context-inherited</div>
+          </div>
+        </div>
+        <div class="pp-modal-body">
+          <p class="pp-modal-def">
+            An EHR-launched app that inherits patient context from the brain via SMART-on-FHIR.
+          </p>
+          <div class="mv mv-smart">
+            <div class="mv-sm-chart">
+              <div class="mv-sm-chart-tab">Epic Workspace &middot; Sarah Hill, 67F &middot; Encounter 04:23</div>
+              <div class="mv-sm-chart-section">PROBLEMS</div>
+              <div class="mv-sm-chart-row">T2DM</div>
+              <div class="mv-sm-chart-row">HTN</div>
+              <div class="mv-sm-chart-row">Hyperlipidemia</div>
+              <div class="mv-sm-chart-section">RECENT LABS</div>
+              <div class="mv-sm-chart-row">A1c 8.2 &middot; May 2026</div>
+              <div class="mv-sm-chart-row">LDL 142</div>
+              <div class="mv-sm-chart-section">VITALS</div>
+              <div class="mv-sm-chart-row">BP 148/92</div>
+            </div>
+            <div class="mv-sm-app">
+              <div class="mv-sm-app-head">
+                <span class="mv-sm-app-name">Diabetes Care Planner</span>
+                <span class="mv-sm-app-ver">v2.1</span>
+              </div>
+              <div class="mv-sm-app-block">
+                <div class="mv-sm-block-head">inheriting context</div>
+                <div class="mv-sm-ctx-row"><span class="mv-sm-ck">&check;</span> Patient: Sarah Hill</div>
+                <div class="mv-sm-ctx-row"><span class="mv-sm-ck">&check;</span> Encounter: 04:23 today</div>
+                <div class="mv-sm-ctx-row"><span class="mv-sm-ck">&check;</span> User: Dr. Patel</div>
+                <div class="mv-sm-ctx-row"><span class="mv-sm-ck">&check;</span> Brain: 23 chart facts</div>
+              </div>
+              <div class="mv-sm-app-block">
+                <div class="mv-sm-block-head">recommended care plan</div>
+                <div class="mv-sm-rec-row">Repeat A1c in 90 days</div>
+                <div class="mv-sm-rec-row">Statin (LDL &gt; 130)</div>
+                <div class="mv-sm-rec-row">Endocrinology referral</div>
+              </div>
+            </div>
+          </div>
+          <div class="pp-modal-meta">
+            <div><span>FHIR</span> SMART-on-FHIR &middot; OAuth 2.0 &middot; FHIR R4 scopes</div>
+            <div><span>Launch shapes</span> Embedded in EHR &middot; Standalone window</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    /* ── Card grid ────────────────────────────────────────────── */
+    .pp-grid {
+      position: absolute;
+      display: grid; gap: 16px;
+    }
+    .pp-grid-4 {
+      left: 64px; right: 64px; top: 222px; height: 280px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* ── Card ─────────────────────────────────────────────────── */
+    .pp-card {
+      position: relative;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 22px 18px 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04), 0 16px 32px -22px rgba(23,38,59,.32);
+      cursor: pointer; text-align: left;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      font-family: inherit;
+    }
+    .pp-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--rule));
+      box-shadow: 0 1px 2px rgba(23,38,59,.06), 0 26px 44px -22px rgba(23,38,59,.42);
+    }
+    .pp-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .pp-no {
+      position: absolute; top: 14px; right: 16px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .2em; font-weight: 700;
+      color: var(--muted); opacity: .55;
+    }
+    .pp-ic {
+      width: 44px; height: 44px; border-radius: 11px;
+      background: color-mix(in srgb, var(--accent) 13%, transparent);
+      color: var(--accent-deep);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .pp-ic svg { width: 22px; height: 22px; }
+    .pp-name {
+      font-family: "Geist", sans-serif; font-size: 20px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.014em;
+      margin-top: 4px;
+    }
+    .pp-desc {
+      font-family: "Newsreader", Georgia, serif; font-style: italic;
+      font-size: 13.5px; line-height: 1.4; color: var(--ink-3);
+      flex: 1;
+    }
+    .pp-expand {
+      position: absolute; bottom: 14px; right: 16px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 14px; font-weight: 700; color: var(--muted);
+      opacity: .5;
+      transition: opacity .18s ease, transform .18s ease, color .18s ease;
+    }
+    .pp-card:hover .pp-expand { opacity: 1; color: var(--accent-deep); transform: translate(2px,-2px); }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    .pp-foot {
+      position: absolute; left: 64px; right: 64px; bottom: 36px;
+      text-align: center;
+      padding-top: 14px; border-top: 1px solid var(--rule);
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: .18em; color: var(--ink-3);
+      font-weight: 600;
+    }
+    .pp-foot .pp-sep { color: var(--muted); opacity: .65; padding: 0 10px; }
+
+    /* ═══ Modals ═════════════════════════════════════════════════ */
+    /* High-specificity selector so we override deck.css's
+       `section.sheet > * { z-index: 1 }` blanket rule. */
+    .reveal .slides section.sheet > .pp-modals {
+      position: absolute; inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .pp-modal {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: color-mix(in srgb, var(--stage) 70%, transparent);
+      backdrop-filter: blur(6px);
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity .22s ease, visibility 0s linear .22s;
+    }
+    .pp-sheet[data-open="copilot"] .pp-modal[data-modal="copilot"],
+    .pp-sheet[data-open="signals"] .pp-modal[data-modal="signals"],
+    .pp-sheet[data-open="line"]    .pp-modal[data-modal="line"],
+    .pp-sheet[data-open="smart"]   .pp-modal[data-modal="smart"] {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transition: opacity .22s ease, visibility 0s;
+    }
+    .pp-modal-card {
+      position: relative;
+      width: 920px; max-width: calc(100% - 80px);
+      max-height: calc(100% - 60px);
+      background: var(--paper-3);
+      border-radius: 16px;
+      box-shadow: 0 28px 70px -22px rgba(0,0,0,.6), 0 0 0 1px var(--rule);
+      transform: translateY(12px) scale(.98);
+      transition: transform .26s cubic-bezier(.2,.7,.2,1);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .pp-sheet[data-open] .pp-modal[data-modal] .pp-modal-card { transform: none; }
+
+    .pp-modal-x {
+      position: absolute; top: 14px; right: 16px;
+      width: 30px; height: 30px;
+      border: 1px solid var(--rule); border-radius: 8px;
+      background: var(--paper);
+      font-size: 18px; line-height: 1; color: var(--ink-3);
+      cursor: pointer; z-index: 2;
+      transition: color .18s ease, border-color .18s ease;
+    }
+    .pp-modal-x:hover { color: var(--ink); border-color: var(--ink-3); }
+
+    .pp-modal-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 22px 28px 14px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pp-modal-ic {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: color-mix(in srgb, var(--accent) 14%, transparent);
+      color: var(--accent-deep);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .pp-modal-ic svg { width: 24px; height: 24px; }
+    .pp-modal-name {
+      font-family: "Geist", sans-serif; font-size: 22px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.018em;
+    }
+    .pp-modal-tag {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; margin-top: 3px;
+    }
+
+    .pp-modal-body { padding: 18px 28px 22px; overflow-y: auto; }
+    .pp-modal-def {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 14.5px; line-height: 1.5; color: var(--ink-2);
+      margin-bottom: 16px;
+    }
+    .pp-modal-meta {
+      margin-top: 14px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      padding-top: 12px; border-top: 1px solid var(--rule);
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .04em; color: var(--ink-3);
+    }
+    .pp-modal-meta span {
+      display: inline-block; padding: 2px 7px;
+      background: color-mix(in srgb, var(--muted) 16%, transparent);
+      color: var(--ink-2); border-radius: 4px;
+      letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+      margin-right: 8px; font-size: 9px;
+    }
+
+    /* ── Mini-viz · common ────────────────────────────────────── */
+    .mv {
+      display: grid; gap: 12px;
+      padding: 14px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, var(--paper)), var(--paper));
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+    }
+
+    /* ── Copilot viz ──────────────────────────────────────────── */
+    .mv-copilot { grid-template-columns: 1.4fr 1fr; min-height: 240px; }
+    .mv-cp-ehr {
+      background: var(--paper-3); border: 1px solid var(--rule);
+      border-radius: 8px; padding: 12px 14px;
+      font-family: "Geist", sans-serif; font-size: 11.5px; color: var(--ink-2);
+    }
+    .mv-cp-ehr-tab {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--accent-deep); font-weight: 700;
+      padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+    }
+    .mv-cp-ehr-section {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .2em; font-weight: 700;
+      color: var(--muted); margin-top: 8px;
+    }
+    .mv-cp-ehr-row { line-height: 1.35; }
+    .mv-cp-ehr-note {
+      font-family: "Newsreader", Georgia, serif; font-style: italic;
+      color: var(--ink-3); line-height: 1.4; margin-top: 4px;
+    }
+    .mv-cp-side {
+      background: var(--stage); color: var(--ink-on-dark);
+      border-radius: 8px; padding: 12px 14px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .mv-cp-side-head {
+      display: flex; align-items: center; gap: 7px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent-soft); font-weight: 700;
+    }
+    .mv-cp-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
+      animation: mv-pulse 2s ease-in-out infinite;
+    }
+    @keyframes mv-pulse {
+      0%,100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); }
+      50%     { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 0%, transparent); }
+    }
+    .mv-cp-suggest {
+      background: color-mix(in srgb, var(--ink-on-dark) 6%, var(--stage));
+      border: 1px solid color-mix(in srgb, var(--ink-on-dark) 14%, transparent);
+      border-radius: 6px; padding: 8px 10px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .mv-cp-q {
+      font-family: "Geist", sans-serif; font-size: 12px; line-height: 1.3; color: #fff;
+    }
+    .mv-cp-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .1em; color: var(--muted-on-dark);
+    }
+    .mv-cp-act { display: flex; gap: 6px; }
+    .mv-btn {
+      font-family: "Geist", sans-serif; font-size: 10.5px; font-weight: 600;
+      padding: 3px 9px; border-radius: 4px;
+      background: color-mix(in srgb, var(--ink-on-dark) 10%, transparent);
+      color: var(--ink-on-dark);
+      border: 1px solid color-mix(in srgb, var(--ink-on-dark) 16%, transparent);
+    }
+    .mv-btn-y { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── Signals (Inbox) viz ──────────────────────────────────── */
+    .mv-inbox { padding: 8px 8px 10px; }
+    .mv-ib-tabs {
+      display: flex; gap: 6px; padding: 4px 4px 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .mv-tab {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .12em; font-weight: 700;
+      color: var(--muted); padding: 3px 8px; border-radius: 4px;
+      background: color-mix(in srgb, var(--muted) 8%, transparent);
+    }
+    .mv-tab-on { background: var(--ink); color: #fff; }
+    .mv-ib-rows { display: flex; flex-direction: column; }
+    .mv-ib-row {
+      display: grid; grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 12px;
+      padding: 9px 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .mv-ib-row:last-child { border-bottom: 0; }
+    .mv-ib-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--muted);
+    }
+    .mv-ib-urgent .mv-ib-dot { background: var(--warn-deep); box-shadow: 0 0 0 3px color-mix(in srgb, var(--warn-deep) 18%, transparent); }
+    .mv-ib-warn .mv-ib-dot   { background: var(--warn); }
+    .mv-ib-fyi .mv-ib-dot    { background: var(--accent); }
+    .mv-ib-title {
+      font-family: "Geist", sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--ink);
+    }
+    .mv-ib-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .06em; color: var(--muted);
+      margin-top: 2px;
+    }
+    .mv-ib-acts {
+      display: flex; gap: 6px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .08em; font-weight: 600;
+      color: var(--ink-2);
+    }
+    .mv-ib-acts span { padding: 3px 7px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper-3); }
+
+    /* ── Line viz ─────────────────────────────────────────────── */
+    .mv-line { grid-template-columns: 1fr 1fr; min-height: 250px; }
+    .mv-ln-phone {
+      background: var(--stage); color: var(--ink-on-dark);
+      border-radius: 12px; padding: 12px 14px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .mv-ln-phone-head { display: flex; justify-content: space-between; align-items: baseline; }
+    .mv-ln-phone-num {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+    .mv-ln-phone-meta {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .14em; color: var(--accent-soft);
+    }
+    .mv-ln-wave {
+      display: flex; gap: 3px; align-items: center; justify-content: center;
+      padding: 8px 0; border-block: 1px solid color-mix(in srgb, #fff 12%, transparent);
+    }
+    .mv-ln-wave span {
+      display: inline-block; width: 3px; border-radius: 2px;
+      background: var(--accent-soft);
+      animation: mv-wave 1.1s ease-in-out infinite;
+    }
+    .mv-ln-wave span:nth-child(1) { height: 8px;  animation-delay: .0s; }
+    .mv-ln-wave span:nth-child(2) { height: 16px; animation-delay: .1s; }
+    .mv-ln-wave span:nth-child(3) { height: 22px; animation-delay: .2s; }
+    .mv-ln-wave span:nth-child(4) { height: 12px; animation-delay: .3s; }
+    .mv-ln-wave span:nth-child(5) { height: 18px; animation-delay: .4s; }
+    .mv-ln-wave span:nth-child(6) { height: 26px; animation-delay: .5s; }
+    .mv-ln-wave span:nth-child(7) { height: 14px; animation-delay: .6s; }
+    .mv-ln-wave span:nth-child(8) { height: 20px; animation-delay: .7s; }
+    .mv-ln-wave span:nth-child(9) { height: 9px;  animation-delay: .8s; }
+    .mv-ln-wave span:nth-child(10){ height: 16px; animation-delay: .9s; }
+    @keyframes mv-wave { 0%,100% { transform: scaleY(.6); } 50% { transform: scaleY(1); } }
+
+    .mv-ln-thread { display: flex; flex-direction: column; gap: 6px; }
+    .mv-ln-msg {
+      font-family: "Geist", sans-serif; font-size: 11.5px; line-height: 1.35;
+      padding: 6px 10px; border-radius: 8px; max-width: 90%;
+    }
+    .mv-ln-agent { background: color-mix(in srgb, var(--accent) 22%, transparent); color: #fff; align-self: flex-start; }
+    .mv-ln-pt    { background: color-mix(in srgb, #fff 12%, transparent); color: #fff; align-self: flex-end; }
+
+    .mv-ln-extract {
+      background: var(--paper-3); border: 1px solid var(--rule);
+      border-radius: 12px; padding: 12px 14px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .mv-ln-extract-head {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent-deep); font-weight: 700;
+      padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+    }
+    .mv-ln-row {
+      display: grid; grid-template-columns: 86px 1fr;
+      font-family: "Geist", sans-serif; font-size: 12px; color: var(--ink);
+    }
+    .mv-ln-row span {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700;
+    }
+    .mv-ln-prov {
+      margin-top: auto;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .04em; color: var(--ink-3);
+      padding-top: 8px; border-top: 1px dashed var(--rule);
+    }
+
+    /* ── SMART App viz ────────────────────────────────────────── */
+    .mv-smart { grid-template-columns: 1fr 1.1fr; min-height: 270px; }
+    .mv-sm-chart {
+      background: var(--paper-3); border: 1px solid var(--rule);
+      border-radius: 10px; padding: 12px 14px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .mv-sm-chart-tab {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700;
+      padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+      margin-bottom: 4px;
+    }
+    .mv-sm-chart-section {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent-deep); font-weight: 700; margin-top: 6px;
+    }
+    .mv-sm-chart-row {
+      font-family: "Geist", sans-serif; font-size: 11.5px; color: var(--ink-2);
+      line-height: 1.35;
+    }
+    .mv-sm-app {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, var(--paper-3)), var(--paper-3));
+      border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--rule));
+      border-radius: 10px; padding: 12px 14px;
+      display: flex; flex-direction: column; gap: 10px;
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 8%, transparent);
+    }
+    .mv-sm-app-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    }
+    .mv-sm-app-name {
+      font-family: "Geist", sans-serif; font-size: 13px; font-weight: 700;
+      color: var(--accent-deep); letter-spacing: -0.01em;
+    }
+    .mv-sm-app-ver {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .12em; color: var(--muted); font-weight: 600;
+    }
+    .mv-sm-app-block {
+      display: flex; flex-direction: column; gap: 3px;
+      padding: 8px 10px;
+      background: var(--paper);
+      border-radius: 6px;
+    }
+    .mv-sm-block-head {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700; margin-bottom: 4px;
+    }
+    .mv-sm-ctx-row {
+      font-family: "Geist", sans-serif; font-size: 11.5px; color: var(--ink-2);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .mv-sm-ck { color: var(--accent-deep); font-weight: 700; }
+    .mv-sm-rec-row {
+      font-family: "Geist", sans-serif; font-size: 11.5px; color: var(--ink);
+    }
+    .mv-sm-rec-row::before { content: "· "; color: var(--accent-deep); font-weight: 700; }
+
+  </style>
+
+  <aside class="notes">
+    Four places the platform shows up that are worth a closer look. The brain
+    works behind all of them. Every one of these inherits the same curated
+    patient context the brain is already maintaining.
+
+    Chart Copilot. The most familiar shape. An AI panel that lives next to
+    whatever the clinician is looking at in the EHR. It reads the chart as
+    they work and surfaces what matters in context. It doesn't get launched.
+    It's always there.
+
+    Signals. Every agent on the platform routes its output through here.
+    Alerts, drafts, tasks, follow-ups. One queue for the clinician. Triage in
+    one place. Instead of every AI tool inventing its own pop-up or
+    notification scheme, they all land in the same Signals queue, routed to
+    the right person.
+
+    Line. Sometimes the touchpoint is a phone number. The doctor texts the
+    on-call line and asks for an update on a patient overnight. The agent
+    reads the chart, summarizes, cites its sources. Same idea as the Copilot,
+    but the surface is a conversation, not a screen.
+
+    SMART App. SMART-on-FHIR is the open protocol every major EHR already
+    supports for launching apps inside the chart. Any builder can publish
+    one. What makes it interesting on this platform is what the launched app
+    gets for free. Standard SMART launch hands over the patient, the
+    encounter, the user. On the brain, the app also inherits the curated
+    patient context the brain has already assembled. The app ships
+    chart-aware on day one.
+
+    Click any card to see what it looks like in use.
+  </aside>
+</section>
