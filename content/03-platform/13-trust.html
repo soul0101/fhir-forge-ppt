@@ -1,0 +1,295 @@
+<!--
+  Slide 11 · Trust · the production unlock
+  Chapter: Why It Is Real · Trust
+
+  Reframed from "one fact's data lineage" to "every agent ACTION is governed".
+  A single agent action is followed left-to-right through its full receipt:
+  grounded in the source, traced end to end, approved by a clinician, then
+  written back and logged. Beneath it, four "every ___" guarantees quantify
+  that this holds for the whole platform, not a sample. The claim the slide
+  lands: this is how agents get past compliance and reach production.
+
+      A1c 8.2%  →  grounded  →  traced  →  clinician approved  →  written + logged
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:5">
+    <h2 class="rise" style="--d:.04s;font-size:42px;line-height:1.06;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700">
+      Trust is built in,
+      <em class="kicker" style="color:var(--accent);font-size:1em">not bolted on.</em>
+    </h2>
+    <p class="rise" style="--d:.12s;font-family:'Newsreader',Georgia,serif;font-style:italic;
+                           font-size:17px;line-height:1.45;color:var(--ink-3);margin-top:9px;max-width:980px">
+      Every agent action carries its receipts, grounded and traced and approved before it touches the chart.
+    </p>
+  </div>
+
+  <!-- ─── The action receipt (one agent action, end to end) ──────── -->
+  <div class="tr-stage">
+
+    <!-- Hero: the agent action at the start of the chain -->
+    <div class="tr-fact tr-step">
+      <span class="tr-fact-label">Agent action</span>
+      <span class="tr-fact-value">A1c 8.2%</span>
+      <span class="tr-fact-meta">proposed write to chart</span>
+    </div>
+
+    <!-- Short tether from the action into its receipt -->
+    <span class="tr-tether" aria-hidden="true"></span>
+
+    <!-- Connector + four checkpoints of the receipt -->
+    <div class="tr-lineage">
+      <div class="tr-track"><span class="tr-track-fill"></span></div>
+
+      <div class="tr-node tr-step tr-n1">
+        <span class="tr-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="tr-node-label">Grounded in source</span>
+        <span class="tr-node-sub">Discharge summary, p.3</span>
+      </div>
+
+      <div class="tr-node tr-step tr-n2">
+        <span class="tr-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="tr-node-label">Traced end to end</span>
+        <span class="tr-node-sub">Agent &middot; model &middot; inputs logged</span>
+      </div>
+
+      <div class="tr-node tr-step tr-n3">
+        <span class="tr-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="tr-node-label">Clinician approved</span>
+        <span class="tr-node-sub">Dr. Patel &middot; signed</span>
+      </div>
+
+      <div class="tr-node tr-node-final tr-step tr-n4">
+        <span class="tr-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="tr-node-label">Written to the chart</span>
+        <span class="tr-node-sub">Committed &middot; audit entry</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Four guarantees: the quantified payoff ─────────────────── -->
+  <div class="tr-guard">
+    <div class="tr-g tr-g1">
+      <span class="tr-g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></span>
+      <div class="tr-g-txt"><b>Every fact</b><span>traces to a source</span></div>
+    </div>
+    <div class="tr-g tr-g2">
+      <span class="tr-g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.6"/><circle cx="18" cy="5" r="2.6"/><path d="M8.4 19H15a3.4 3.4 0 0 0 0-6.8H9A3.4 3.4 0 0 1 9 5.4h6.6"/></svg></span>
+      <div class="tr-g-txt"><b>Every action</b><span>carries a full trace</span></div>
+    </div>
+    <div class="tr-g tr-g3">
+      <span class="tr-g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+      <div class="tr-g-txt"><b>Every write</b><span>waits for a clinician</span></div>
+    </div>
+    <div class="tr-g tr-g4">
+      <span class="tr-g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+      <div class="tr-g-txt"><b>Every correction</b><span>sharpens the agent</span></div>
+    </div>
+  </div>
+
+  <div class="sig">PROMPT OPINION</div>
+  <div class="pageno">11 / 12</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    /* ── Stage: agent action + receipt, centered as one row ──────── */
+    .tr-stage {
+      position: absolute; left: 64px; right: 64px; top: 250px;
+      display: flex; align-items: flex-start; gap: 0;
+      z-index: 4;
+    }
+    /* The node circle centre sits 30px below the lineage top (4px padding
+       + 26px to the circle centre). The hero card is taller than the
+       circle, so we lift it so its vertical centre lands on that line. */
+    .tr-stage .tr-fact { margin-top: -29px; }
+
+    /* Short tether on the circle-centre line, joining action to receipt */
+    .tr-tether {
+      flex: 0 0 44px; height: 2px;
+      margin-top: 29px;
+      background: var(--rule);
+      transform: scaleX(0); transform-origin: left center;
+    }
+
+    /* ── Hero action card (start of the chain) ───────────────────── */
+    .tr-fact {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      width: 210px;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: flex; flex-direction: column; gap: 4px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 22px 44px -26px rgba(23,38,59,.34);
+    }
+    .tr-fact-label {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+    }
+    .tr-fact-value {
+      font-family: "Geist", sans-serif; font-size: 38px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.022em; line-height: 1.05;
+      font-variant-numeric: tabular-nums; margin-top: 2px;
+    }
+    .tr-fact-meta {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .08em;
+      color: var(--ink-3); font-weight: 500; margin-top: 4px;
+    }
+
+    /* ── Receipt rail: track + four checkpoints ──────────────────── */
+    .tr-lineage {
+      position: relative; flex: 1 1 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      align-items: start;
+      padding-top: 4px;
+    }
+    .tr-track {
+      position: absolute; top: 26px; left: 7%; right: 7%; height: 2px;
+      background: var(--rule);
+      border-radius: 2px; z-index: 0;
+    }
+    .tr-track-fill {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--ink-3) 0%, var(--ink-3) 70%, var(--accent) 100%);
+      transform: scaleX(0); transform-origin: left center;
+      border-radius: 2px;
+    }
+
+    /* ── Checkpoint node ─────────────────────────────────────────── */
+    .tr-node {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: 8px;
+      padding: 0 6px;
+    }
+    .tr-check {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      color: var(--ink-3);
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 5px var(--paper), 0 1px 2px rgba(23,38,59,.05), 0 10px 24px -16px rgba(23,38,59,.3);
+    }
+    .tr-check svg { width: 23px; height: 23px; }
+    .tr-node-label {
+      font-family: "Geist", sans-serif; font-size: 14.5px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.012em; line-height: 1.15;
+    }
+    .tr-node-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .06em;
+      color: var(--muted); line-height: 1.3; max-width: 150px;
+    }
+
+    /* ── The single accent moment: written, into production ──────── */
+    .tr-node-final .tr-check {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 0 5px var(--paper),
+                  0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent),
+                  0 14px 30px -14px rgba(15,138,120,.6);
+    }
+    .tr-node-final .tr-node-label { color: var(--accent-deep); font-weight: 700; }
+    .tr-node-final .tr-node-sub   { color: var(--accent-deep); opacity: .85; }
+
+    /* ── Four guarantees (quantified payoff) ─────────────────────── */
+    .tr-guard {
+      position: absolute; left: 64px; right: 64px; top: 486px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+      border-top: 1px solid var(--rule); padding-top: 30px;
+      z-index: 4;
+    }
+    .tr-g {
+      display: flex; align-items: flex-start; gap: 13px; opacity: 0;
+    }
+    .tr-g-ic {
+      flex: 0 0 auto; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--paper-3); border: 1px solid var(--rule);
+      color: var(--ink-3);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .tr-g-ic svg { width: 18px; height: 18px; }
+    .tr-g-txt { display: flex; flex-direction: column; gap: 2px; padding-top: 1px; }
+    .tr-g-txt b {
+      font-family: "Geist", sans-serif; font-size: 15px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.012em; line-height: 1.15;
+    }
+    .tr-g-txt span {
+      font-family: "Geist", sans-serif; font-size: 12.5px; font-weight: 400;
+      color: var(--ink-3); line-height: 1.3;
+    }
+
+    /* ═══ Choreography on .present (~2.4s total) ═══ */
+    @keyframes tr-fact-in { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: none; } }
+    @keyframes tr-track-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes tr-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes tr-rise { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+    @keyframes tr-node-pop {
+      0%   { opacity: 0; transform: translateY(8px) scale(.78); }
+      60%  { opacity: 1; transform: translateY(0) scale(1.06); }
+      100% { opacity: 1; transform: none; }
+    }
+    @keyframes tr-final-settle {
+      0%   { opacity: 0; transform: translateY(8px) scale(.78); }
+      55%  { opacity: 1; transform: translateY(0) scale(1.12); }
+      78%  { transform: scale(.99); }
+      100% { opacity: 1; transform: none; }
+    }
+
+    /* nodes start hidden so the pop reads */
+    .tr-node { opacity: 0; }
+
+    /* 1 · the agent action appears */
+    .reveal .slides section.present .tr-fact {
+      animation: tr-fact-in .5s cubic-bezier(.2,.7,.2,1) both;
+      animation-delay: .34s;
+    }
+    /* 2 · tether + connector draw outward from the action */
+    .reveal .slides section.present .tr-tether {
+      animation: tr-track-draw .4s cubic-bezier(.45,.05,.25,1) both;
+      animation-delay: .62s;
+    }
+    .reveal .slides section.present .tr-track-fill {
+      animation: tr-track-draw 1.25s cubic-bezier(.45,.05,.25,1) both;
+      animation-delay: .74s;
+    }
+    /* 3 · each checkpoint checks in, link by link */
+    .reveal .slides section.present .tr-n1 { animation: tr-node-pop .42s cubic-bezier(.25,1.3,.45,1) both; animation-delay: .84s; }
+    .reveal .slides section.present .tr-n2 { animation: tr-node-pop .42s cubic-bezier(.25,1.3,.45,1) both; animation-delay: .96s; }
+    .reveal .slides section.present .tr-n3 { animation: tr-node-pop .42s cubic-bezier(.25,1.3,.45,1) both; animation-delay: 1.08s; }
+    /* 4 · the accented final node lands into production */
+    .reveal .slides section.present .tr-n4 { animation: tr-final-settle .56s cubic-bezier(.2,.8,.3,1) both; animation-delay: 1.24s; }
+    /* 5 · the four guarantees rise in, left to right */
+    .reveal .slides section.present .tr-g1 { animation: tr-rise .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: 1.78s; }
+    .reveal .slides section.present .tr-g2 { animation: tr-rise .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: 1.90s; }
+    .reveal .slides section.present .tr-g3 { animation: tr-rise .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.02s; }
+    .reveal .slides section.present .tr-g4 { animation: tr-rise .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.14s; }
+  </style>
+
+  <aside class="notes">
+    Trust here is not a certificate, it is a receipt on every agent action.
+    Take one action, an agent proposing to write A1c 8.2 percent to the chart.
+    You can follow it left to right: grounded in the source document, traced
+    end to end with the agent, the model, and the inputs logged, approved by a
+    clinician, then written back with an audit entry. That holds for every
+    action on the platform, not a sample. Every fact traces to a source, every
+    action carries a full trace, every write waits for a clinician, and every
+    correction sharpens the agent. This is the governance that gets a workflow
+    past compliance sign-off, which is exactly where most pilots stall. Trust is
+    how agents reach production.
+  </aside>
+</section>

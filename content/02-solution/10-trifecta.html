@@ -1,0 +1,218 @@
+<!--
+  Slide 09 · The trifecta of agents
+  Chapter: Why It Is Real
+
+  A trifecta: three dotted source boxes at the corners of a triangle
+  (Foundational Agents / Agent Marketplace / Built by You), each feeding a
+  small pulsing Prompt Opinion node at the centre. Connectors flow inward.
+  Resolves slide 2's isolation: three origins, one platform.
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:8">
+    <h2 class="rise" style="--d:.04s;font-size:42px;line-height:1.05;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700">
+      Value on day one.
+      <em class="kicker" style="color:var(--accent);font-size:1em">Yours to grow forever.</em>
+    </h2>
+  </div>
+
+  <!-- ─── Connectors: each box → the platform node ───────────────── -->
+  <svg class="tk-conns" viewBox="0 0 1280 720" preserveAspectRatio="none"
+       style="position:absolute;inset:0;z-index:2;overflow:visible">
+    <g fill="none" stroke="var(--accent)" stroke-linecap="round">
+      <line class="tk-line tk-l1" x1="640" y1="286" x2="640" y2="386"/>
+      <line class="tk-line tk-l2" x1="522" y1="460" x2="640" y2="386"/>
+      <line class="tk-line tk-l3" x1="758" y1="460" x2="640" y2="386"/>
+    </g>
+  </svg>
+
+  <!-- ═══ Three source boxes (triangle corners) ═══ -->
+
+  <!-- Top · Foundational Agents -->
+  <div class="tk-box tk-box-top">
+    <div class="tk-bhead">
+      <span class="tk-bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg></span>
+      <span class="tk-bname">Foundational Agents</span>
+      <span class="tk-btag">out of the box</span>
+    </div>
+    <div class="tk-chips">
+      <span class="tk-chip"><span>Clinical Trial Matcher</span></span>
+      <span class="tk-chip"><span>Prior Auth</span></span>
+      <span class="tk-more">+ many more</span>
+    </div>
+  </div>
+
+  <!-- Bottom-left · Agent Marketplace -->
+  <div class="tk-box tk-box-bl">
+    <div class="tk-bhead">
+      <span class="tk-bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span>
+      <span class="tk-bname">Agent Marketplace</span>
+      <span class="tk-btag">an open ecosystem</span>
+    </div>
+    <div class="tk-chips">
+      <span class="tk-chip"><span>Referral Router</span></span>
+      <span class="tk-chip"><span>Care Gap Finder</span></span>
+      <span class="tk-more">+ many more</span>
+    </div>
+  </div>
+
+  <!-- Bottom-right · Built by You -->
+  <div class="tk-box tk-box-br">
+    <div class="tk-bhead">
+      <span class="tk-bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      <span class="tk-bname">Built by You</span>
+      <span class="tk-btag">in code or plain language</span>
+    </div>
+    <div class="tk-chips">
+      <span class="tk-chip"><span>Cohort rule</span></span>
+      <span class="tk-chip"><span>Care pathway</span></span>
+      <span class="tk-build"><span class="tk-build-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>build your own</span>
+    </div>
+  </div>
+
+  <!-- ─── Prompt Opinion · small pulsing node at the centre ──────── -->
+  <div class="tk-hub-dot"></div>
+  <div class="tk-hub-label">Prompt Opinion</div>
+
+  <div class="sig">PROMPT OPINION</div>
+  <div class="pageno">09 / 12</div>
+
+  <!-- ═════ Scoped styles + choreography ═════ -->
+  <style>
+    /* ── Source boxes (dotted, compact) ──────────────────────────── */
+    .tk-box {
+      box-sizing: border-box;
+      position: absolute; width: 372px; height: 100px;
+      border: 1.5px dashed color-mix(in srgb, var(--ink-3) 36%, var(--rule));
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--paper-3) 55%, transparent);
+      padding: 15px 18px; z-index: 4; opacity: 0;
+    }
+    .tk-box-top { left: 454px; top: 186px; }   /* bottom-centre attaches at (640,286) */
+    .tk-box-bl  { left: 150px; top: 460px; }   /* top-right attaches at (522,460)     */
+    .tk-box-br  { left: 758px; top: 460px; }   /* top-left attaches at (758,460)      */
+
+    .tk-bhead { display: flex; align-items: center; gap: 9px; }
+    .tk-bic {
+      width: 24px; height: 24px; border-radius: 7px; flex-shrink: 0;
+      background: color-mix(in srgb, var(--ink-2) 8%, var(--paper));
+      color: var(--ink-2);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .tk-bic svg { width: 14px; height: 14px; }
+    .tk-bname {
+      font-family: "Geist", sans-serif; font-size: 15px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.012em; white-space: nowrap;
+    }
+    .tk-btag {
+      margin-left: auto;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; white-space: nowrap;
+    }
+
+    /* ── Agent chips inside each box ─────────────────────────────── */
+    .tk-chips { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+    .tk-chip {
+      box-sizing: border-box;
+      display: inline-flex; align-items: center;
+      background: var(--paper); border: 1px solid var(--rule);
+      border-radius: 8px; padding: 7px 11px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.04);
+    }
+    .tk-chip span {
+      font-family: "Geist", sans-serif; font-size: 12px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.008em; white-space: nowrap;
+    }
+
+    /* "+ many more" · stacked-card hint */
+    .tk-more {
+      position: relative;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .08em; font-weight: 600;
+      color: var(--muted); white-space: nowrap;
+      border: 1px dashed color-mix(in srgb, var(--ink-3) 40%, var(--rule));
+      border-radius: 8px; padding: 7px 11px; background: var(--paper);
+    }
+    .tk-more::before, .tk-more::after {
+      content: ""; position: absolute; inset: 0;
+      border: 1px dashed color-mix(in srgb, var(--ink-3) 32%, var(--rule));
+      border-radius: 8px; background: var(--paper); z-index: -1;
+    }
+    .tk-more::before { transform: translate(4px, 4px); opacity: .6; }
+    .tk-more::after  { transform: translate(8px, 8px); opacity: .3; }
+
+    /* "build your own" · dashed affordance */
+    .tk-build {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px dashed color-mix(in srgb, var(--ink-3) 42%, var(--rule));
+      border-radius: 8px; padding: 7px 11px; background: transparent;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9.5px; letter-spacing: .06em; font-weight: 600; color: var(--ink-3);
+      white-space: nowrap;
+    }
+    .tk-build-ic { display: inline-flex; color: var(--ink-3); }
+    .tk-build-ic svg { width: 12px; height: 12px; }
+
+    /* ── Connectors (flow inward toward the platform) ────────────── */
+    .tk-line { stroke-width: 1.6; opacity: 0; stroke-dasharray: 4 7; }
+
+    /* ── Prompt Opinion node (small, pulsing) ────────────────────── */
+    .tk-hub-dot {
+      position: absolute; left: 626px; top: 372px; width: 28px; height: 28px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 32%,
+                  color-mix(in srgb, var(--accent) 70%, white), var(--accent) 60%, var(--accent-deep));
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 10%, transparent),
+                  0 6px 18px -6px rgba(15,138,120,.6);
+      z-index: 5; opacity: 0;
+    }
+    .tk-hub-dot::after {
+      content: ""; position: absolute; inset: 0; border-radius: 50%;
+      border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      animation: tk-sonar 2.6s ease-out infinite;
+    }
+    .tk-hub-label {
+      position: absolute; left: 490px; top: 410px; width: 300px; text-align: center;
+      font-family: "Geist", sans-serif; font-size: 14px; font-weight: 700;
+      color: var(--accent-deep); letter-spacing: -0.014em; z-index: 5; opacity: 0;
+    }
+
+    /* ═══ Keyframes ═══ */
+    @keyframes tk-flow    { to { stroke-dashoffset: -22; } }
+    @keyframes tk-line-in { from { opacity: 0; } to { opacity: .55; } }
+    @keyframes tk-box-in  { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: none; } }
+    @keyframes tk-dot-in  { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+    @keyframes tk-fade    { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes tk-sonar {
+      0%   { transform: scale(1);   opacity: .6; }
+      70%  { transform: scale(2.4); opacity: 0; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* ═══ Choreography on .present (~2.0s) ═══ */
+    /* 1 · the three source boxes settle at the corners */
+    .reveal .slides section.present .tk-box-top { animation: tk-box-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: .45s; }
+    .reveal .slides section.present .tk-box-bl  { animation: tk-box-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: .58s; }
+    .reveal .slides section.present .tk-box-br  { animation: tk-box-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: .71s; }
+    /* 2 · connectors fade in and stream inward */
+    .reveal .slides section.present .tk-line { animation: tk-line-in .5s ease both, tk-flow 1.5s linear infinite; }
+    .reveal .slides section.present .tk-l1 { animation-delay: 1.05s, 1.05s; }
+    .reveal .slides section.present .tk-l2 { animation-delay: 1.15s, 1.15s; }
+    .reveal .slides section.present .tk-l3 { animation-delay: 1.25s, 1.25s; }
+    /* 3 · the platform node lights up at the centre */
+    .reveal .slides section.present .tk-hub-dot   { animation: tk-dot-in .5s cubic-bezier(.25,1.3,.4,1) both; animation-delay: 1.5s; }
+    .reveal .slides section.present .tk-hub-label { animation: tk-fade .45s ease both; animation-delay: 1.65s; }
+  </style>
+
+  <aside class="notes">
+    A trifecta, in one picture. Three sources of agents, all interoperable. We
+    ship foundational agents out of the box, the clinical trial matcher, prior
+    auth, and many more, so you get value on day one. A growing marketplace lets
+    third parties add more. And you can build your own, in code or in plain
+    language. Three origins, one platform. Every one of them plugs into Prompt
+    Opinion at the centre, instead of sitting as another siloed point tool.
+  </aside>
+</section>

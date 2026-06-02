@@ -2,60 +2,131 @@
   Slide 1 · Title
   Chapter: Opening
 
-  Sets up the deck as a three-part story:
-    1. How I built FHIR Forge
-    2. What I learnt from it
-    3. How I think we should position it with Po
-  The three cards below the title carry that arc visually.
+  Split hero: Prompt Opinion wordmark + subline on the left; on the right a
+  signature graphic of six agent nodes converging on a living "pulse" core
+  (the deck thesis in one image: many agents, one shared living core). Accent
+  is reserved for the core. Pageno only; no footer texts on this slide.
 -->
 <section class="sheet" data-transition="fade">
-  <!-- Ambient back-plate: faint dot grid drifting under the title. -->
+  <!-- Ambient back-plate: faint dot grid. -->
   <svg class="bg-layer" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"
-       style="opacity:.55;color:var(--accent);pointer-events:none">
+       style="opacity:.5;color:var(--accent);pointer-events:none">
     <defs>
-      <pattern id="lml-title-grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+      <pattern id="po-title-grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
         <circle cx="1.2" cy="1.2" r="1.2" fill="currentColor" opacity=".10"/>
       </pattern>
-      <radialGradient id="lml-title-fade" cx="50%" cy="60%" r="65%">
+      <radialGradient id="po-title-fade" cx="62%" cy="50%" r="60%">
         <stop offset="0%"   stop-color="#000" stop-opacity="0"/>
         <stop offset="100%" stop-color="#000" stop-opacity="1"/>
       </radialGradient>
-      <mask id="lml-title-mask">
-        <rect width="1280" height="720" fill="url(#lml-title-fade)"/>
+      <mask id="po-title-mask">
+        <rect width="1280" height="720" fill="url(#po-title-fade)"/>
       </mask>
     </defs>
-    <rect width="1280" height="720" fill="url(#lml-title-grid)" mask="url(#lml-title-mask)"/>
+    <rect width="1280" height="720" fill="url(#po-title-grid)" mask="url(#po-title-mask)"/>
   </svg>
 
-  <div style="position:absolute;inset:0;padding:120px 100px 120px;
-              display:flex;flex-direction:column;justify-content:center;gap:36px;z-index:1">
-
-    <div class="rise" style="--d:0s">
-      <span class="section-marker">A Strategy Brief · Internal</span>
-    </div>
-
-    <h1 class="rise" style="--d:.05s;max-width:1080px;font-size:104px;line-height:1.0;
-                            letter-spacing:-0.034em;color:var(--ink);font-weight:700">
-      The Patient<br>Brain.
+  <!-- ─── LEFT · wordmark + subline ───────────────────────────────── -->
+  <div style="position:absolute;left:100px;top:0;bottom:0;width:540px;z-index:3;
+              display:flex;flex-direction:column;justify-content:center;gap:28px">
+    <h1 class="rise" style="--d:.05s;font-size:96px;line-height:.96;
+                            letter-spacing:-0.036em;color:var(--ink);font-weight:700">
+      Prompt<br>Opinion.
     </h1>
-
-    <p class="rise" style="--d:.1s;max-width:880px;font-size:22px;line-height:1.55;color:var(--ink-3)">
-      How I built <strong style="color:var(--ink);font-weight:600">FHIR Forge.</strong>
-      What it taught me.
-      <em class="kicker" style="color:var(--accent);font-size:1em">Where I think Prompt Opinion should plant a flag.</em>
+    <p class="rise" style="--d:.14s;max-width:470px;font-size:21px;line-height:1.5;color:var(--ink-3)">
+      The agent platform that takes your EHR to the next level.
     </p>
-
-    <div class="rise" style="--d:.16s;margin-top:8px">
-      <hr class="rule short">
-    </div>
-
+    <div class="rise" style="--d:.2s;margin-top:2px"><hr class="rule short"></div>
   </div>
 
-  <div class="sig">FOR PROMPT OPINION · INTERNAL</div>
+  <!-- ─── RIGHT · agents converging on the living core ────────────── -->
+  <!-- connecting hairlines (node -> core), drawn behind the nodes -->
+  <svg viewBox="0 0 1280 720" preserveAspectRatio="none"
+       style="position:absolute;inset:0;z-index:1;overflow:visible">
+    <g fill="none" stroke="var(--accent-soft)" stroke-width="1.2" stroke-linecap="round">
+      <line class="po-line" x1="735" y1="245" x2="920" y2="360" style="animation-delay:.95s"/>
+      <line class="po-line" x1="925" y1="158" x2="920" y2="360" style="animation-delay:1.02s"/>
+      <line class="po-line" x1="1100" y1="255" x2="920" y2="360" style="animation-delay:1.09s"/>
+      <line class="po-line" x1="1118" y1="430" x2="920" y2="360" style="animation-delay:1.16s"/>
+      <line class="po-line" x1="905" y1="560" x2="920" y2="360" style="animation-delay:1.23s"/>
+      <line class="po-line" x1="722" y1="415" x2="920" y2="360" style="animation-delay:1.30s"/>
+    </g>
+  </svg>
+
+  <!-- expanding pulse ring + core -->
+  <div class="po-core-ring"></div>
+  <div class="po-core"><span class="po-core-dot"></span></div>
+
+  <!-- six agent nodes (centres listed; div offset by half-size) -->
+  <div class="po-node" style="left:714px;top:224px;animation-delay:.5s"><span></span></div>
+  <div class="po-node" style="left:904px;top:137px;animation-delay:.58s"><span></span></div>
+  <div class="po-node" style="left:1079px;top:234px;animation-delay:.66s"><span></span></div>
+  <div class="po-node" style="left:1097px;top:409px;animation-delay:.74s"><span></span></div>
+  <div class="po-node" style="left:884px;top:539px;animation-delay:.82s"><span></span></div>
+  <div class="po-node" style="left:701px;top:394px;animation-delay:.9s"><span></span></div>
+
   <div class="pageno">01 / 12</div>
 
+  <style>
+    /* core */
+    .po-core {
+      position: absolute; left: 882px; top: 322px;
+      width: 76px; height: 76px; border-radius: 50%;
+      background: radial-gradient(circle at 50% 42%, var(--accent-soft), var(--accent));
+      box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 12%, transparent),
+                  0 18px 44px -14px rgba(15,138,120,.6);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3; opacity: 0;
+    }
+    .po-core-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #fff; opacity: .92;
+      box-shadow: 0 0 0 0 color-mix(in srgb, #fff 70%, transparent);
+      animation: po-core-breathe 2.4s ease-in-out infinite;
+    }
+    @keyframes po-core-breathe {
+      0%,100% { box-shadow: 0 0 0 0 color-mix(in srgb,#fff 60%,transparent); }
+      50%     { box-shadow: 0 0 0 7px color-mix(in srgb,#fff 0%,transparent); }
+    }
+    /* expanding wave ring */
+    .po-core-ring {
+      position: absolute; left: 882px; top: 322px;
+      width: 76px; height: 76px; border-radius: 50%;
+      border: 1.5px solid var(--accent);
+      z-index: 2; opacity: 0;
+      transform-origin: center;
+    }
+    /* agent nodes */
+    .po-node {
+      position: absolute; width: 44px; height: 44px; border-radius: 12px;
+      background: var(--paper-3); border: 1px solid var(--rule);
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 12px 26px -18px rgba(23,38,59,.3);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3; opacity: 0;
+    }
+    .po-node span {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--ink-3);
+    }
+    .po-line { opacity: 0; }
+
+    /* choreography on .present */
+    @keyframes po-pop { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+    @keyframes po-node-in { from { opacity: 0; transform: translateY(8px) scale(.85); } to { opacity: 1; transform: none; } }
+    @keyframes po-line-in { from { opacity: 0; } to { opacity: .42; } }
+    @keyframes po-ring-out {
+      0%   { opacity: 0; transform: scale(1); }
+      18%  { opacity: .5; }
+      100% { opacity: 0; transform: scale(2.5); }
+    }
+    .reveal .slides section.present .po-core { animation: po-pop .6s cubic-bezier(.3,1.2,.4,1) both; animation-delay: .3s; }
+    .reveal .slides section.present .po-node { animation: po-node-in .5s cubic-bezier(.2,.7,.2,1) both; }
+    .reveal .slides section.present .po-line { animation: po-line-in .5s ease both; }
+    .reveal .slides section.present .po-core-ring { animation: po-ring-out 3s ease-out infinite; animation-delay: 1.4s; }
+  </style>
+
   <aside class="notes">
-    The Patient Brain. This deck is in three parts. How I built FHIR Forge.
-    What it taught me. And where I think Prompt Opinion should plant a flag.
+    Prompt Opinion. The agent platform that takes the EHR you already run to
+    the next level. The mark on the right: many agents, one shared living core.
   </aside>
 </section>

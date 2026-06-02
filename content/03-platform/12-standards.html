@@ -1,0 +1,233 @@
+<!--
+  Slide 12 (folio 10 / 12) · Open standards · poster
+  Chapter: The Platform
+
+  Three parallel rails (MCP, A2A, FHIR) run left-to-right across the centre,
+  like tracks the platform rides on. A small Prompt Opinion chip settles ON
+  TOP of the rails: it travels on standards it does not own. Accent is used
+  sparingly on the rails and the PO mark.
+
+  Choreography (gated on section.present, ~1.6s):
+    header rises → three rails draw L→R in sequence (150ms stagger)
+    → PO mark settles onto them → closing line fades in last.
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:5">
+    <h2 class="rise" style="--d:.04s;font-size:42px;line-height:1.05;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700">
+      Built on standards.
+      <em class="kicker" style="font-size:1em;color:var(--accent)">Never locked in.</em>
+    </h2>
+  </div>
+
+  <!-- ─── Rails ──────────────────────────────────────────────────── -->
+  <div class="st-rails">
+
+    <!-- Prompt Opinion mark riding on top of the rails -->
+    <div class="st-mark">
+      <span class="st-mark-dot"></span>
+      <span class="st-mark-name">Prompt Opinion</span>
+      <span class="st-mark-sub">rides the rails</span>
+    </div>
+
+    <!-- Rail 1 · MCP -->
+    <div class="st-rail st-r1">
+      <span class="st-rail-name">MCP</span>
+      <div class="st-track">
+        <span class="st-track-line"></span>
+        <span class="st-node st-node-a"></span>
+        <span class="st-node st-node-b"></span>
+      </div>
+      <span class="st-rail-pay">Tools and agents plug in. No custom glue.</span>
+    </div>
+
+    <!-- Rail 2 · A2A -->
+    <div class="st-rail st-r2">
+      <span class="st-rail-name">A2A</span>
+      <div class="st-track">
+        <span class="st-track-line"></span>
+        <span class="st-node st-node-a"></span>
+        <span class="st-node st-node-b"></span>
+      </div>
+      <span class="st-rail-pay">Agents coordinate directly with each other.</span>
+    </div>
+
+    <!-- Rail 3 · FHIR -->
+    <div class="st-rail st-r3">
+      <span class="st-rail-name">FHIR</span>
+      <div class="st-track">
+        <span class="st-track-line"></span>
+        <span class="st-node st-node-a"></span>
+        <span class="st-node st-node-b"></span>
+      </div>
+      <span class="st-rail-pay">Your data stays in the format you already know.</span>
+    </div>
+
+  </div>
+
+  <!-- ─── Closing line ───────────────────────────────────────────── -->
+  <div class="st-close">
+    Open standards,
+    <em class="kicker" style="font-size:1em;color:var(--ink-2)">no lock-in.</em>
+  </div>
+
+  <div class="sig">PROMPT OPINION</div>
+  <div class="pageno">10 / 12</div>
+
+  <!-- ═════ Styles ═══════════════════════════════════════════════════ -->
+  <style>
+    /* ── Rail field ───────────────────────────────────────────────── */
+    .st-rails {
+      position: absolute; left: 64px; right: 64px; top: 226px;
+      height: 322px;
+    }
+
+    .st-rail {
+      position: absolute; left: 0; right: 0;
+      display: grid;
+      grid-template-columns: 132px 1fr 360px;
+      align-items: center;
+      column-gap: 30px;
+      height: 56px;
+    }
+    .st-r1 { top: 0; }
+    .st-r2 { top: 104px; }
+    .st-r3 { top: 208px; }
+
+    /* Standard name, Geist mono, bold */
+    .st-rail-name {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 24px; font-weight: 700; letter-spacing: .04em;
+      color: var(--ink); text-align: right;
+      opacity: 0;
+    }
+
+    /* Payoff line */
+    .st-rail-pay {
+      font-family: "Geist", sans-serif;
+      font-size: 15px; line-height: 1.35; color: var(--ink-2);
+      opacity: 0;
+    }
+
+    /* The track itself */
+    .st-track {
+      position: relative; height: 56px;
+    }
+    .st-track-line {
+      position: absolute; left: 0; right: 0; top: 50%;
+      height: 2px; transform: translateY(-50%);
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--accent) 0%, transparent) 0%,
+        color-mix(in srgb, var(--accent) 55%, var(--rule)) 14%,
+        color-mix(in srgb, var(--accent) 55%, var(--rule)) 86%,
+        color-mix(in srgb, var(--accent) 0%, transparent) 100%);
+      transform-origin: left center;
+      /* drawn L→R by choreography */
+    }
+    /* small travelling nodes sitting on the rail */
+    .st-node {
+      position: absolute; top: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--paper-3);
+      border: 2px solid color-mix(in srgb, var(--accent) 60%, var(--rule));
+      transform: translate(-50%, -50%) scale(0);
+      box-shadow: 0 0 0 4px var(--paper);
+    }
+    .st-node-a { left: 30%; }
+    .st-node-b { left: 70%; }
+
+    /* ── Prompt Opinion mark ──────────────────────────────────────── */
+    .st-mark {
+      position: absolute;
+      left: 162px;
+      top: -34px;
+      z-index: 4;
+      display: inline-flex; align-items: center; gap: 11px;
+      background: var(--stage); color: var(--ink-on-dark);
+      border-radius: 999px; padding: 10px 20px 10px 16px;
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 10%, transparent),
+                  0 16px 34px -16px rgba(11,28,45,.7);
+      opacity: 0;
+    }
+    .st-mark-dot {
+      width: 9px; height: 9px; border-radius: 50%; background: var(--accent-soft);
+      animation: st-breathe 2.6s ease-in-out infinite;
+    }
+    @keyframes st-breathe {
+      0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-soft) 70%, transparent); }
+      50%      { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent-soft) 0%, transparent); }
+    }
+    .st-mark-name {
+      font-family: "Geist", sans-serif; font-size: 15px; font-weight: 700;
+      letter-spacing: -0.012em;
+    }
+    .st-mark-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--muted-on-dark); padding-left: 11px;
+      border-left: 1px solid color-mix(in srgb, var(--ink-on-dark) 22%, transparent);
+    }
+    /* vertical contact ticks: the chip touching the three rails below */
+    .st-mark::after {
+      content: ""; position: absolute; left: 50%; bottom: -6px;
+      width: 1px; height: 6px; transform: translateX(-50%);
+      background: color-mix(in srgb, var(--accent) 50%, transparent);
+    }
+
+    /* ── Closing line ─────────────────────────────────────────────── */
+    .st-close {
+      position: absolute; left: 64px; right: 64px; bottom: 58px;
+      text-align: center;
+      font-family: "Geist", sans-serif;
+      font-size: 15px; line-height: 1.4; color: var(--ink-2);
+      opacity: 0;
+    }
+
+    /* ═══ Choreography on .present (~1.6s) ═══ */
+    @keyframes st-draw   { from { transform: translateY(-50%) scaleX(0); } to { transform: translateY(-50%) scaleX(1); } }
+    @keyframes st-label  { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+    @keyframes st-pay    { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+    @keyframes st-node-in{ from { transform: translate(-50%, -50%) scale(0); } to { transform: translate(-50%, -50%) scale(1); } }
+    @keyframes st-mark-in{ from { opacity: 0; transform: translateY(-12px) scale(.94); } to { opacity: 1; transform: none; } }
+    @keyframes st-fade   { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Rail 1 */
+    .reveal .slides section.present .st-r1 .st-rail-name { animation: st-label .4s ease both; animation-delay: .24s; }
+    .reveal .slides section.present .st-r1 .st-track-line { animation: st-draw .55s cubic-bezier(.4,.1,.2,1) both; animation-delay: .30s; }
+    .reveal .slides section.present .st-r1 .st-rail-pay  { animation: st-pay .4s ease both; animation-delay: .62s; }
+    .reveal .slides section.present .st-r1 .st-node-a    { animation: st-node-in .3s cubic-bezier(.3,1.3,.4,1) both; animation-delay: .50s; }
+    .reveal .slides section.present .st-r1 .st-node-b    { animation: st-node-in .3s cubic-bezier(.3,1.3,.4,1) both; animation-delay: .62s; }
+
+    /* Rail 2 (+150ms) */
+    .reveal .slides section.present .st-r2 .st-rail-name { animation: st-label .4s ease both; animation-delay: .39s; }
+    .reveal .slides section.present .st-r2 .st-track-line { animation: st-draw .55s cubic-bezier(.4,.1,.2,1) both; animation-delay: .45s; }
+    .reveal .slides section.present .st-r2 .st-rail-pay  { animation: st-pay .4s ease both; animation-delay: .77s; }
+    .reveal .slides section.present .st-r2 .st-node-a    { animation: st-node-in .3s cubic-bezier(.3,1.3,.4,1) both; animation-delay: .65s; }
+    .reveal .slides section.present .st-r2 .st-node-b    { animation: st-node-in .3s cubic-bezier(.3,1.3,.4,1) both; animation-delay: .77s; }
+
+    /* Rail 3 (+300ms) */
+    .reveal .slides section.present .st-r3 .st-rail-name { animation: st-label .4s ease both; animation-delay: .54s; }
+    .reveal .slides section.present .st-r3 .st-track-line { animation: st-draw .55s cubic-bezier(.4,.1,.2,1) both; animation-delay: .60s; }
+    .reveal .slides section.present .st-r3 .st-rail-pay  { animation: st-pay .4s ease both; animation-delay: .92s; }
+    .reveal .slides section.present .st-r3 .st-node-a    { animation: st-node-in .3s cubic-bezier(.3,1.3,.4,1) both; animation-delay: .80s; }
+    .reveal .slides section.present .st-r3 .st-node-b    { animation: st-node-in .3s cubic-bezier(.3,1.3,.4,1) both; animation-delay: .92s; }
+
+    /* PO mark settles onto the rails */
+    .reveal .slides section.present .st-mark { animation: st-mark-in .5s cubic-bezier(.3,1.2,.4,1) both; animation-delay: 1.18s; }
+
+    /* closing line last */
+    .reveal .slides section.present .st-close { animation: st-fade .5s ease both; animation-delay: 1.55s; }
+  </style>
+
+  <aside class="notes">
+    One promise to a buyer who has been burned by lock-in. We did not invent
+    a private protocol. We build on the open standards your teams already
+    trust. MCP lets any tool or agent plug in without custom glue. A2A lets
+    agents coordinate directly with each other. FHIR keeps your data in the
+    format you already know. The Prompt Opinion mark rides on top of those
+    rails, it does not replace them. These are standards we build on, not
+    standards we own, so you are never locked in.
+  </aside>
+</section>

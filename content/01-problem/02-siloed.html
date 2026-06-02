@@ -1,0 +1,212 @@
+<!--
+  Slide 2 · The agents are siloed
+  Chapter: The Gap
+
+  Four agents, each tagged PILOT, each holding its OWN partial, conflicting
+  copy of the same patient (A1c and meds disagree across cards). Each drops
+  its own separate wire into a single "YOUR EHR · one patient" bar. No links
+  between agents. Reading: many agents, redundant pulls, no shared foundation,
+  none talking, stuck in pilot. Muted palette; faint warn only on stale/missing.
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- Header -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:5">
+    <h2 class="rise" style="--d:0s;font-size:38px;line-height:1.05;letter-spacing:-0.022em;
+                            color:var(--ink);font-weight:700">
+      Everyone is building agents.
+      <em class="kicker" style="color:var(--ink-2);font-size:1em">Few reach production.</em>
+    </h2>
+    <p class="rise" style="--d:.1s;font-size:15px;line-height:1.4;color:var(--ink-3);margin-top:8px;max-width:920px">
+      Each builds its own context. None of them talk to each other.
+    </p>
+  </div>
+
+  <!-- Agent cards -->
+  <div class="sl2-cards">
+    <div class="sl2-card sl2-c1">
+      <div class="sl2-card-head"><span class="sl2-name"><span class="sl2-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span>Agent</span><span class="sl2-pilot">pilot</span></div>
+      <div class="sl2-copy">
+        <div class="sl2-copy-h">its own context</div>
+        <div class="sl2-row"><span>A1c</span><b>8.2%</b></div>
+        <div class="sl2-row"><span>Meds</span><b>Metformin 500</b></div>
+        <div class="sl2-row sl2-miss"><span>Allergy</span><b>not seen</b></div>
+      </div>
+    </div>
+    <div class="sl2-card sl2-c2">
+      <div class="sl2-card-head"><span class="sl2-name"><span class="sl2-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span>Agent</span><span class="sl2-pilot">pilot</span></div>
+      <div class="sl2-copy">
+        <div class="sl2-copy-h">its own context</div>
+        <div class="sl2-row sl2-miss"><span>A1c</span><b>not seen</b></div>
+        <div class="sl2-row"><span>Meds</span><b>Metformin 1000</b></div>
+        <div class="sl2-row"><span>Problem</span><b>T2DM</b></div>
+      </div>
+    </div>
+    <div class="sl2-card sl2-c3">
+      <div class="sl2-card-head"><span class="sl2-name"><span class="sl2-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span>Agent</span><span class="sl2-pilot">pilot</span></div>
+      <div class="sl2-copy">
+        <div class="sl2-copy-h">its own context</div>
+        <div class="sl2-row sl2-stale"><span>A1c</span><b>7.4%</b><i>stale</i></div>
+        <div class="sl2-row sl2-miss"><span>Meds</span><b>not seen</b></div>
+        <div class="sl2-row"><span>Problem</span><b>CHF</b></div>
+      </div>
+    </div>
+    <div class="sl2-card sl2-c4">
+      <div class="sl2-card-head"><span class="sl2-name"><span class="sl2-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span>Agent</span><span class="sl2-pilot">pilot</span></div>
+      <div class="sl2-copy">
+        <div class="sl2-copy-h">its own context</div>
+        <div class="sl2-row sl2-miss"><span>A1c</span><b>not seen</b></div>
+        <div class="sl2-row"><span>Meds</span><b>Metformin</b></div>
+        <div class="sl2-row"><span>Allergy</span><b>Penicillin</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Break glyphs in the gaps (they do not talk) -->
+  <svg class="sl2-breaks" viewBox="0 0 1280 720" preserveAspectRatio="none"
+       style="position:absolute;inset:0;z-index:4;overflow:visible">
+    <g stroke="var(--warn-deep)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
+      <g class="sl2-break" style="animation-delay:1.15s">
+        <path d="M324 300 h10"/><path d="M331 296 l5 4 l-5 4"/>
+        <path d="M380 300 h-10"/><path d="M373 296 l-5 4 l5 4"/>
+        <path d="M347 294 l10 12 M357 294 l-10 12"/>
+      </g>
+      <g class="sl2-break" style="animation-delay:1.22s">
+        <path d="M612 300 h10"/><path d="M619 296 l5 4 l-5 4"/>
+        <path d="M668 300 h-10"/><path d="M661 296 l-5 4 l5 4"/>
+        <path d="M635 294 l10 12 M645 294 l-10 12"/>
+      </g>
+      <g class="sl2-break" style="animation-delay:1.29s">
+        <path d="M900 300 h10"/><path d="M907 296 l5 4 l-5 4"/>
+        <path d="M956 300 h-10"/><path d="M949 296 l-5 4 l5 4"/>
+        <path d="M923 294 l10 12 M933 294 l-10 12"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- Separate wires: each card -> EHR bar (no convergence, four pulls) -->
+  <svg class="sl2-wires" viewBox="0 0 1280 720" preserveAspectRatio="none"
+       style="position:absolute;inset:0;z-index:2;overflow:visible">
+    <defs>
+      <marker id="sl2-arr" viewBox="0 0 8 8" refX="5" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M1 1 L6 4 L1 7" fill="none" stroke="var(--muted)" stroke-width="1.3"/>
+      </marker>
+    </defs>
+    <g stroke="var(--muted)" stroke-width="1.3" fill="none" opacity=".5">
+      <line class="sl2-wire" x1="208"  y1="408" x2="208"  y2="544" marker-end="url(#sl2-arr)" style="animation-delay:.8s"/>
+      <line class="sl2-wire" x1="496"  y1="408" x2="496"  y2="544" marker-end="url(#sl2-arr)" style="animation-delay:.9s"/>
+      <line class="sl2-wire" x1="784"  y1="408" x2="784"  y2="544" marker-end="url(#sl2-arr)" style="animation-delay:1.0s"/>
+      <line class="sl2-wire" x1="1072" y1="408" x2="1072" y2="544" marker-end="url(#sl2-arr)" style="animation-delay:1.1s"/>
+    </g>
+  </svg>
+
+  <!-- EHR bar -->
+  <div class="sl2-ehr">
+    <span class="sl2-ehr-name">Your EHR</span>
+    <span class="sl2-ehr-sub">one patient, read four separate ways</span>
+  </div>
+
+  <div class="sig">PROMPT OPINION</div>
+  <div class="pageno">02 / 12</div>
+
+  <style>
+    .sl2-cards {
+      position: absolute; left: 96px; top: 200px; width: 1088px; height: 200px;
+      display: grid; grid-template-columns: repeat(4, 224px); gap: 64px; z-index: 3;
+    }
+    .sl2-card {
+      background: var(--paper-3); border: 1px solid var(--rule);
+      border-radius: 12px; padding: 14px 14px 12px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 14px 30px -20px rgba(23,38,59,.3);
+      display: flex; flex-direction: column; gap: 10px; opacity: 0;
+    }
+    .sl2-card-head { display: flex; align-items: center; justify-content: space-between; }
+    .sl2-name {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: "Geist", sans-serif; font-size: 15px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+    .sl2-ic {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: color-mix(in srgb, var(--ink-2) 8%, var(--paper));
+      color: var(--ink-2);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .sl2-ic svg { width: 17px; height: 17px; }
+    .sl2-pilot {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
+      color: var(--warn-deep);
+      background: color-mix(in srgb, var(--warn) 15%, transparent);
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .sl2-copy {
+      background: var(--paper); border: 1px solid var(--rule-soft);
+      border-radius: 8px; padding: 9px 11px 10px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .sl2-copy-h {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700; opacity: .8;
+    }
+    .sl2-row {
+      display: flex; align-items: baseline; gap: 8px;
+      font-family: "Geist", sans-serif; font-size: 12px; color: var(--ink-2);
+    }
+    .sl2-row span {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 8.5px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700; width: 54px; flex-shrink: 0;
+    }
+    .sl2-row b { font-weight: 600; color: var(--ink); }
+    .sl2-row i {
+      font-style: normal;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 7.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+      color: var(--warn-deep);
+      background: color-mix(in srgb, var(--warn) 14%, transparent);
+      padding: 1px 5px; border-radius: 3px; margin-left: auto;
+    }
+    .sl2-miss b { color: var(--muted); font-weight: 500; font-style: italic; }
+    .sl2-stale b { color: var(--warn-deep); }
+
+    .sl2-ehr {
+      position: absolute; left: 96px; top: 548px; width: 1088px; height: 56px;
+      background: var(--stage); color: var(--ink-on-dark);
+      border-radius: 12px; padding: 0 26px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 16px 38px -22px rgba(11,28,45,.7); z-index: 3; opacity: 0;
+    }
+    .sl2-ehr-name { font-family: "Geist", sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+    .sl2-ehr-sub {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted-on-dark);
+    }
+
+    .sl2-wire, .sl2-break { opacity: 0; }
+    .sl2-breaks, .sl2-wires { opacity: 1; }
+
+    @keyframes sl2-card-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    @keyframes sl2-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes sl2-wire-in { from { opacity: 0; } to { opacity: .5; } }
+    @keyframes sl2-break-in { from { opacity: 0; } to { opacity: .55; } }
+
+    .reveal .slides section.present .sl2-ehr { animation: sl2-fade .5s ease both; animation-delay: .3s; }
+    .reveal .slides section.present .sl2-c1 { animation: sl2-card-in .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: .42s; }
+    .reveal .slides section.present .sl2-c2 { animation: sl2-card-in .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: .52s; }
+    .reveal .slides section.present .sl2-c3 { animation: sl2-card-in .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: .62s; }
+    .reveal .slides section.present .sl2-c4 { animation: sl2-card-in .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: .72s; }
+    .reveal .slides section.present .sl2-wire { animation: sl2-wire-in .45s ease both; }
+    .reveal .slides section.present .sl2-break { animation: sl2-break-in .4s ease both; }
+  </style>
+
+  <aside class="notes">
+    Everyone is building agents. Few reach production. Here is why. Four
+    agents, four pilots. Each reaches into the EHR on its own and rebuilds its
+    own copy of the patient, and those copies disagree. One sees an A1c of 8.2,
+    another a stale 7.4, two never saw it. One has the meds at 500, another at
+    1000. None of them talk, none of them share a foundation. Capable agents,
+    working in isolation, none compounding into a workflow.
+  </aside>
+</section>

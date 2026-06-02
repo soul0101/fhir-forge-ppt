@@ -1,0 +1,174 @@
+<!--
+  Slide 3 · The record is locked away
+  Chapter: The Gap · folio 03 / 12
+
+  Focus: most of the chart is unstructured, locked content (fax, note, scanned
+  PDF, outside record) that agents cannot read reliably. A greyed pile of
+  labelled documents with a padlock on the left; three agents on the right
+  reach in with broken connectors and failure tags. Muted palette; warn only
+  on the failure marks. No structured card (removed per direction).
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- Header -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:6">
+    <h2 class="rise" style="--d:0s;font-size:38px;line-height:1.05;letter-spacing:-0.022em;
+                            color:var(--ink);font-weight:700">
+      Most of the record is locked away.
+      <em class="kicker" style="color:var(--ink-2);font-size:1em">And your agents can't read it.</em>
+    </h2>
+  </div>
+
+  <!-- ─── The locked pile (left) ──────────────────────────────────── -->
+  <div class="sl3-pile">
+    <div class="sl3-doc sl3-d1"><span class="sl3-tag">Fax</span><div class="sl3-lines sl3-fax"></div></div>
+    <div class="sl3-doc sl3-d2"><span class="sl3-tag">Clinical note</span><div class="sl3-lines sl3-note"></div></div>
+    <div class="sl3-doc sl3-d3"><span class="sl3-tag">Scanned PDF</span><div class="sl3-lines sl3-scan"></div></div>
+    <div class="sl3-doc sl3-d4">
+      <span class="sl3-tag">Outside record</span>
+      <div class="sl3-lines sl3-ccd"></div>
+    </div>
+  </div>
+
+  <!-- padlock badge over the pile -->
+  <div class="sl3-lock">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2"/>
+      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/>
+      <circle cx="12" cy="15.5" r="1.2" fill="currentColor" stroke="none"/>
+    </svg>
+  </div>
+  <div class="sl3-cap">unstructured &middot; not machine-readable</div>
+
+  <!-- Unifying line -->
+  <div class="sl3-unify rise" style="--d:.16s">
+    Two problems, <em class="kicker" style="color:var(--ink-2)">one root cause.</em>
+    There is no living, shared foundation under your AI.
+  </div>
+
+  <div class="sig">PROMPT OPINION</div>
+  <div class="pageno">03 / 12</div>
+
+  <style>
+    /* ── locked pile ─────────────────────────────────────────────── */
+    .sl3-pile { position: absolute; left: 439px; top: 188px; width: 470px; height: 320px; z-index: 2; }
+    .sl3-doc {
+      position: absolute; width: 300px; height: 224px;
+      background: var(--paper-2); border: 1px solid var(--rule);
+      border-radius: 10px;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 16px 34px -22px rgba(23,38,59,.32);
+      opacity: 0;
+    }
+    .sl3-d1 { left: 0;     top: 0;    transform: rotate(-2.5deg); }
+    .sl3-d2 { left: 34px;  top: 42px;  transform: rotate(-0.5deg); }
+    .sl3-d3 { left: 68px;  top: 84px;  transform: rotate(1.5deg); }
+    .sl3-d4 { left: 102px; top: 126px; transform: rotate(3.5deg); background: var(--paper-3); }
+    .sl3-tag {
+      position: absolute; top: 12px; left: 14px;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
+      color: var(--muted);
+      background: color-mix(in srgb, var(--ink) 6%, transparent);
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .sl3-lines { position: absolute; left: 16px; right: 16px; top: 44px; bottom: 16px; opacity: .5; }
+    .sl3-lines::before, .sl3-lines::after {
+      content: ""; position: absolute; left: 0; right: 0; height: 6px; border-radius: 3px;
+      background: repeating-linear-gradient(90deg, var(--muted) 0 60px, transparent 60px 74px);
+      opacity: .35;
+    }
+    .sl3-lines::before { top: 18px; }
+    .sl3-lines::after  { top: 42px; right: 38px; }
+    .sl3-fax::before  { top: 6px; background: var(--muted); opacity: .25; height: 12px; }
+    .sl3-scan { transform: skewX(-4deg); }
+    .sl3-ccd::before { background: repeating-linear-gradient(90deg, var(--muted) 0 18px, transparent 18px 26px); }
+
+    .sl3-lock {
+      position: absolute; left: 658px; top: 393px;
+      width: 66px; height: 66px; border-radius: 50%;
+      background: var(--paper-3); color: var(--ink-2);
+      border: 1px solid var(--rule);
+      box-shadow: 0 10px 26px -12px rgba(23,38,59,.4);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 4; opacity: 0;
+    }
+    .sl3-lock svg { width: 30px; height: 30px; }
+    .sl3-cap {
+      position: absolute; left: 405px; top: 548px; width: 470px; text-align: center;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; opacity: 0; z-index: 4;
+    }
+    .reveal .slides section.present .sl3-cap { animation: sl3-fade .5s ease both; animation-delay: 1.0s; }
+
+    /* ── agents (right) ──────────────────────────────────────────── */
+    .sl3-agents {
+      position: absolute; left: 884px; top: 270px; width: 250px;
+      display: flex; flex-direction: column; gap: 60px; z-index: 4;
+    }
+    .sl3-agent {
+      background: var(--paper-3); border: 1px solid var(--rule);
+      border-radius: 10px; height: 50px; padding: 0 16px;
+      font-family: "Geist", sans-serif; font-size: 14px; font-weight: 600; color: var(--ink);
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 12px 26px -20px rgba(23,38,59,.3);
+      display: flex; align-items: center; gap: 10px; opacity: 0;
+    }
+    .sl3-ag-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
+
+    .sl3-line, .sl3-x { opacity: 0; }
+    .sl3-reach { opacity: 1; }
+    .sl3-fail {
+      position: absolute; z-index: 6; white-space: nowrap;
+      transform: translate(-50%, -50%);
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;
+      color: var(--warn-deep);
+      background: color-mix(in srgb, var(--warn) 16%, var(--paper));
+      padding: 3px 9px; border-radius: 4px; opacity: 0;
+    }
+    .sl3-f1 { left: 752px; top: 295px; }
+    .sl3-f2 { left: 752px; top: 405px; }
+    .sl3-f3 { left: 752px; top: 515px; }
+    .reveal .slides section.present .sl3-f1 { animation: sl3-fade .4s ease both; animation-delay: 1.55s; }
+    .reveal .slides section.present .sl3-f2 { animation: sl3-fade .4s ease both; animation-delay: 1.65s; }
+    .reveal .slides section.present .sl3-f3 { animation: sl3-fade .4s ease both; animation-delay: 1.75s; }
+
+    /* ── unifying line ───────────────────────────────────────────── */
+    .sl3-unify {
+      position: absolute; left: 64px; right: 64px; bottom: 70px; text-align: center;
+      font-family: "Geist", sans-serif; font-size: 17px; line-height: 1.4; color: var(--ink);
+    }
+
+    /* ── choreography ────────────────────────────────────────────── */
+    @keyframes sl3-doc-in { from { opacity: 0; transform: translateY(10px) rotate(0deg); } }
+    @keyframes sl3-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes sl3-pop { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+    @keyframes sl3-line-in { from { opacity: 0; } to { opacity: .9; } }
+
+    .reveal .slides section.present .sl3-d1 { animation: sl3-doc-in .5s ease both; animation-delay: .35s; }
+    .reveal .slides section.present .sl3-d2 { animation: sl3-doc-in .5s ease both; animation-delay: .47s; }
+    .reveal .slides section.present .sl3-d3 { animation: sl3-doc-in .5s ease both; animation-delay: .59s; }
+    .reveal .slides section.present .sl3-d4 { animation: sl3-doc-in .5s ease both; animation-delay: .71s; }
+    .reveal .slides section.present .sl3-lock { animation: sl3-pop .5s cubic-bezier(.3,1.2,.4,1) both; animation-delay: .9s; }
+    .reveal .slides section.present .sl3-a1 { animation: sl3-fade .45s ease both; animation-delay: 1.05s; }
+    .reveal .slides section.present .sl3-a2 { animation: sl3-fade .45s ease both; animation-delay: 1.13s; }
+    .reveal .slides section.present .sl3-a3 { animation: sl3-fade .45s ease both; animation-delay: 1.21s; }
+    .reveal .slides section.present .sl3-line { animation: sl3-line-in .4s ease both; }
+    .reveal .slides section.present .sl3-x { animation: sl3-pop .35s ease both; }
+
+    /* keep the doc rotations after the entrance (animation resets transform) */
+    .reveal .slides section.present .sl3-d1 { animation-name: sl3-fade; }
+    .reveal .slides section.present .sl3-d2 { animation-name: sl3-fade; }
+    .reveal .slides section.present .sl3-d3 { animation-name: sl3-fade; }
+    .reveal .slides section.present .sl3-d4 { animation-name: sl3-fade; }
+  </style>
+
+  <aside class="notes">
+    Most of the record is locked away, and your agents can't read it. The bulk
+    of the chart is unstructured: faxes, clinical notes, scanned PDFs, outside
+    records. When an agent reaches for it, it bounces off. It can't parse it,
+    the OCR is low confidence, it's unreadable. So two problems, one root
+    cause. The agents are fragmented, and the record underneath is mostly
+    unreadable. There is no living, shared foundation under your AI.
+  </aside>
+</section>

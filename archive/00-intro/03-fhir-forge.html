@@ -19,22 +19,15 @@
 -->
 <section class="sheet" data-transition="fade">
   <!-- ─── Header ─────────────────────────────────────────────────── -->
-  <div style="position:absolute;left:80px;top:84px;right:80px;z-index:2">
-    <div class="rise" style="--d:0s">
-      <span class="section-marker">The Prototype</span>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:24px;margin-top:10px;flex-wrap:wrap">
-      <h1 class="rise" style="--d:.05s;font-size:64px;line-height:1;
-                              letter-spacing:-0.028em;color:var(--ink);font-weight:700">
-        FHIR Forge.
-      </h1>
-      <p class="rise" style="--d:.1s;font-size:19px;line-height:1.45;color:var(--ink-3);
-                             font-family:'Newsreader',Georgia,serif;font-style:italic;
-                             margin-bottom:6px">
-        Unstructured notes in.
-        <span style="color:var(--accent);font-weight:500">Chart-ready FHIR out.</span>
-      </p>
-    </div>
+  <div style="position:absolute;left:80px;top:64px;right:80px;z-index:2">
+    <h2 class="rise" style="--d:.04s;font-size:42px;line-height:1.05;
+                            letter-spacing:-0.024em;color:var(--ink);font-weight:700">
+      Your unstructured data,
+      <em class="kicker" style="color:var(--accent);font-size:1em">finally usable.</em>
+    </h2>
+    <p class="rise" style="--d:.1s;font-size:16px;line-height:1.45;color:var(--ink-3);margin-top:8px;max-width:920px">
+      Documents in. Validated, coded FHIR out, written back as a governed transaction.
+    </p>
   </div>
 
   <!-- ─── Animated stage (interactive — see widgets.js · fhirForge) ──── -->
@@ -197,12 +190,12 @@
       <span class="band-mark"></span>
       <div style="font-size:15.5px;line-height:1.45">
         Extraction is the easy part.
-        <em class="kicker" style="color:var(--accent-soft);font-size:1em">Keeping the chart true is the moat.</em>
+        <em class="kicker" style="color:var(--accent-soft);font-size:1em">Keeping the chart true is the hard part.</em>
       </div>
     </div>
   </div>
 
-  <div class="pageno" style="bottom:8px">05 / 12</div>
+  <div class="pageno" style="bottom:8px">09 / 14</div>
 
   <!-- ═════ Scoped styles + animation timeline ═════════════════════ -->
   <style>
@@ -547,7 +540,7 @@
   </style>
 
   <aside class="notes">
-    This is FHIR Forge. The clearest way to show what the platform does.
+    This is the engine. The clearest way to show what the platform does.
     On the left, an unstructured note. The engine reads it, lifts out
     diagnoses, labs, medications, and grounds each one to a real code.
     ICD-10. LOINC. RxNorm. Every fact arrives at this review panel for a

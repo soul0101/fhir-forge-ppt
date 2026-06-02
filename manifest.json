@@ -1,17 +1,17 @@
 {
-  "description": "The Patient Brain — strategy brief for Prompt Opinion. Internal audience. FHIR Forge as proof of capability; the Patient Brain as the destination.",
+  "description": "Prompt Opinion — the standards-first healthcare AI agent platform. Customer flagship deck: takes the EHR you already run to the next level, no rip and replace.",
   "slides": [
-    { "folio": "01", "chapter": "Opening",       "title": "The Patient Brain",            "path": "content/00-intro/01-title.html" },
-    { "folio": "02", "chapter": "The Problem",   "title": "Born unstructured",            "path": "content/01-problem/02-born-unstructured.html" },
-    { "folio": "03", "chapter": "The Burden",    "title": "Every chart, by hand",         "path": "content/01-problem/04-conversion-economy.html" },
-    { "folio": "04", "chapter": "Why AI Stalls", "title": "Where current AI fails",       "path": "content/01-problem/04-ai-stalls.html" },
-    { "folio": "05", "chapter": "Opening",       "title": "FHIR Forge",                   "path": "content/00-intro/03-fhir-forge.html" },
-    { "folio": "06", "chapter": "The Gap",       "title": "No one builds the brain",      "path": "content/02-solution/06-market-map.html" },
-    { "folio": "07", "chapter": "The Vision",    "title": "The Patient Brain",            "path": "content/02-solution/06-patient-brain.html" },
-    { "folio": "08", "chapter": "The Spine",     "title": "What the brain does",          "path": "content/02-solution/07-six-verbs.html" },
-    { "folio": "09", "chapter": "The Foundation","title": "One foundation, every agent",  "path": "content/03-platform/10-one-engine.html" },
-    { "folio": "10", "chapter": "Proactive",     "title": "Proactive, not reactive",       "path": "content/02-solution/08-signals.html" },
-    { "folio": "11", "chapter": "Touchpoints",   "title": "Touchpoints worth noting",      "path": "content/03-platform/11-primitives.html" },
-    { "folio": "12", "chapter": "Closing",       "title": "A brain, not another agent",   "path": "content/04-closing/10-closing.html" }
+    { "folio": "01", "chapter": "Opening",      "title": "Prompt Opinion",                  "path": "content/00-intro/01-title.html" },
+    { "folio": "02", "chapter": "The Gap",       "title": "The agents are siloed",            "path": "content/01-problem/02-siloed.html" },
+    { "folio": "03", "chapter": "The Gap",       "title": "The record is locked away",        "path": "content/01-problem/03-static-chart.html" },
+    { "folio": "04", "chapter": "The Platform",  "title": "A platform on top of your EHR",    "path": "content/02-solution/04-platform.html" },
+    { "folio": "05", "chapter": "The Platform",  "title": "How it works",                     "path": "content/03-platform/05-architecture.html" },
+    { "folio": "06", "chapter": "The Chart Is Alive", "title": "Patient Pulse",               "path": "content/02-solution/06-senses.html" },
+    { "folio": "07", "chapter": "The Chart Is Alive", "title": "It notices what matters",     "path": "content/02-solution/08-signals.html" },
+    { "folio": "08", "chapter": "The Chart Is Alive", "title": "It answers, wherever you are","path": "content/03-platform/11-primitives.html" },
+    { "folio": "09", "chapter": "Why It Is Real","title": "The trifecta of agents",           "path": "content/02-solution/10-trifecta.html" },
+    { "folio": "10", "chapter": "Why It Is Real","title": "Open standards",                   "path": "content/03-platform/12-standards.html" },
+    { "folio": "11", "chapter": "Why It Is Real","title": "Provenance and guardrails",        "path": "content/03-platform/13-trust.html" },
+    { "folio": "12", "chapter": "Closing",       "title": "Your EHR, alive",                  "path": "content/04-closing/10-closing.html" }
   ]
 }

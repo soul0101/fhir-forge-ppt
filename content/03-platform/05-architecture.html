@@ -1,0 +1,297 @@
+<!--
+  Slide 5 · How it works (the architecture) · THE CUTAWAY
+  Chapter: The Platform · folio 05 / 12
+
+  The one layer from slide 4, opened. Three tiers, centred:
+      TOP    · generic agent chips resting on the layer (no names)
+      MIDDLE · the Prompt Opinion layer, opened: Data Engine · Patient Pulse · Guardrails
+      BASE   · Your EHR and data (grounded, widest)
+  One clean bidirectional arrow signifies data flowing both ways between the
+  layer and the EHR (no protocol labels; standards live on slide 11).
+-->
+<section class="sheet" data-transition="fade">
+
+  <!-- ─── Header ─────────────────────────────────────────────────── -->
+  <div style="position:absolute;left:64px;top:52px;right:64px;z-index:5">
+    <h2 class="rise" style="--d:.04s;font-size:42px;line-height:1.04;letter-spacing:-0.024em;
+                            color:var(--ink);font-weight:700">
+      One layer.
+      <em class="kicker" style="color:var(--accent);font-size:1em">Everything connects through it.</em>
+    </h2>
+  </div>
+
+  <!-- ░░ TOP · generic agent chips resting on the layer ░░ -->
+  <div class="ar-agents">
+    <div class="ar-chip ar-ch1"><span class="ar-chip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span></div>
+    <div class="ar-chip ar-ch2"><span class="ar-chip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span></div>
+    <div class="ar-chip ar-ch3"><span class="ar-chip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span></div>
+    <div class="ar-chip ar-ch4"><span class="ar-chip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="2.5"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.1"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/></svg></span></div>
+  </div>
+
+  <!-- ░░ A2A · the agents coordinate with one another ░░ -->
+  <svg class="ar-a2a" viewBox="0 0 1280 720" preserveAspectRatio="none"
+       style="position:absolute;inset:0;overflow:visible">
+    <g stroke="var(--ink-3)" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".7">
+      <path stroke-dasharray="4 5" d="M375 196 H905"/>
+      <path d="M375 196 V215"/><path d="M552 196 V215"/><path d="M728 196 V215"/><path d="M905 196 V215"/>
+    </g>
+    <g fill="var(--ink-3)">
+      <circle cx="375" cy="196" r="2.6"/><circle cx="552" cy="196" r="2.6"/><circle cx="728" cy="196" r="2.6"/><circle cx="905" cy="196" r="2.6"/>
+    </g>
+  </svg>
+  <div class="ar-a2a-lbl">A2A</div>
+
+  <!-- ░░ MIDDLE · the PO layer, opened (cutaway) ░░ -->
+  <div class="ar-layer">
+    <div class="ar-layer-head">
+      <span class="ar-layer-name">THE PROMPT OPINION LAYER</span>
+      <span class="ar-shield" title="Secured, governed, provenance-tracked">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+      </span>
+    </div>
+    <div class="ar-inner">
+      <div class="ar-block ar-bl1">
+        <span class="ar-block-name">Data Engine</span>
+        <span class="ar-block-sub">Documents in, validated FHIR out</span>
+      </div>
+      <div class="ar-block ar-bl2">
+        <span class="ar-block-name">Patient Pulse</span>
+        <span class="ar-block-sub">Continuously curated context</span>
+      </div>
+      <div class="ar-block ar-bl3">
+        <span class="ar-block-name">Guardrails</span>
+        <span class="ar-block-sub">Scoped writes, clinician approval</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ bidirectional data flow: layer ↕ EHR (no labels) ░░ -->
+  <svg class="ar-flow" viewBox="0 0 30 48" preserveAspectRatio="none"
+       style="left:625px;top:448px;width:30px;height:48px;z-index:3">
+    <g stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="15" y1="10" x2="15" y2="38"/>
+      <path d="M10 15 L15 9 L20 15"/>
+      <path d="M10 33 L15 39 L20 33"/>
+    </g>
+  </svg>
+
+  <!-- ░░ BASE · Your EHR and data (grounded, widest) ░░ -->
+  <div class="ar-base">
+    <span class="ar-base-name">YOUR EHR AND DATA</span>
+    <div class="ar-marquee">
+      <div class="ar-track">
+        <span class="ar-ehr">Epic</span>
+        <span class="ar-ehr">Oracle Health</span>
+        <span class="ar-ehr">Cerner</span>
+        <span class="ar-ehr">athenahealth</span>
+        <span class="ar-ehr">MEDITECH</span>
+        <span class="ar-ehr">Allscripts</span>
+        <span class="ar-ehr">eClinicalWorks</span>
+        <span class="ar-ehr">NextGen</span>
+        <span class="ar-ehr">Greenway</span>
+        <span class="ar-ehr">any FHIR source</span>
+        <span class="ar-ehr" aria-hidden="true">Epic</span>
+        <span class="ar-ehr" aria-hidden="true">Oracle Health</span>
+        <span class="ar-ehr" aria-hidden="true">Cerner</span>
+        <span class="ar-ehr" aria-hidden="true">athenahealth</span>
+        <span class="ar-ehr" aria-hidden="true">MEDITECH</span>
+        <span class="ar-ehr" aria-hidden="true">Allscripts</span>
+        <span class="ar-ehr" aria-hidden="true">eClinicalWorks</span>
+        <span class="ar-ehr" aria-hidden="true">NextGen</span>
+        <span class="ar-ehr" aria-hidden="true">Greenway</span>
+        <span class="ar-ehr" aria-hidden="true">any FHIR source</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Trust line ─────────────────────────────────────────────── -->
+  <div class="ar-trust rise" style="--d:.0s">
+    SECURE · PROVENANCE AND GUARDRAILS ON EVERY ACTION
+  </div>
+
+  <div class="sig">PROMPT OPINION</div>
+  <div class="pageno">05 / 12</div>
+
+  <style>
+    .ar-layer, .ar-base, .ar-block, .ar-chip, .ar-inner, .ar-agents { box-sizing: border-box; }
+
+    /* ── TOP · generic agent chips ─────────────────────────────────── */
+    .ar-agents {
+      position: absolute; left: 296px; right: 296px; top: 216px; height: 70px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; z-index: 4;
+    }
+    .ar-chip {
+      background: var(--paper-3);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 2px rgba(23,38,59,.05), 0 12px 28px -20px rgba(23,38,59,.3);
+      opacity: 0; transform-origin: bottom center;
+    }
+    .ar-chip-ic {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--paper-2); color: var(--ink-2);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .ar-chip-ic svg { width: 19px; height: 19px; }
+
+    /* ── MIDDLE · the PO layer (opened) ─────────────────────────────── */
+    .ar-layer {
+      position: absolute; left: 200px; right: 200px; top: 300px; height: 150px;
+      background: var(--paper-3);
+      border: 1.5px solid var(--accent);
+      border-radius: 14px;
+      padding: 12px 16px 16px;
+      z-index: 3; opacity: 0;
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 10%, transparent),
+                  0 22px 48px -22px rgba(15,138,120,.5);
+    }
+    .ar-layer-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2px 9px;
+    }
+    .ar-layer-name {
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent-deep); font-weight: 700;
+    }
+    .ar-shield {
+      width: 26px; height: 26px; border-radius: 7px;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent-deep);
+      display: inline-flex; align-items: center; justify-content: center;
+      opacity: 0;
+    }
+    .ar-shield svg { width: 15px; height: 15px; }
+
+    .ar-inner {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; height: 88px;
+    }
+    .ar-block {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 13px 14px;
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      opacity: 0; transform: translateY(8px);
+    }
+    .ar-block-name {
+      font-family: "Geist", sans-serif; font-size: 16px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.014em; line-height: 1.1;
+    }
+    .ar-block-sub {
+      font-family: "Geist", sans-serif; font-size: 11.5px; line-height: 1.3;
+      color: var(--ink-3);
+    }
+
+    /* ── BASE · EHR and data (widest, grounded) ─────────────────────── */
+    .ar-base {
+      position: absolute; left: 64px; right: 64px; top: 488px; height: 66px;
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 0 26px;
+      display: flex; align-items: center; gap: 26px; overflow: hidden;
+      z-index: 2; opacity: 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 1px 2px rgba(23,38,59,.04);
+    }
+    .ar-base-name {
+      flex-shrink: 0;
+      font-family: "Geist", sans-serif; font-size: 16px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.006em; line-height: 1;
+    }
+    .ar-base-name::after {
+      content: ""; display: inline-block; width: 1px; height: 22px;
+      background: var(--rule); margin-left: 26px; vertical-align: middle;
+    }
+    .ar-marquee {
+      flex: 1; overflow: hidden; height: 100%;
+      display: flex; align-items: center;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 88%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 5%, #000 88%, transparent);
+    }
+    .ar-track {
+      display: flex; align-items: center; gap: 12px; white-space: nowrap;
+      animation: ar-scroll 32s linear infinite;
+    }
+    .ar-ehr {
+      flex-shrink: 0;
+      font-family: "Geist", sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--ink-2); letter-spacing: -0.008em;
+      background: var(--paper-3); border: 1px solid var(--rule);
+      border-radius: 999px; padding: 6px 15px;
+    }
+    @keyframes ar-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── bidirectional flow connector ───────────────────────────────── */
+    .ar-flow { position: absolute; overflow: visible; opacity: 0; }
+
+    /* ── A2A coordination bus ───────────────────────────────────────── */
+    .ar-a2a { z-index: 4; opacity: 0; }
+    .ar-a2a-lbl {
+      position: absolute; left: 640px; top: 196px; transform: translate(-50%, -50%);
+      z-index: 5; opacity: 0;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 9px; letter-spacing: .24em; text-transform: uppercase; font-weight: 700;
+      color: var(--muted); background: var(--paper); padding: 2px 9px; border-radius: 4px;
+    }
+
+    /* ── Trust line ─────────────────────────────────────────────────── */
+    .ar-trust {
+      position: absolute; left: 64px; right: 64px; top: 598px; text-align: center;
+      font-family: "Geist Mono", ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500;
+      padding-top: 20px;
+      opacity: 0;
+    }
+    .ar-trust::before {
+      content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+      width: 72px; height: 1px; background: var(--rule);
+    }
+
+    /* ═══ CHOREOGRAPHY · build bottom-up on .present (~2.6s) ═══ */
+    @keyframes ar-band-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes ar-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes ar-block-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes ar-chip-in { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
+    @keyframes ar-shield-pop {
+      0% { opacity: 0; transform: scale(.5); }
+      60% { opacity: 1; transform: scale(1.15); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* 1 · BASE first */
+    .reveal .slides section.present .ar-base { animation: ar-band-in .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: .30s; }
+    /* 2 · layer settles, inner blocks, shield */
+    .reveal .slides section.present .ar-layer { animation: ar-band-in .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: .75s; }
+    .reveal .slides section.present .ar-bl1 { animation: ar-block-in .4s ease both; animation-delay: 1.05s; }
+    .reveal .slides section.present .ar-bl2 { animation: ar-block-in .4s ease both; animation-delay: 1.18s; }
+    .reveal .slides section.present .ar-bl3 { animation: ar-block-in .4s ease both; animation-delay: 1.31s; }
+    .reveal .slides section.present .ar-shield { animation: ar-shield-pop .4s cubic-bezier(.5,1.4,.4,1) both; animation-delay: 1.44s; }
+    /* 3 · bidirectional flow to EHR */
+    .reveal .slides section.present .ar-flow { animation: ar-fade .45s ease both; animation-delay: 1.60s; }
+    /* 4 · agents rest on top */
+    .reveal .slides section.present .ar-ch1 { animation: ar-chip-in .42s cubic-bezier(.2,.7,.2,1) both; animation-delay: 1.85s; }
+    .reveal .slides section.present .ar-ch2 { animation: ar-chip-in .42s cubic-bezier(.2,.7,.2,1) both; animation-delay: 1.95s; }
+    .reveal .slides section.present .ar-ch3 { animation: ar-chip-in .42s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.05s; }
+    .reveal .slides section.present .ar-ch4 { animation: ar-chip-in .42s cubic-bezier(.2,.7,.2,1) both; animation-delay: 2.15s; }
+    /* 5 · agents coordinate (A2A) */
+    .reveal .slides section.present .ar-a2a { animation: ar-fade .45s ease both; animation-delay: 2.30s; }
+    .reveal .slides section.present .ar-a2a-lbl { animation: ar-fade .4s ease both; animation-delay: 2.42s; }
+    /* 6 · trust line last */
+    .reveal .slides section.present .ar-trust { animation: ar-fade .5s ease both; animation-delay: 2.6s; }
+  </style>
+
+  <aside class="notes">
+    This is the same layer from the previous slide, opened up. At the base,
+    your EHR and data: Epic, Oracle Health, Athena, any FHIR source. We meet it
+    where it lives, and data flows both ways. The Prompt Opinion layer sits on
+    top, one thing made of three: the data engine that structures documents,
+    Patient Pulse that keeps context current, and guardrails on every write.
+    The agents rest on this one foundation. Everything connects through this
+    one layer, secured in your cloud, with provenance and guardrails on every
+    action.
+  </aside>
+</section>
